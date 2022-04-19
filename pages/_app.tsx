@@ -1,8 +1,22 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "@theme/normalize.css";
+import { AppProps } from "next/app";
+import { ThemeProvider } from "styled-components";
+import theme from "@theme/index";
+import Font from "@components/Fonts";
+import { GlobalStyles } from "@theme/globalStyles";
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+  return (
+    <ThemeProvider theme={theme}>
+      <GlobalStyles />
+      <Font />
+      <Main Component={Component} pageProps={pageProps} />
+    </ThemeProvider>
+  );
 }
 
-export default MyApp
+const Main = ({ Component, pageProps }) => {
+  return <Component {...pageProps} />;
+};
+
+export default MyApp;
