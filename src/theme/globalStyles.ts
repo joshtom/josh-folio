@@ -5,15 +5,15 @@ export const GlobalStyles = createGlobalStyle`
   html {
     --dm-sans: 'DM Sans', sans-serif;
     --din-alternate: 'DIN Alternate', sans-serif;
-    /* All css variables goes here */
+    cursor: none;
   }
 
   body {
     font-size: 16px;
     width:100%;
     scroll-behavior:smooth;
-    /* font-family: ${cVar("dmSans")}; */
-    background-color: ${cVar("darkWhiteAlt")};
+    background-color: ${cVar("black")};
+    cursor: none;
 
 
     @media (min-width: 400px) and (max-width: 1200px){
@@ -36,13 +36,13 @@ export const GlobalStyles = createGlobalStyle`
   }
 
 
-  &::-webkit-scrollbar {
-    width: 3px;
+  /* &::-webkit-scrollbar {
+    width: 1px;
   }
 
-  /* &::-webkit-scrollbar-thumb {
+  &::-webkit-scrollbar-thumb {
     border-radius:50px;
-    background-color: red;
+    background-color: transparent;
   } */
 
 

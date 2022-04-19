@@ -1,4 +1,5 @@
-import Document from "next/document";
+import Fonts from "@src/components/Fonts";
+import Document, { Html, Main, Head, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
 export default class MyDocument extends Document {
@@ -26,5 +27,17 @@ export default class MyDocument extends Document {
     } finally {
       sheet.seal();
     }
+  }
+  render() {
+    return (
+      <Html lang="en">
+        <Head />
+        <Fonts />
+        <body>
+          <Main />
+          <NextScript />
+        </body>
+      </Html>
+    );
   }
 }

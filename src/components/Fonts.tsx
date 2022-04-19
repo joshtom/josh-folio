@@ -1,8 +1,8 @@
-import Head from "next/head";
+import { Fragment } from "react";
 
 const Fonts = () => {
   return (
-    <Head>
+    <Fragment>
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link
         rel="preconnect"
@@ -14,7 +14,7 @@ const Fonts = () => {
         rel="stylesheet"
       />
       <link href="../assets/fonts/DINAlternate-Bold.woff" rel="stylesheet" />
-    </Head>
+    </Fragment>
   );
 };
 
