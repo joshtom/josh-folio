@@ -5,7 +5,15 @@ export const GlobalStyles = createGlobalStyle`
   html {
     --dm-sans: 'DM Sans', sans-serif;
     --din-alternate: 'DIN Alternate', sans-serif;
+    --text-white: #ffffff;
+    --text-black: #060606;
     cursor: none;
+    -webkit-touch-callout: none; 
+    -webkit-user-select: none; 
+    -khtml-user-select: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    user-select: none; 
   }
 
   body {
