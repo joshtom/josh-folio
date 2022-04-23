@@ -11,7 +11,6 @@ interface DefaultLayoutProps {
 const DefaultLayoutContainer = styled.div`
   width: 100%;
   height: 100%;
-  /* background: ${cVar("black")}; */
 `;
 
 function Defaultlayout({ children }: DefaultLayoutProps) {
@@ -31,7 +30,7 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
   };
 
   useEffect(() => {
-    renderPreloader();
+    // renderPreloader();
   }, []);
 
   useEffect(() => {

@@ -5,8 +5,10 @@ export const GlobalStyles = createGlobalStyle`
   html {
     --dm-sans: 'DM Sans', sans-serif;
     --din-alternate: 'DIN Alternate', sans-serif;
-    --text-white: #ffffff;
-    --text-black: #060606;
+    --dm-mono: 'DM Mono', monospace;
+    --light: #ffffff;
+    --dark: #060606;
+    --primary: #FE3F00;
     cursor: none;
     -webkit-touch-callout: none; 
     -webkit-user-select: none; 
@@ -20,7 +22,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: 16px;
     width:100%;
     scroll-behavior:smooth;
-    background-color: ${cVar("black")};
+    background-color: ${cVar("dark")};
     cursor: none;
 
 

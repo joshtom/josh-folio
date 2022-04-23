@@ -1,10 +1,11 @@
 export const COLORS = {
   text: "#000000",
-  primary: "#156064",
+  primary: "--primary",
   darkGreen: "#1A535C",
   deepGreen: "#10353A",
   red: "#DD0426",
-  black: "--text-black",
+  dark: "--dark",
+  light: "--light",
   black2: "#000000",
   darkWhite: "#F9F3F7",
   darkWhiteAlt: "#F9F7F3",
@@ -29,4 +30,5 @@ export const COLORS = {
 export const FONT_FAMILY = {
   dinAlternate: "--din-alternate",
   dmSans: "--dm-sans",
+  dmMono: "--dm-mono",
 };
