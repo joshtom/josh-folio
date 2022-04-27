@@ -1,6 +1,7 @@
 export const COLORS = {
   text: "#000000",
   primary: "--primary",
+  warning: "--warning",
   darkGreen: "#1A535C",
   deepGreen: "#10353A",
   red: "#DD0426",

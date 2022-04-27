@@ -5,13 +5,24 @@ const Wrapper = styled.div`
   position: fixed;
   width: 100%;
   height: 100vh;
+  min-height: 100vh;
   display: flex;
   justify-content: space-between;
   flex-direction: column;
   padding: 3rem;
   font-family: ${cVar("dinAlternate")};
-  background-color: ${cVar("dark")};
-  border-bottom: 10px solid ${cVar("primary")};
+`;
+const WrapperContainer = styled.div`
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  z-index: 100;
+  /* background-color: red; */
+  right: 40px;
+  left: 40px;
+  bottom: 40px;
+  top: 40px;
 `;
 
 const Header = styled.div`
@@ -32,7 +43,7 @@ const Footer = styled.div`
 
 const Text = styled.p`
   font-size: 3vw;
-  color: ${cVar("light")};
+  color: ${cVar("primary")};
   font-family: ${cVar("dinAlternate")};
   text-transform: capitalize;
   overflow: hidden;
@@ -46,15 +57,18 @@ const Text = styled.p`
 `;
 
 const RandomText = styled.p`
-  color: ${cVar("light")};
+  color: ${cVar("primary")};
   margin-bottom: 20px;
 `;
 const Countdown = styled.p`
-  font-size: 15vw;
   font-family: ${cVar("dmMono")};
   color: ${cVar("primary")};
   line-height: 0.9;
   overflow: hidden;
+
+  & > span {
+    font-size: 15vw;
+  }
 `;
 
 const SubText = styled.div`
@@ -65,6 +79,14 @@ const SubText = styled.div`
 const ImageWrapper = styled.div`
   overflow: hidden;
 `;
+const Trans = styled.svg`
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  fill: ${cVar("warning")};
+`;
 export {
   Header,
   Footer,
@@ -74,4 +96,6 @@ export {
   Text,
   RandomText,
   Countdown,
+  Trans,
+  WrapperContainer,
 };

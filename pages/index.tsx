@@ -8,13 +8,13 @@ import gsap from "gsap";
 import Defaultlayout from "@src/layout/DefaultLayout";
 
 const Text = styled.h1`
-  color: ${cVar("white")};
+  color: ${cVar("light")};
   font-family: ${cVar("dinAlternate")};
 `;
 
 const Container = styled.div`
   width: 100%;
-  height: 2000px;
+  height: auto;
   background-color: ${cVar("black2")};
 `;
 

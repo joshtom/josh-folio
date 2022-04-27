@@ -9,6 +9,7 @@ export const GlobalStyles = createGlobalStyle`
     --light: #ffffff;
     --dark: #060606;
     --primary: #FE3F00;
+    --warning: #FEF7CD;
     cursor: none;
     -webkit-touch-callout: none; 
     -webkit-user-select: none; 
@@ -23,6 +24,7 @@ export const GlobalStyles = createGlobalStyle`
     width:100%;
     scroll-behavior:smooth;
     background-color: ${cVar("dark")};
+    /* background-color: ${cVar("white")}; */
     cursor: none;
 
 

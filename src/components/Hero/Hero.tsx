@@ -1,4 +1,4 @@
-import { HeroContainer, HeroHeading, HeroParagraph } from "./styles";
+import { HeroContainer, HeroHeading, HeroParagraph } from "./Hero.styles";
 import { useContext, useEffect, useRef } from "react";
 import { MouseContext } from "@context/mouse-context";
 /* Change the icon once the user scrolls down */
@@ -10,7 +10,7 @@ function Hero({ timeline }: Heroprops) {
   let text1 = useRef(null);
   let text2 = useRef(null);
   let text3 = useRef(null);
-  const { cursorType, cursorChangeHandler } = useContext(MouseContext);
+  const { cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => {
     timeline
@@ -22,7 +22,7 @@ function Hero({ timeline }: Heroprops) {
         opacity: 1,
         stagger: {
           amount: 0.3,
-        },
+        },  
       })
       .from(text3.current, {
         duration: 0.6,

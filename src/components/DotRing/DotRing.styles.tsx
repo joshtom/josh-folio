@@ -27,6 +27,7 @@ const Ring = styled.div`
     height: 80px;
     border-width: 3px;
     background-color: white;
+    mix-blend-mode: difference;
     /* background: lightgray; */
     /* background-color: black; */
   }

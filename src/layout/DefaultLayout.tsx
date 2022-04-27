@@ -15,7 +15,7 @@ const DefaultLayoutContainer = styled.div`
 
 function Defaultlayout({ children }: DefaultLayoutProps) {
   const [preloader, setPreloader] = useState(true);
-  let [timer, setTimer] = useState(3);
+  let [timer, setTimer] = useState(12);
   const id = useRef(null);
 
   const clear = () => {
@@ -30,7 +30,7 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
   };
 
   useEffect(() => {
-    // renderPreloader();
+    renderPreloader();
   }, []);
 
   useEffect(() => {

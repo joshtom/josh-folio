@@ -4,8 +4,7 @@ import styled from "styled-components";
 const HeroContainer = styled.div`
   width: 100%;
   min-height: 100vh;
-  background-color: ${cVar("white")};
-  border: 1px solid red;
+  background-color: ${cVar("dark")};
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -13,15 +12,13 @@ const HeroContainer = styled.div`
 `;
 
 const HeroHeading = styled.div`
-  color: ${cVar("black")};
+  color: ${cVar("light")};
   font-size: 100px;
   font-family: ${cVar("dinAlternate")};
   overflow: hidden;
-  /* background-color: red; */
-  /* letter-spacing: 10px; */
 `;
 const HeroParagraph = styled.div`
-  color: ${cVar("black")};
+  color: ${cVar("light")};
   font-size: 50px;
   font-family: ${cVar("dmSans")};
   font-weight: 100;
