@@ -30,7 +30,7 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
   };
 
   useEffect(() => {
-    // renderPreloader();
+    renderPreloader();
   }, []);
 
   useEffect(() => {
@@ -48,8 +48,7 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
   }, [timer]);
   return (
     <DefaultLayoutContainer id="main-container">
-      {/* {preloader ? <Preloader /> : children} */}
-      {<Preloader />}
+      {preloader ? <Preloader /> : children}
     </DefaultLayoutContainer>
   );
 }

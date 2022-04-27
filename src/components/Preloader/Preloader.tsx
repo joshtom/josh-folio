@@ -99,7 +99,6 @@ function Preloader() {
       showNextText(cText2, cText3, "shift");
     } else if (timer === 0) {
       clear();
-      return;
       time
         .to(trans.current, {
           duration: 0.8,
@@ -113,6 +112,7 @@ function Preloader() {
         })
         .to(trans.current, {
           stroke: `${cVar("dark")}`,
+          ease: "Power4.easeOut",
         });
       wtl.to(wrappercontainer.current, {
         opacity: 0,
@@ -145,7 +145,7 @@ function Preloader() {
           from: "random",
           ease: "power3.out",
         },
-      })
+      });
   };
 
   useEffect(() => {

@@ -31,6 +31,13 @@ const Ring = styled.div`
     /* background: lightgray; */
     /* background-color: black; */
   }
+  ${({ theme }) => theme.media.tablet} {
+    display: none;
+  }
+
+  ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 `;
 
 const Dot = styled.div`
@@ -47,6 +54,14 @@ const Dot = styled.div`
   background-color: white;
 
   &.hovered {
+    display: none;
+  }
+
+  ${({ theme }) => theme.media.tablet} {
+    display: none;
+  }
+
+  ${({ theme }) => theme.media.mobile} {
     display: none;
   }
 `;

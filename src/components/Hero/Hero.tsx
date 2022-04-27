@@ -22,7 +22,7 @@ function Hero({ timeline }: Heroprops) {
         opacity: 1,
         stagger: {
           amount: 0.3,
-        },  
+        },
       })
       .from(text3.current, {
         duration: 0.6,
