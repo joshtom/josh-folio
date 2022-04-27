@@ -18,7 +18,6 @@ const WrapperContainer = styled.div`
   justify-content: space-between;
   flex-direction: column;
   z-index: 100;
-  /* background-color: red; */
   right: 40px;
   left: 40px;
   bottom: 40px;
@@ -44,21 +43,23 @@ const Footer = styled.div`
 const Text = styled.p`
   font-size: 3vw;
   color: ${cVar("primary")};
-  font-family: ${cVar("dinAlternate")};
+  font-family: ${cVar("dmSans")};
   text-transform: capitalize;
   overflow: hidden;
+  font-weight: 500;
   line-height: 1.1;
-
-  & > span {
-    font-family: ${cVar("dmSans")};
-    font-size: 2vw;
-    text-transform: capitalize;
+  ${({ theme }) => theme.media.mobile} {
+    font-size: 50px;
   }
 `;
 
 const RandomText = styled.p`
   color: ${cVar("primary")};
   margin-bottom: 20px;
+  ${({ theme }) => theme.media.mobile} {
+    width: 60%;
+    margin-bottom: 0px;
+  }
 `;
 const Countdown = styled.p`
   font-family: ${cVar("dmMono")};

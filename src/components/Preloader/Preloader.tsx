@@ -99,6 +99,7 @@ function Preloader() {
       showNextText(cText2, cText3, "shift");
     } else if (timer === 0) {
       clear();
+      return;
       time
         .to(trans.current, {
           duration: 0.8,
@@ -115,6 +116,7 @@ function Preloader() {
         });
       wtl.to(wrappercontainer.current, {
         opacity: 0,
+        autoAlpha: 0,
         ease: "power4.easeOut",
       });
     }
@@ -143,7 +145,7 @@ function Preloader() {
           from: "random",
           ease: "power3.out",
         },
-      });
+      })
   };
 
   useEffect(() => {
