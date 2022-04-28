@@ -28,3 +28,6 @@
 
 <!-- Footer -->
 <!-- Make the footer component sticky and reveal it once the user gets to the bottom oof the page -->
+
+<!-- HOVER ON LINK  -->
+<!-- https://css-tricks.com/css-link-hover-effects/ -->

@@ -12,6 +12,7 @@ export const GlobalStyles = createGlobalStyle`
     --warning: #FEF7CD;
     --text-pink: #FDEEE7;
     --gray: #E5E5E5;
+    --gray-dark: #C4C4C4;
     --black: #000000;
     cursor: none;
     -webkit-touch-callout: none; 
@@ -35,7 +36,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size: calc( 16px + (21 - 16) * ( (100vw - 400px) / ( 1200 - 400) ));
 }
       @media (min-width: 1200px){
-          font-size: 21px;
+          font-size: 18px;
       }
 
 

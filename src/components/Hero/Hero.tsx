@@ -1,6 +1,7 @@
 import { useContext, useEffect, useRef } from "react";
 import {
   HeroContainer,
+  HeroHeading,
   Main,
   MainBody,
   MainFooter,
@@ -12,7 +13,8 @@ import {
 import { MouseContext } from "@context/mouse-context";
 import Header from "../Header/Header";
 import Image from "next/image";
-// import { ReactComponent as Scroller } from "@assets/icons/scroller.svg";
+import Scroller from "@src/assets/icons/Scroller";
+import Arrow from "@src/assets/icons/Arrow.svg";
 /* Change the icon once the user scrolls down */
 
 interface Heroprops {
@@ -50,16 +52,26 @@ function Hero({ timeline }: Heroprops) {
       <Header />
       <Main>
         <MainHead>
-          <h1>Joshua Olajide</h1>
-          {/* <Scroller /> */}
+          <HeroHeading>Joshua Olajide</HeroHeading>
+          <Scroller />
         </MainHead>
         <MainBody>
           <Section1>
-            <Image
-              src="/q_auto/v1651137778/DSC_1473x_2_gjeiku.webp"
-              width="100%"
-              height="100%"
-            />
+            <div
+              style={{
+                width: "100%",
+                height: "100%",
+                position: "relative",
+                border: "1px solid black",
+                padding: "10px",
+              }}
+            >
+              <Image
+                src="/q_auto/v1651137778/DSC_1473x_2_gjeiku.webp"
+                objectFit="cover"
+                layout="fill"
+              />
+            </div>
           </Section1>
           <Section2>
             I’m a frontend developer that loves to create scalable, fast and
@@ -72,10 +84,13 @@ function Hero({ timeline }: Heroprops) {
             </p>
             <section>
               <span>CONTACT ME</span>
+              <span>
+                <Image src={Arrow} height="50%" width="50%" />
+              </span>
             </section>
           </Section3>
         </MainBody>
-        <MainFooter>Frontend Developer</MainFooter>
+        <MainFooter>Front-end Developer</MainFooter>
       </Main>
     </HeroContainer>
   );

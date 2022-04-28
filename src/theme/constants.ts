@@ -5,6 +5,7 @@ export const COLORS = {
   dark: "--dark",
   light: "--light",
   gray: "--gray",
+  grayDark: "--gray-dark",
   white: "--text-white",
   pink: "--text-pink",
 };
