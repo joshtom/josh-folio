@@ -25,4 +25,25 @@ const HeroParagraph = styled.div`
   font-weight: 100;
   overflow: hidden;
 `;
-export { HeroContainer, HeroHeading, HeroParagraph };
+
+const Main = styled.div``;
+const MainHead = styled.header``;
+const MainBody = styled.main``;
+const Section1 = styled.section``;
+const Section2 = styled.section``;
+const Section3 = styled.section``;
+const MainFooter = styled.footer`
+  
+`;
+export {
+  HeroContainer,
+  HeroHeading,
+  HeroParagraph,
+  Main,
+  MainHead,
+  MainBody,
+  Section1,
+  Section2,
+  Section3,
+  MainFooter
+};

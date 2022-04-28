@@ -1,7 +1,18 @@
-import { HeroContainer, HeroHeading, HeroParagraph } from "./Hero.styles";
 import { useContext, useEffect, useRef } from "react";
+import {
+  HeroContainer,
+  Main,
+  MainBody,
+  MainFooter,
+  MainHead,
+  Section1,
+  Section2,
+  Section3,
+} from "./Hero.styles";
 import { MouseContext } from "@context/mouse-context";
 import Header from "../Header/Header";
+import Image from "next/image";
+// import { ReactComponent as Scroller } from "@assets/icons/scroller.svg";
 /* Change the icon once the user scrolls down */
 
 interface Heroprops {
@@ -37,24 +48,35 @@ function Hero({ timeline }: Heroprops) {
   return (
     <HeroContainer>
       <Header />
-      <HeroHeading>
-        <p> Frontend Developer </p>
-      </HeroHeading>
-      {/* <HeroHeading>
-        <p
-          ref={text1}
-          onMouseEnter={() => cursorChangeHandler("hovered")}
-          onMouseLeave={() => cursorChangeHandler("")}
-        >
-          FRONTEND DEVELOPER
-        </p>
-      </HeroHeading>
-      <HeroParagraph>
-        <p ref={text2}>JOSHUA OLAJIDE</p>
-      </HeroParagraph>
-      <HeroParagraph>
-        <p ref={text3}>JOSHUA OLAJIDE</p>
-      </HeroParagraph> */}
+      <Main>
+        <MainHead>
+          <h1>Joshua Olajide</h1>
+          {/* <Scroller /> */}
+        </MainHead>
+        <MainBody>
+          <Section1>
+            <Image
+              src="/q_auto/v1651137778/DSC_1473x_2_gjeiku.webp"
+              width="100%"
+              height="100%"
+            />
+          </Section1>
+          <Section2>
+            I’m a frontend developer that loves to create scalable, fast and
+            mobile-first web applications.
+          </Section2>
+          <Section3>
+            <p>
+              Currently at <b>Flutterwave</b>, Open for freelance project and
+              collaboration
+            </p>
+            <section>
+              <span>CONTACT ME</span>
+            </section>
+          </Section3>
+        </MainBody>
+        <MainFooter>Frontend Developer</MainFooter>
+      </Main>
     </HeroContainer>
   );
 }

@@ -11,6 +11,8 @@ export const GlobalStyles = createGlobalStyle`
     --primary: #FE3F00;
     --warning: #FEF7CD;
     --text-pink: #FDEEE7;
+    --gray: #E5E5E5;
+    --black: #000000;
     cursor: none;
     -webkit-touch-callout: none; 
     -webkit-user-select: none; 
@@ -18,9 +20,6 @@ export const GlobalStyles = createGlobalStyle`
     -moz-user-select: none; 
     -ms-user-select: none; 
     user-select: none; 
-    /* ${({ theme }) => theme.media.tablet} {
-      cursor: pointer;
-    } */
   }
 
   body {
@@ -30,9 +29,6 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${cVar("dark")};
     font-family: ${cVar("dinAlternate")};
     cursor: none;
-    /* ${({ theme }) => theme.media.tablet} {
-      cursor: pointer;
-    } */
 
 
     @media (min-width: 400px) and (max-width: 1200px){

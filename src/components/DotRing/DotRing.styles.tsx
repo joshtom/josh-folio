@@ -24,8 +24,6 @@ const Ring = styled.div`
   align-items: center;
 
   &.hovered {
-    width: 80px;
-    height: 80px;
     border-width: 3px;
     background-color: ${cVar("pink")};
     mix-blend-mode: difference;
