@@ -1,4 +1,4 @@
-import Fonts from "@src/components/Fonts";
+import Fonts from "@src/components/Fonts/Fonts";
 import Document, { Html, Main, Head, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
