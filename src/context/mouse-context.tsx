@@ -1,13 +1,19 @@
 import React, { createContext, useState } from "react";
 
-type cursor = 'hovered' | 'unhovered' | ''
+export type cursorType =
+  | "hovered"
+  | "unhovered"
+  | ""
+  | "ahover"
+  | "linkhover"
+  | "buttonhover";
 export const MouseContext = createContext({
   cursorType: "",
-  cursorChangeHandler: (cursorType: cursor) => {},
+  cursorChangeHandler: (cursorType: cursorType) => {},
 });
 
 const MouseContextProvider = (props) => {
-  const [cursorType, setCursorType] = useState("");
+  const [cursorType, setCursorType] = useState<cursorType>("");
 
   const cursorChangeHandler = (cursorType: any) => {
     setCursorType(cursorType);

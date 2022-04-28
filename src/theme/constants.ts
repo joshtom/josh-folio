@@ -11,6 +11,7 @@ export const COLORS = {
   darkWhite: "#F9F3F7",
   darkWhiteAlt: "#F9F7F3",
   white: "--text-white",
+  pink: "--text-pink",
   secondary: "#000000b2",
   secondary2: "000000bf",
   secondary3: "#00000099",

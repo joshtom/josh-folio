@@ -1,3 +1,4 @@
+import { cVar } from "@src/helpers";
 import styled from "styled-components";
 
 const Ring = styled.div`
@@ -7,7 +8,7 @@ const Ring = styled.div`
   width: 35px;
   height: 35px;
   border: 2px solid rgba(31, 30, 30, 0.808);
-  border: 2px solid white;
+  border: 2px solid ${cVar("pink")};
   border-radius: 50%;
   transform: translate(-50%, -50%);
   -webkit-transition-duration: 100ms;
@@ -26,10 +27,8 @@ const Ring = styled.div`
     width: 80px;
     height: 80px;
     border-width: 3px;
-    background-color: white;
+    background-color: ${cVar("pink")};
     mix-blend-mode: difference;
-    /* background: lightgray; */
-    /* background-color: black; */
   }
   ${({ theme }) => theme.media.tablet} {
     display: none;
@@ -51,7 +50,7 @@ const Dot = styled.div`
   transform: translate(-50%, -50%);
   z-index: 999;
   pointer-events: none;
-  background-color: white;
+  background-color: ${cVar("pink")};
 
   &.hovered {
     display: none;

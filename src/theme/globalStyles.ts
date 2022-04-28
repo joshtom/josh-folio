@@ -10,6 +10,7 @@ export const GlobalStyles = createGlobalStyle`
     --dark: #060606;
     --primary: #FE3F00;
     --warning: #FEF7CD;
+    --text-pink: #FDEEE7;
     cursor: none;
     -webkit-touch-callout: none; 
     -webkit-user-select: none; 
@@ -17,9 +18,9 @@ export const GlobalStyles = createGlobalStyle`
     -moz-user-select: none; 
     -ms-user-select: none; 
     user-select: none; 
-    ${({ theme }) => theme.media.tablet} {
+    /* ${({ theme }) => theme.media.tablet} {
       cursor: pointer;
-    }
+    } */
   }
 
   body {
@@ -27,11 +28,11 @@ export const GlobalStyles = createGlobalStyle`
     width:100%;
     scroll-behavior:smooth;
     background-color: ${cVar("dark")};
-    /* background-color: ${cVar("white")}; */
+    font-family: ${cVar("dinAlternate")};
     cursor: none;
-    ${({ theme }) => theme.media.tablet} {
+    /* ${({ theme }) => theme.media.tablet} {
       cursor: pointer;
-    }
+    } */
 
 
     @media (min-width: 400px) and (max-width: 1200px){

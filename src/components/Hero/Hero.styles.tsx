@@ -5,10 +5,10 @@ const HeroContainer = styled.div`
   width: 100%;
   min-height: 100vh;
   background-color: ${cVar("dark")};
-  display: flex;
+  /* display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
+  align-items: center; */
 `;
 
 const HeroHeading = styled.div`
@@ -17,6 +17,7 @@ const HeroHeading = styled.div`
   font-family: ${cVar("dinAlternate")};
   overflow: hidden;
 `;
+
 const HeroParagraph = styled.div`
   color: ${cVar("light")};
   font-size: 50px;
