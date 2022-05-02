@@ -14,7 +14,8 @@ import { MouseContext } from "@context/mouse-context";
 import Header from "../Header/Header";
 import Image from "next/image";
 import Scroller from "@src/assets/icons/Scroller";
-import Arrow from "@src/assets/icons/Arrow.svg";
+import PlaceholderImage from "@assets/images/placeholder.png";
+import ArrowIcon from "@assets/icons/Arrow";
 /* Change the icon once the user scrolls down */
 
 interface Heroprops {
@@ -70,6 +71,9 @@ function Hero({ timeline }: Heroprops) {
                 src="/q_auto/v1651137778/DSC_1473x_2_gjeiku.webp"
                 objectFit="cover"
                 layout="fill"
+                placeholder="blur"
+                loading="lazy"
+                blurDataURL={PlaceholderImage}
               />
             </div>
           </Section1>
@@ -85,7 +89,7 @@ function Hero({ timeline }: Heroprops) {
             <section>
               <span>CONTACT ME</span>
               <span>
-                <Image src={Arrow} height="50%" width="50%" />
+                <ArrowIcon />
               </span>
             </section>
           </Section3>

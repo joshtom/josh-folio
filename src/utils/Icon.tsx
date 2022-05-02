@@ -1,4 +1,4 @@
-import { ReactComponent as Arrow } from "@assets/icons/Arrow.svg";
+import Arrow from "@assets/icons/Arrow.svg";
 
 export type IconType = "arrow";
 

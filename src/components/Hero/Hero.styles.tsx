@@ -82,7 +82,7 @@ const Section3 = styled.section`
     bottom: 0;
     margin-top: 20px;
     display: inline-flex;
-    background-color: ${cVar("grayDark")};
+    /* background-color: ${cVar("grayDark")}; */
   }
 `;
 const MainFooter = styled.footer`
