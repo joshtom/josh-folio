@@ -10,24 +10,34 @@ function Header() {
       <LogoArea>joshua.olajide</LogoArea>
       <LinkArea>
         <Links
-          data-text="PROJECTS"
           onMouseEnter={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")}
         >
-          <Link href="#project">PROJECTS</Link>
-        </Links>
-        <Links
-          data-text="ABOUT"
-          onMouseEnter={() => cursorChangeHandler("hovered")}
-          onMouseLeave={() => cursorChangeHandler("")}
-        >
-          <Link href="#project">ABOUT</Link>
+          <Link href="#project">
+            <a data-replace="PROJECTS">
+              <span>PROJECTS</span>
+            </a>
+          </Link>
         </Links>
         <Links
           onMouseEnter={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")}
         >
-          <Link href="#project">CONTACT</Link>
+          <Link href="#project" passHref>
+            <a data-replace="ABOUT">
+              <span>ABOUT</span>
+            </a>
+          </Link>
+        </Links>
+        <Links
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")}
+        >
+          <Link href="#project">
+            <a data-replace="CONTACT">
+              <span>CONTACT</span>
+            </a>
+          </Link>
         </Links>
       </LinkArea>
     </HeaderContainer>
