@@ -10,6 +10,8 @@ const Wrapper = styled.div`
   justify-content: space-between;
   flex-direction: column;
   padding: 3rem;
+  top: 0;
+  z-index: 100;
   font-family: ${cVar("dinAlternate")};
 `;
 const WrapperContainer = styled.div`
@@ -42,10 +44,11 @@ const Footer = styled.div`
 
 const Text = styled.p`
   font-size: 3vw;
-  color: ${cVar("primary")};
-  font-family: ${cVar("dmSans")};
-  text-transform: capitalize;
+  color: ${cVar("black2")};
+  font-family: ${cVar("dinAlternate")};
+  text-transform: uppercase;
   overflow: hidden;
+  margin: 10px;
   font-weight: 500;
   line-height: 1.1;
   ${({ theme }) => theme.media.mobile} {
@@ -55,6 +58,7 @@ const Text = styled.p`
 
 const RandomText = styled.p`
   color: ${cVar("primary")};
+  color: ${cVar("black2")};
   margin-bottom: 20px;
   ${({ theme }) => theme.media.mobile} {
     width: 60%;
@@ -64,6 +68,7 @@ const RandomText = styled.p`
 const Countdown = styled.p`
   font-family: ${cVar("dmMono")};
   color: ${cVar("primary")};
+  color: ${cVar("black2")};
   line-height: 0.9;
   overflow: hidden;
 

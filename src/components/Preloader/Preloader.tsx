@@ -1,6 +1,6 @@
 import { Ref, RefObject, useEffect, useRef, useState } from "react";
 import { cVar, RandomQuote } from "@src/helpers";
-import gsap from "gsap";
+import gsap, { Linear, TweenMax } from "gsap";
 import {
   Header,
   Footer,
@@ -13,19 +13,19 @@ import {
 } from "./Preloader.styles";
 import ConditionallyRender from "../ConditionalRender/ConditionalRender";
 
-function Preloader() {
-  const tl = gsap.timeline();
+interface PreloaderProps {
+  timeline?: any;
+}
+
+const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
   const htl = gsap.timeline();
   const wtl = gsap.timeline();
-  const time = gsap.timeline();
   const htext1 = useRef(null);
   const htext2 = useRef(null);
   const htext3 = useRef(null);
   const fText1 = useRef(null);
   const fText2 = useRef(null);
   const cText1 = useRef(null);
-  const cText2 = useRef(null);
-  const cText3 = useRef(null);
   const wrapper = useRef(null);
   const trans = useRef(null);
   const wrappercontainer = useRef(null);
@@ -34,16 +34,7 @@ function Preloader() {
   const end = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
   let [timer, setTimer] = useState(10);
   const [randomQuote, setRandomQuote] = useState("");
-
-  const clear = () => {
-    window.clearInterval(id.current);
-  };
-
-  const renderTimer = () => {
-    id.current = window.setInterval(() => {
-      setTimer((timer) => timer - 1);
-    }, 1000);
-  };
+  let [countdown, setCountdown] = useState(0);
 
   const showNextText = (
     prevText: RefObject<EventTarget | null>,
@@ -90,40 +81,60 @@ function Preloader() {
     }
   };
 
-  useEffect(() => {
-    if (timer === 7) {
-      showNextText(htext1, htext2);
-      showNextText(cText1, cText2, "shift");
-    } else if (timer === 3) {
-      showNextText(htext2, htext3);
-      showNextText(cText2, cText3, "shift");
-    } else if (timer === 0) {
-      clear();
-      time
-        .to(trans.current, {
-          duration: 0.8,
-          attr: { d: start },
-          ease: "Power2.easeIn",
-        })
-        .to(trans.current, {
-          duration: 1,
-          attr: { d: "M 0 100 V 100 Q 50 100 100 100 V 100 z" },
-          ease: "Power4.easeOut",
-        })
-        .to(trans.current, {
-          stroke: `${cVar("dark")}`,
-          ease: "Power4.easeOut",
-        });
-      wtl.to(wrappercontainer.current, {
-        opacity: 0,
-        autoAlpha: 0,
-        ease: "power4.easeOut",
+  // useEffect(() => {
+  //   if (timer === 7) {
+  //     showNextText(htext1, htext2);
+  //     showNextText(cText1, cText2, "shift");
+  //   } else if (timer === 3) {
+  //     showNextText(htext2, htext3);
+  //     showNextText(cText2, cText3, "shift");
+  //   } else if (timer === 0) {
+  //     clear();
+  //     time
+  //       .to(trans.current, {
+  //         duration: 0.8,
+  //         attr: { d: start },
+  //         ease: "Power2.easeIn",
+  //       })
+  //       .to(trans.current, {
+  //         duration: 1,
+  //         attr: { d: "M 0 100 V 100 Q 50 100 100 100 V 100 z" },
+  //         ease: "Power5.easeOut",
+  //         strokeWidth: "0",
+  //       });
+  //     wtl.to(wrappercontainer.current, {
+  //       opacity: 0,
+  //       autoAlpha: 0,
+  //       ease: "power2.easeOut",
+  //     });
+  //   }
+  // }, [timer]);
+
+  const locomotiveScroller = () => {
+    // Move Locomotive scroller here.
+  };
+
+  const completeAnimate = () => {
+    timeline
+      .to(trans.current, {
+        duration: 0.8,
+        attr: { d: start },
+        ease: "Power2.easeIn",
+      })
+      .to(trans.current, {
+        attr: { d: "M 0 100 V 100 Q 50 100 100 100 V 100 z" },
+        ease: "Power5.easeOut",
+        strokeWidth: "0",
       });
-    }
-  }, [timer]);
+    wtl.to(wrappercontainer.current, {
+      opacity: 0,
+      autoAlpha: 0,
+      ease: "power2.easeOut",
+    });
+  };
 
   const animate = () => {
-    time
+    timeline
       .to(trans.current, {
         duration: 0.8,
         attr: { d: start },
@@ -134,24 +145,50 @@ function Preloader() {
         attr: { d: end },
         ease: "Power2.easeOut",
       })
-      .from([htext1.current, fText1.current, fText2.current], {
-        duration: 0.5,
-        y: 400,
-        ease: "power2.out",
-        skewY: 15,
-        stagger: {
-          amount: 0.5,
-          each: 0.1,
-          from: "random",
-          ease: "power3.out",
-        },
-      });
+      .from(
+        [
+          htext1.current,
+          htext2.current,
+          htext3.current,
+          fText1.current,
+          fText2.current,
+        ],
+        {
+          duration: 0.5,
+          y: 400,
+          ease: "power2.out",
+          skewY: 15,
+          stagger: {
+            amount: 0.5,
+            each: 0.1,
+            from: "random",
+            ease: "power3.out",
+          },
+        }
+      );
   };
 
   useEffect(() => {
     setRandomQuote(RandomQuote[Math.floor(Math.random() * RandomQuote.length)]);
-    renderTimer();
     animate();
+    let startCount = 0;
+    let endCount = 100;
+    let duration = 5;
+    let num = { var: startCount };
+    timeline.to(num, duration, {
+      var: endCount,
+      onUpdate: () => {
+        setCountdown(num.var);
+        // console.log(num.var.toFixed());
+      },
+      ease: Linear.easeNone,
+      onComplete: () => {
+        console.log("Countdown is now complete");
+        setTimeout(() => {
+          completeAnimate();
+        }, 1000);
+      },
+    });
   }, []);
   return (
     <Wrapper ref={wrapper}>
@@ -175,33 +212,33 @@ function Preloader() {
       </Trans>
       <WrapperContainer ref={wrappercontainer}>
         <Header>
-          <Text ref={htext1}>
-            Joshua <br /> Olajide
-          </Text>
-          <Text ref={htext2} style={{ opacity: "0", display: "none" }}>
-            Frontend <br /> Engineer
-          </Text>
-          <Text ref={htext3} style={{ opacity: "0", display: "none" }}>
-            Lifelong <br /> Learner
-          </Text>
+          <div style={{ overflow: "hidden" }}>
+            <Text ref={htext1}>
+              <span>Joshua Olajide</span>
+            </Text>
+          </div>
+          <div style={{ overflow: "hidden" }}>
+            <Text ref={htext2}>
+              <span>Frontend Developer</span>
+            </Text>
+          </div>
+          <div style={{ overflow: "hidden" }}>
+            <Text ref={htext3}>
+              <span>Lifelong Learner</span>
+            </Text>
+          </div>
         </Header>
         <Footer>
           <RandomText ref={fText1}>
             <ConditionallyRender client>{randomQuote}</ConditionallyRender>
           </RandomText>
           <Countdown ref={fText2}>
-            <span ref={cText1}>0</span>
-            <span ref={cText2} style={{ display: "none" }}>
-              50
-            </span>
-            <span ref={cText3} style={{ display: "none" }}>
-              100
-            </span>
+            <span>{countdown.toFixed()}</span>
           </Countdown>
         </Footer>
       </WrapperContainer>
     </Wrapper>
   );
-}
+};
 
 export default Preloader;

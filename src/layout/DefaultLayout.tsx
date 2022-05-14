@@ -14,13 +14,11 @@ const DefaultLayoutContainer = styled.div`
 `;
 
 function Defaultlayout({ children }: DefaultLayoutProps) {
-  const [preloader, setPreloader] = useState(true);
-  let [timer, setTimer] = useState(12);
+  let [timer, setTimer] = useState(13);
   const id = useRef(null);
 
   const clear = () => {
     window.clearInterval(id.current);
-    setPreloader(false);
   };
 
   const renderPreloader = () => {
@@ -44,11 +42,11 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
           class: "is-reveal",
         });
       });
+      console.log("Locomotive scroll added");
     }
   }, [timer]);
   return (
     <DefaultLayoutContainer id="main-container">
-      {/* {preloader ? <Preloader /> : children} */}
       {children}
     </DefaultLayoutContainer>
   );

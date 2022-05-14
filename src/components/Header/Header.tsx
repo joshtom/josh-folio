@@ -1,12 +1,27 @@
 import Link from "next/link";
 import { HeaderContainer, LogoArea, LinkArea, Links } from "./Header.styles";
 import { MouseContext } from "@context/mouse-context";
-import { useContext } from "react";
+import { useContext, useRef, useEffect } from "react";
 
-function Header() {
+interface HeaderProps {
+  timeline: any;
+}
+
+const Header: React.FC<HeaderProps> = ({ timeline }) => {
+  let header = useRef(null);
   const { cursorChangeHandler } = useContext(MouseContext);
+
+  useEffect(() => {
+    timeline.from(header.current, {
+      delay: 5,
+      duration: 2,
+      ease: "power4.out",
+      y: 100,
+      opacity: 1,
+    });
+  }, []);
   return (
-    <HeaderContainer>
+    <HeaderContainer ref={header}>
       <LogoArea>joshua.olajide</LogoArea>
       <LinkArea>
         <Links
@@ -42,6 +57,6 @@ function Header() {
       </LinkArea>
     </HeaderContainer>
   );
-}
+};
 
 export default Header;

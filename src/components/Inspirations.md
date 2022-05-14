@@ -9,6 +9,7 @@
 
 <!-- TEXT STAGGER ENTRANCE -->
 <!-- https://www.youtube.com/watch?v=p0T9HVQUu3Q -->
+<!-- https://splitting.js.org/guide.html#cols -->
 
 <!-- https://codepen.io/kohlej/pen/RwoyRgo -->
 <!-- https://codepen.io/kohlej/pen/RwoyRgo?editors=0010 -->
