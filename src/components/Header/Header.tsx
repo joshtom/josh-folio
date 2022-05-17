@@ -2,6 +2,7 @@ import Link from "next/link";
 import { HeaderContainer, LogoArea, LinkArea, Links } from "./Header.styles";
 import { MouseContext } from "@context/mouse-context";
 import { useContext, useRef, useEffect } from "react";
+import Logo from "@src/assets/icons/Logo";
 
 interface HeaderProps {
   timeline: any;
@@ -13,16 +14,17 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
 
   useEffect(() => {
     timeline.from(header.current, {
-      delay: 5,
-      duration: 2,
+      // delay: 9,
       ease: "power4.out",
-      y: 100,
+      y: 30,
       opacity: 1,
     });
   }, []);
   return (
     <HeaderContainer ref={header}>
-      <LogoArea>joshua.olajide</LogoArea>
+      <LogoArea>
+        <Logo />
+      </LogoArea>
       <LinkArea>
         <Links
           onMouseEnter={() => cursorChangeHandler("hovered")}

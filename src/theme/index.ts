@@ -1,5 +1,12 @@
 import { COLORS, FONT_FAMILY } from "./constants";
-import { border, borderRadius, fontSize, media, spacing } from "./declarations";
+import {
+  border,
+  borderRadius,
+  fontSize,
+  media,
+  spacing,
+  transition,
+} from "./declarations";
 
 const theme = {
   COLORS,
@@ -8,7 +15,8 @@ const theme = {
   borderRadius,
   fontSize,
   media,
-  spacing
+  spacing,
+  transition,
 };
 
 export default theme;

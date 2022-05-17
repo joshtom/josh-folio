@@ -84,4 +84,8 @@ const border = {
   default: "1px solid rgba(0, 0, 0, 0.18)",
 };
 
-export { media, fontSize, borderRadius, spacing, border };
+const transition = {
+  default: "transition: 0.5s cubic-bezier(0.76, 0, 0.24, 1)",
+};
+
+export { media, fontSize, borderRadius, spacing, border, transition };

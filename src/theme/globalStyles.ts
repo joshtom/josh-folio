@@ -14,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     --gray: #E5E5E5;
     --gray-dark: #C4C4C4;
     --black: #000000;
+    --logo-dark: #171717;
     cursor: none;
     -webkit-touch-callout: none; 
     -webkit-user-select: none; 

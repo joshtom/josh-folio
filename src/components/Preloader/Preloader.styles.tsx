@@ -51,6 +51,7 @@ const Text = styled.p`
   margin: 10px;
   font-weight: 500;
   line-height: 1.1;
+  padding: 0;
   ${({ theme }) => theme.media.mobile} {
     font-size: 50px;
   }

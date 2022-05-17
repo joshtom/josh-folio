@@ -7,6 +7,7 @@ const HeaderContainer = styled.div`
   margin-top: 2rem;
   grid-template-areas: "logo . . links";
   gap: 20px;
+  /* background-color: red; */
 `;
 
 const LogoArea = styled.p`
@@ -15,6 +16,19 @@ const LogoArea = styled.p`
   align-self: center;
   justify-items: center;
   font-family: ${cVar("dinAlternate")};
+  background-color: ${cVar("logoDark")};
+  width: 63px;
+  height: 63px;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  ${({ theme }) => theme.transition.default};
+
+  &:hover {
+    background-color: ${cVar("primary")};
+  }
 `;
 
 const LinkArea = styled.ul`

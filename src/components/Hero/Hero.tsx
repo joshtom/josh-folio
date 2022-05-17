@@ -27,7 +27,7 @@ function Hero({ timeline }: Heroprops) {
 
   useEffect(() => {
     timeline.from(main.current, {
-      delay: 5,
+      delay: 9,
       duration: 1.8,
       ease: "power4.out",
       skewY: 7,
@@ -41,8 +41,9 @@ function Hero({ timeline }: Heroprops) {
 
   return (
     <HeroContainer>
-      <Header timeline={tl} />
-      <Main ref={main}>
+      <Header timeline={timeline} />
+      {/* <Main ref={main}> */}
+      <Main>
         <MainHead>
           <HeroHeading>Joshua Olajide</HeroHeading>
           <Scroller />
