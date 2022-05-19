@@ -19,7 +19,7 @@ const Fonts = () => {
         href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap"
         rel="stylesheet"
       />
-      <link href="../assets/fonts/DINAlternate-Bold.woff" rel="stylesheet" />
+      {/* <link href="../../../assets/fonts/DINAlternate-Bold.woff" rel="stylesheet" /> */}
     </Fragment>
   );
 };

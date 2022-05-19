@@ -2,18 +2,23 @@ import { cVar } from "@src/helpers";
 import styled from "styled-components";
 
 const HeroContainer = styled.div`
-  width: 80%;
+  width: 75%;
   margin: auto;
-  min-height: 100vh;
+  padding-top: 3rem;
+  height: auto;
   background-color: ${cVar("dark")};
+  /* background: red; */
+  overflow: hidden;
 `;
 
-const HeroHeading = styled.div`
-  color: ${cVar("light")};
-  font-size: 7vw;
+const HeroHeading = styled.h1`
+  color: ${cVar("gray")};
+  font-size: 7.4vw;
   font-family: ${cVar("dinAlternate")};
   overflow: hidden;
   text-transform: uppercase;
+  overflow-wrap: normal;
+  letter-spacing: 0.01em;
 `;
 
 const HeroParagraph = styled.div`
@@ -28,39 +33,26 @@ const Main = styled.main`
   width: 100%;
   height: auto;
   color: ${cVar("gray")};
-  margin-top: 4rem;
+  margin-top: 3rem;
 `;
 const MainHead = styled.header`
   display: flex;
-  gap: 3rem;
+  gap: 4rem;
+  margin-bottom: 20px;
 `;
 const MainBody = styled.main`
   display: grid;
-  grid-template-columns: 2fr 1fr 1fr;
-  gap: 30px;
+  grid-template-columns: 428px 1fr 1fr;
+  gap: 35px;
   justify-content: center;
   align-items: center;
 `;
 const Section1 = styled.section`
   position: relative;
-  background-color: ${cVar("grayDark")};
+  background-color: ${cVar("grayDarker")};
   width: 100%;
-  height: 230px;
+  height: 185px;
   overflow: hidden;
-
-  img {
-    filter: grayscale(100%);
-  }
-
-  &::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    background-color: rgba(0, 0, 0, 0.5);
-  }
 `;
 const Section2 = styled.section`
   font-family: ${cVar("dmSans")};
@@ -85,20 +77,20 @@ const Section3 = styled.section`
     /* background-color: ${cVar("grayDark")}; */
   }
 `;
-const MainFooter = styled.footer`
+const MainFooter = styled.h1`
   text-align: justify;
-  color: ${cVar("light")};
-  font-size: 7.5vw;
+  color: ${cVar("gray")};
+  font-size: 7.3vw;
   font-family: ${cVar("dinAlternate")};
   overflow: hidden;
   text-transform: uppercase;
   overflow-wrap: normal;
 
-  &::after {
+  /* &::after {
     content: "";
     display: inline-block;
     width: 100%;
-  }
+  } */
 `;
 export {
   HeroContainer,

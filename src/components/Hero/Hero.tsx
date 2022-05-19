@@ -22,7 +22,7 @@ interface Heroprops {
   timeline?: any;
 }
 function Hero({ timeline }: Heroprops) {
-  const tl = gsap.timeline();
+  // const tl = gsap.timeline();
   const main = useRef(null);
 
   useEffect(() => {
@@ -50,7 +50,7 @@ function Hero({ timeline }: Heroprops) {
         </MainHead>
         <MainBody>
           <Section1>
-            <div
+            {/* <div
               style={{
                 width: "100%",
                 height: "100%",
@@ -58,16 +58,16 @@ function Hero({ timeline }: Heroprops) {
                 border: "1px solid black",
                 padding: "10px",
               }}
-            >
-              <Image
-                src="/q_auto/v1651137778/DSC_1473x_2_gjeiku.webp"
-                objectFit="cover"
-                layout="fill"
-                placeholder="blur"
-                loading="lazy"
-                blurDataURL={PlaceholderImage}
-              />
-            </div>
+            > */}
+            <Image
+              src="/q_auto:best/v1652971643/fococlipping-20220224-05210_1_mydqw8.png"
+              objectFit="cover"
+              layout="fill"
+              placeholder="blur"
+              loading="lazy"
+              blurDataURL={PlaceholderImage}
+            />
+            {/* </div> */}
           </Section1>
           <Section2>
             I’m a frontend developer that loves to create scalable, fast and
@@ -86,7 +86,7 @@ function Hero({ timeline }: Heroprops) {
             </section>
           </Section3>
         </MainBody>
-        <MainFooter>Front-end Developer</MainFooter>
+        <MainFooter>Frontend Developer</MainFooter>
       </Main>
     </HeroContainer>
   );

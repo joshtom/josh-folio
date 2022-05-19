@@ -1,4 +1,3 @@
-import dynamic from "next/dynamic";
 import { useEffect, useRef, useState } from "react";
 import { cVar, RandomQuote } from "@src/helpers";
 import gsap, { Linear } from "gsap";
@@ -19,11 +18,8 @@ interface PreloaderProps {
 }
 
 const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
-  const htl = gsap.timeline();
   const wtl = gsap.timeline();
   const htext1 = useRef(null);
-  const htext2 = useRef(null);
-  const htext3 = useRef(null);
   const fText1 = useRef(null);
   const fText2 = useRef(null);
   const wrapper = useRef(null);
@@ -33,7 +29,6 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
   const end = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
   const [randomQuote, setRandomQuote] = useState("");
   let [countdown, setCountdown] = useState(0);
-  const splitRef = useRef(null);
 
   const completeAnimate = () => {
     timeline

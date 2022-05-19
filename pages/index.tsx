@@ -24,7 +24,7 @@ const Home: NextPage = () => {
   const gsaptimeline = gsap;
 
   return (
-    <Defaultlayout>
+    // <Defaultlayout>
       <Container>
         <Head>
           <title>JoshFolio | Home</title>
@@ -34,7 +34,7 @@ const Home: NextPage = () => {
         {/* <Preloader timeline={timeline} /> */}
         <Hero timeline={gsaptimeline} />
       </Container>
-    </Defaultlayout>
+    // </Defaultlayout>
   );
 };
 

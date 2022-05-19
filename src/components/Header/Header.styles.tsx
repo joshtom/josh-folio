@@ -4,7 +4,6 @@ import styled from "styled-components";
 const HeaderContainer = styled.div`
   width: 100%;
   display: grid;
-  margin-top: 2rem;
   grid-template-areas: "logo . . links";
   gap: 20px;
   /* background-color: red; */
@@ -37,13 +36,11 @@ const LinkArea = styled.ul`
   align-items: flex-end;
   align-self: center;
   justify-items: center;
-  gap: 20px;
+  gap: 35px;
   grid-area: links;
 `;
 
 const Links = styled.li`
-  /* overflow: hidden; */
-  /* line-height: 2; */
   font-weight: 700;
   color: ${cVar("pink")};
   cursor: none;
@@ -55,6 +52,8 @@ const Links = styled.li`
     font-weight: 700;
     overflow: hidden;
     line-height: 2;
+    font-size: 16px;
+    letter-spacing: 0.08em;
     cursor: none;
 
     &::before,
