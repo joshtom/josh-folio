@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { HeaderContainer, LogoArea, LinkArea, Links } from "./Header.styles";
+import { HeaderContainer, LogoArea, MenuArea, LinkArea, Links } from "./Header.styles";
 import { MouseContext } from "@context/mouse-context";
 import { useContext, useRef, useEffect } from "react";
 import Logo from "@src/assets/icons/Logo";
@@ -57,6 +57,9 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
           </Link>
         </Links>
       </LinkArea>
+      <MenuArea>
+        <p> MENU </p>
+      </MenuArea>
     </HeaderContainer>
   );
 };

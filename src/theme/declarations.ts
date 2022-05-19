@@ -6,7 +6,8 @@
 const customMediaQuery = (minWidth: number, maxWidth: number) =>
   `@media only screen and (min-width: ${minWidth}px)  and  (max-width: ${maxWidth}px)`;
 const extraMediaQuery = (minWidth: number) =>
-  `@media only screen and (min-width: ${minWidth}px)`;
+  `@media only screen and (max-width: ${minWidth}px)`;
+
 
 interface Media {
   custom: (minWidth: number, maxWidth: number) => string;

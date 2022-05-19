@@ -7,9 +7,15 @@ const HeroContainer = styled.div`
   margin-bottom: 3rem;
   padding-top: 3rem;
   height: auto;
-  background-color: ${cVar("dark")};
-  /* background: red; */
+  background-color: transparent;
   overflow: hidden;
+
+  ${({ theme }) => theme.media.custom(0, 1024)} {
+    width: 85%;
+  }
+  ${({ theme }) => theme.media.custom(0, 768)} {
+    width: 90%;
+  }
 `;
 
 const HeroHeading = styled.h1`
@@ -20,6 +26,14 @@ const HeroHeading = styled.h1`
   text-transform: uppercase;
   overflow-wrap: normal;
   letter-spacing: 0.01em;
+  align-self: center;
+
+  ${({ theme }) => theme.media.mobile} {
+    font-size: 45px;
+    font-size: 15vw;
+    line-height: 1.2;
+    font-weight: 900;
+  }
 `;
 
 const HeroParagraph = styled.div`
@@ -37,9 +51,28 @@ const Main = styled.main`
   margin-top: 3rem;
 `;
 const MainHead = styled.header`
-  display: flex;
+  display: grid;
+  grid-template-columns: 8fr 2fr;
   gap: 4rem;
   margin-bottom: 20px;
+
+  ${({ theme }) => theme.media.custom(0, 1024)} {
+    gap: 2rem;
+  }
+  ${({ theme }) => theme.media.mobile} {
+    grid-template-columns: 5fr 2fr;
+    /* grid-template-columns: 1fr; */
+  }
+`;
+const ScrollerContainer = styled.div`
+  width: auto;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* ${({ theme }) => theme.media.mobile} {
+    display: none;
+  } */
 `;
 const MainBody = styled.main`
   display: grid;
@@ -47,35 +80,71 @@ const MainBody = styled.main`
   gap: 35px;
   justify-content: center;
   align-items: center;
+  height: auto;
+
+  ${({ theme }) => theme.media.custom(0, 1024)} {
+    grid-template-columns: 300px 1fr 1fr;
+    gap: 30px;
+  }
+  ${({ theme }) => theme.media.custom(0, 768)} {
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 30px;
+  }
+  ${({ theme }) => theme.media.mobile} {
+    grid-template-columns: 1fr;
+  }
+`;
+const MainBodyHeading = styled.h1`
+  display: none;
+  font-family: ${cVar("dinAlternate")};
+  text-transform: uppercase;
+  line-height: 1.2;
+  font-weight: bolder;
+  font-size: 70px;
+  font-size: 17vw;
+  ${({ theme }) => theme.media.mobile} {
+    display: inline-flex;
+  }
 `;
 const Section1 = styled.section`
   position: relative;
   background-color: ${cVar("grayDarker")};
   width: 100%;
-  height: 185px;
+  height: auto;
   overflow: hidden;
+  & > img {
+    object-fit: fill;
+  }
 `;
 const Section2 = styled.section`
   font-family: ${cVar("dmSans")};
   border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
-  min-height: 150px;
-  max-height: 110px;
-  /* overflow: hidden; */
+  height: 160px;
+  ${({ theme }) => theme.media.smallLaptop} {
+    min-height: 100%;
+  }
+  ${({ theme }) => theme.media.mobile} {
+    height: auto;
+    font-size: 20px;
+  }
 `;
 const Section3 = styled.section`
   font-family: ${cVar("dmSans")};
   border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
-  min-height: 150px;
-  max-height: 110px;
-  /* overflow: hidden; */
+  height: 160px;
+  /* background-color: red; */
   & section {
     position: relative;
     bottom: 0;
     margin-top: 20px;
     display: inline-flex;
     /* background-color: ${cVar("grayDark")}; */
+  }
+  ${({ theme }) => theme.media.mobile} {
+    height: auto;
+    font-size: 20px;
   }
 `;
 const MainFooter = styled.h1`
@@ -87,6 +156,9 @@ const MainFooter = styled.h1`
   text-transform: uppercase;
   overflow-wrap: normal;
   margin-top: 20px;
+  ${({ theme }) => theme.media.mobile} {
+    display: none;
+  }
 
   /* &::after {
     content: "";
@@ -101,8 +173,10 @@ export {
   Main,
   MainHead,
   MainBody,
+  MainBodyHeading,
   Section1,
   Section2,
   Section3,
   MainFooter,
+  ScrollerContainer,
 };

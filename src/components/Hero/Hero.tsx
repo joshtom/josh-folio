@@ -4,11 +4,13 @@ import {
   HeroHeading,
   Main,
   MainBody,
+  MainBodyHeading,
   MainFooter,
   MainHead,
   Section1,
   Section2,
   Section3,
+  ScrollerContainer,
 } from "./Hero.styles";
 import Header from "../Header/Header";
 import Image from "next/image";
@@ -46,29 +48,19 @@ function Hero({ timeline }: Heroprops) {
       <Main>
         <MainHead>
           <HeroHeading>Joshua Olajide</HeroHeading>
-          <Scroller />
+          <ScrollerContainer>
+            <Scroller />
+          </ScrollerContainer>
         </MainHead>
         <MainBody>
           <Section1>
-            {/* <div
-              style={{
-                width: "100%",
-                height: "100%",
-                position: "relative",
-                border: "1px solid black",
-                padding: "10px",
-              }}
-            > */}
-            <Image
-              src="/q_auto:best/v1652971643/fococlipping-20220224-05210_1_mydqw8.png"
-              objectFit="cover"
-              layout="fill"
-              placeholder="blur"
-              loading="lazy"
-              blurDataURL={PlaceholderImage}
+            <img
+              src="https://res.cloudinary.com/drqltx8ye/image/upload/q_auto:best/v1652971643/fococlipping-20220224-05210_1_mydqw8.png"
+              width="100%"
+              height="100%"
             />
-            {/* </div> */}
           </Section1>
+          <MainBodyHeading>Frontend Developer</MainBodyHeading>
           <Section2>
             I’m a frontend developer that loves to create scalable, fast and
             mobile-first web applications.

@@ -38,6 +38,22 @@ const LinkArea = styled.ul`
   justify-items: center;
   gap: 35px;
   grid-area: links;
+  ${({ theme }) => theme.media.custom(0, 768)} {
+    display: none;
+  }
+`;
+
+const MenuArea = styled.div`
+  display: none;
+  /* background-color: red; */
+  color: ${cVar("pink")};
+  justify-content: flex-end;
+  grid-area: links;
+  ${({ theme }) => theme.media.custom(0, 768)} {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+  }
 `;
 
 const Links = styled.li`
@@ -95,4 +111,4 @@ const Links = styled.li`
   }
 `;
 
-export { HeaderContainer, LogoArea, LinkArea, Links };
+export { HeaderContainer, LogoArea, LinkArea, MenuArea, Links };

@@ -1,10 +1,11 @@
 export default function Scroller() {
   return (
     <svg
-      width="166"
-      height="166"
+      // width="166"
+      // height="166"
       fill="none"
       xmlnsXlink="http://www.w3.org/1999/xlink"
+      viewBox="0 0 166 166"
     >
       <circle
         cx="83"
