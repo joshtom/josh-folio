@@ -4,6 +4,7 @@ import styled from "styled-components";
 const HeroContainer = styled.div`
   width: 75%;
   margin: auto;
+  margin-bottom: 3rem;
   padding-top: 3rem;
   height: auto;
   background-color: ${cVar("dark")};
@@ -85,6 +86,7 @@ const MainFooter = styled.h1`
   overflow: hidden;
   text-transform: uppercase;
   overflow-wrap: normal;
+  margin-top: 20px;
 
   /* &::after {
     content: "";
