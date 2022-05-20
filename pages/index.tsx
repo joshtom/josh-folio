@@ -8,6 +8,7 @@ import gsap from "gsap";
 import Defaultlayout from "@src/layout/DefaultLayout";
 import Preloader from "@src/components/Preloader/Preloader";
 import Skills from "@src/components/Skills/Skills";
+import Project from "@src/components/Project/Project";
 
 const Text = styled.h1`
   color: ${cVar("light")};
@@ -35,6 +36,7 @@ const Home: NextPage = () => {
         {/* <Preloader timeline={timeline} /> */}
         <Hero timeline={gsaptimeline} />
         <Skills />
+        <Project />
       </Container>
     </Defaultlayout>
   );
