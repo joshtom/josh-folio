@@ -23,16 +23,15 @@ const Skill = styled.div`
   width: auto;
   color: ${cVar("pink")};
   border: 1.3px solid #aaaaaa57;
-  /* border: 1px solid ${cVar("primary")}; */
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
   border-radius: 58px;
 
-  /* &:hover {
-    border: 1.3px solid ${cVar("primary")};
-  } */
+  ${({ theme }) => theme.media.mobile} {
+    padding: 20px 40px;
+  }
 `;
 
 export { Container, Skillset, Skill };

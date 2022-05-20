@@ -34,7 +34,7 @@ const Home: NextPage = () => {
         </Head>
         {/* <Preloader timeline={timeline} /> */}
         <Hero timeline={gsaptimeline} />
-        {/* <Skills /> */}
+        <Skills />
       </Container>
     </Defaultlayout>
   );

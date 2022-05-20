@@ -61,7 +61,6 @@ const MainHead = styled.header`
   }
   ${({ theme }) => theme.media.mobile} {
     grid-template-columns: 5fr 2fr;
-    /* grid-template-columns: 1fr; */
   }
 `;
 const ScrollerContainer = styled.div`
@@ -70,9 +69,6 @@ const ScrollerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  /* ${({ theme }) => theme.media.mobile} {
-    display: none;
-  } */
 `;
 const MainBody = styled.main`
   display: grid;
@@ -134,13 +130,11 @@ const Section3 = styled.section`
   border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
   height: 160px;
-  /* background-color: red; */
   & section {
     position: relative;
     bottom: 0;
     margin-top: 20px;
     display: inline-flex;
-    /* background-color: ${cVar("grayDark")}; */
   }
   ${({ theme }) => theme.media.mobile} {
     height: auto;
