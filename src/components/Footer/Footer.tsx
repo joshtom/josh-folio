@@ -16,6 +16,12 @@ const FooterContainer = styled.footer`
   p {
     color: ${cVar("pink")};
     font-size: 18px;
+
+    span {
+      ${({ theme }) => theme.media.custom(0, 768)} {
+        display: none;
+      }
+    }
   }
 `;
 
@@ -24,7 +30,10 @@ function Footer() {
     <>
       <FooterContainer>
         <p> &copy; Joshua Olajide - {new Date().getFullYear()} </p>
-        <p> 🎨 Design by B! </p>
+        <p>
+          {" "}
+          🎨 &nbsp; <span>Design by</span> B!{" "}
+        </p>
       </FooterContainer>
     </>
   );

@@ -30,6 +30,10 @@ const Heading = styled.h1`
   letter-spacing: ${({ theme }) => theme.letterSpacing("0.04")};
   line-height: 1.15;
   text-align: center;
+
+  ${({ theme }) => theme.media.mobile} {
+    font-size: 10vw;
+  }
 `;
 
 const Email = styled.div`

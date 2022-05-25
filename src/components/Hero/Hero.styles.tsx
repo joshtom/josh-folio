@@ -29,8 +29,7 @@ const HeroHeading = styled.h1`
   align-self: center;
 
   ${({ theme }) => theme.media.mobile} {
-    font-size: 45px;
-    font-size: 15vw;
+    font-size: 12vw;
     line-height: 1.2;
     font-weight: 900;
   }
@@ -99,6 +98,7 @@ const MainBodyHeading = styled.h1`
   font-size: 70px;
   font-size: 17vw;
   ${({ theme }) => theme.media.mobile} {
+    font-size: 12vw;
     display: inline-flex;
   }
 `;
