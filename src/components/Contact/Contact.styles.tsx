@@ -41,7 +41,16 @@ const Email = styled.div`
   width: auto;
   border-radius: 91px;
   margin: 40px auto;
-  /* font-size: 28px; */
+  font-size: 28px;
+
+  a {
+    display: flex;
+    cursor: none;
+  }
+
+  ${({ theme }) => theme.media.mobile} {
+    font-size: 16px;
+  }
 
   p {
     color: ${cVar("dark")};

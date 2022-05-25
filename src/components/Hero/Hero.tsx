@@ -24,16 +24,18 @@ interface Heroprops {
 }
 function Hero({ timeline }: Heroprops) {
   // const tl = gsap.timeline();
-  const main = useRef(null);
+  // const main = useRef(null);
+  const HeroCont = useRef(null);
 
   useEffect(() => {
-    timeline.from(main.current, {
+    timeline.from(HeroCont.current, {
       delay: 9,
-      duration: 1.8,
-      ease: "power4.out",
-      skewY: 7,
-      y: 400,
-      opacity: 1,
+      duration: 6.0,
+      // ease: "power4.out",
+      ease: "bounce.out",
+      // skewY: 7,
+      // y: 400,
+      opacity: 0,
       stagger: {
         amount: 0.3,
       },
@@ -41,7 +43,7 @@ function Hero({ timeline }: Heroprops) {
   }, []);
 
   return (
-    <HeroContainer>
+    <HeroContainer ref={HeroCont}>
       <Header timeline={timeline} />
       {/* <Main ref={main}> */}
       <Main>

@@ -1,6 +1,4 @@
-import { ReactNode, useState, useRef, useEffect } from "react";
-import Preloader from "@src/components/Preloader/Preloader";
-import { cVar } from "@src/helpers";
+import { ReactNode } from "react";
 import styled from "styled-components";
 
 interface DefaultLayoutProps {

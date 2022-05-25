@@ -54,13 +54,12 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
         // Add smooth scroll once everything is complete
         import("locomotive-scroll").then((locomotiveModule) => {
           let scroll = new locomotiveModule.default({
-            el: document.querySelector("body"),
+            el: document.querySelector("#main-container"),
             smooth: true,
             multiplier: 1,
             class: "is-reveal",
           });
         });
-        console.log("Locomotive scroll added");
       },
     });
   };
@@ -77,7 +76,7 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
         attr: { d: end },
         ease: "Power2.easeOut",
       })
-      .from(htext1.current, {
+      .from([htext1.current, fText1.current, fText2.current], {
         duration: 0.5,
         y: 400,
         ease: "power2.out",
@@ -133,16 +132,12 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       </Trans>
       <WrapperContainer ref={wrappercontainer}>
         <Header>
-          <ConditionallyRender client>
-            <Text ref={htext1} data-splitting="">
-              <span>Joshua Olajide</span>
-            </Text>
-          </ConditionallyRender>
+          <Text ref={htext1}>
+            <span>Joshua Olajide</span>
+          </Text>
         </Header>
         <Footer>
-          <RandomText ref={fText1}>
-            <ConditionallyRender client>{randomQuote}</ConditionallyRender>
-          </RandomText>
+          <RandomText ref={fText1}>{randomQuote}</RandomText>
           <Countdown ref={fText2}>
             <span>{countdown.toFixed()}</span>
           </Countdown>
