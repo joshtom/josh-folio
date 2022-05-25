@@ -8,7 +8,6 @@ const customMediaQuery = (minWidth: number, maxWidth: number) =>
 const extraMediaQuery = (minWidth: number) =>
   `@media only screen and (max-width: ${minWidth}px)`;
 
-
 interface Media {
   custom: (minWidth: number, maxWidth: number) => string;
   mobile: string;
@@ -55,6 +54,8 @@ const allSidesSpacing = (
   left: number
 ) => `${top}px ${right}px ${bottom}px ${left}px`;
 
+const letterSpacing = (space: string = "0.08em") => `${space}em`;
+
 const fontSize = {
   custom: customFontSize,
   small: customFontSize(0.7),
@@ -89,4 +90,4 @@ const transition = {
   default: "transition: 0.5s cubic-bezier(0.76, 0, 0.24, 1)",
 };
 
-export { media, fontSize, borderRadius, spacing, border, transition };
+export { media, fontSize, borderRadius, spacing, letterSpacing, border, transition };

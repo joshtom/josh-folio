@@ -23,6 +23,11 @@ export const GlobalStyles = createGlobalStyle`
     -moz-user-select: none; 
     -ms-user-select: none; 
     user-select: none; 
+    /* Add default margin with its reponsiveness */
+    --default-margin: 2rem auto;
+    ${({ theme }) => theme.media.custom(0, 1240)} {
+      --default-margin: 1rem auto;
+    }
   }
 
   body {
@@ -36,32 +41,11 @@ export const GlobalStyles = createGlobalStyle`
 
     @media (min-width: 400px) and (max-width: 1200px){
     font-size: calc( 16px + (21 - 16) * ( (100vw - 400px) / ( 1200 - 400) ));
-}
-      @media (min-width: 1200px){
+    }
+
+    @media (min-width: 1200px){
           font-size: 18px;
       }
 
 
-  }
-  *, *::before, *::after {
-    box-sizing: border-box;
-  }
-
-
-
-  a {
-    text-decoration:none;
-  }
-
-
-  /* &::-webkit-scrollbar {
-    width: 1px;
-  }
-
-  &::-webkit-scrollbar-thumb {
-    border-radius:50px;
-    background-color: transparent;
-  } */
-
-
-  `;
+  }`;

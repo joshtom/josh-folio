@@ -6,6 +6,7 @@ import {
   media,
   spacing,
   transition,
+  letterSpacing,
 } from "./declarations";
 
 const theme = {
@@ -17,6 +18,7 @@ const theme = {
   media,
   spacing,
   transition,
+  letterSpacing,
 };
 
 export default theme;

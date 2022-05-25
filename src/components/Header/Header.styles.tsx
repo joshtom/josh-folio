@@ -56,6 +56,7 @@ const MenuArea = styled.div`
   }
 `;
 
+
 const Links = styled.li`
   font-weight: 700;
   color: ${cVar("pink")};
@@ -69,7 +70,7 @@ const Links = styled.li`
     overflow: hidden;
     line-height: 2;
     font-size: 16px;
-    letter-spacing: 0.08em;
+    letter-spacing: ${({ theme }) => theme.letterSpacing()};
     cursor: none;
 
     &::before,

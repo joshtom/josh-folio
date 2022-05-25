@@ -6,10 +6,11 @@ import Head from "next/head";
 import styled from "styled-components";
 import gsap from "gsap";
 import Defaultlayout from "@src/layout/DefaultLayout";
-import Preloader from "@src/components/Preloader/Preloader";
+// import Preloader from "@src/components/Preloader/Preloader";
 import Skills from "@src/components/Skills/Skills";
 import Project from "@src/components/Project/Project";
 import About from "@src/components/About/About";
+import Contact from "@src/components/Contact/Contact";
 
 const Text = styled.h1`
   color: ${cVar("light")};
@@ -39,6 +40,7 @@ const Home: NextPage = () => {
         <Skills />
         <Project />
         <About />
+        <Contact />
       </Container>
     </Defaultlayout>
   );

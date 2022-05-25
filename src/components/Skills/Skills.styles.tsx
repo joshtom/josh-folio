@@ -19,7 +19,7 @@ const Skillset = styled.div`
 
 const Skill = styled.div`
   padding: 25px 50px;
-  letter-spacing: 0.08em;
+  letter-spacing: ${({ theme }) => theme.letterSpacing()};
   width: auto;
   color: ${cVar("pink")};
   border: 1.3px solid #aaaaaa57;
