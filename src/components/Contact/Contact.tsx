@@ -14,7 +14,7 @@ function Contact() {
     <>
       <LineText>Contact</LineText>
       <ContactContainer>
-        <Heading>Let's Work On Something Cool Together</Heading>
+        <Heading>Let&apos;s Work On Something Cool Together</Heading>
 
         <Email>
           <a href="mailto:joshuaolarjide@gmail.com">

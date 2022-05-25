@@ -1,4 +1,3 @@
-import Fonts from "@src/components/Fonts/Fonts";
 import Document, { Html, Main, Head, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
 
@@ -31,8 +30,24 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
-        <Fonts />
+        <Head>
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link
+            rel="preconnect"
+            href="https://fonts.gstatic.com"
+            crossOrigin="anonymous"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
+            rel="stylesheet"
+          />
+          <link rel="preconnect" href="https://fonts.googleapis.com" />
+          <link rel="preconnect" href="https://fonts.gstatic.com" />
+          <link
+            href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@500&display=swap"
+            rel="stylesheet"
+          />
+        </Head>
         <body>
           <Main />
           <NextScript />

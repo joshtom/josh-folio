@@ -19,7 +19,7 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
       y: 30,
       opacity: 1,
     });
-  }, []);
+  }, [timeline]);
   return (
     <HeaderContainer ref={header}>
       <LogoArea>

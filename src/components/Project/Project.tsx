@@ -27,8 +27,8 @@ function Project() {
           <Title>SOCIAL LIFESTYLE PLATFORM</Title>
           <Info>
             <p>
-              I've built products that solve real-life problems ranging from
-              Businesses to companies{" "}
+              I&apos;ve built products that solve real-life problems ranging
+              from Businesses to companies{" "}
             </p>
             <p> VISIT SITE </p>
           </Info>
@@ -49,8 +49,8 @@ function Project() {
           <Title>ROBUST EVENT MANAGEMENT SYSTEM</Title>
           <Info>
             <p>
-              I've built products that solve real-life problems ranging from
-              Businesses to companies{" "}
+              I&apos;ve built products that solve real-life problems ranging
+              from Businesses to companies{" "}
             </p>
             <p> VISIT SITE </p>
           </Info>

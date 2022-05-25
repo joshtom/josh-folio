@@ -3,7 +3,6 @@ import { AppProps } from "next/app";
 import { ThemeProvider } from "styled-components";
 import theme from "@theme/index";
 import MouseContextProvider from "@context/mouse-context";
-import Font from "@src/components/Fonts/Fonts";
 import { GlobalStyles } from "@theme/globalStyles";
 import { Fragment } from "react";
 import DotRing from "@src/components/DotRing/DotRing";
@@ -15,7 +14,6 @@ function MyApp({ Component, pageProps }: AppProps) {
     <ThemeProvider theme={theme}>
       <MouseContextProvider>
         <GlobalStyles />
-        <Font />
         <Main Component={Component} pageProps={pageProps} />
       </MouseContextProvider>
     </ThemeProvider>

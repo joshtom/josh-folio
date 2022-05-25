@@ -14,9 +14,7 @@ import {
 } from "./Hero.styles";
 import Header from "../Header/Header";
 import Scroller from "@src/assets/icons/Scroller";
-import PlaceholderImage from "@assets/images/placeholder.png";
 import ArrowIcon from "@assets/icons/Arrow";
-import gsap from "gsap";
 /* Change the icon once the user scrolls down */
 
 interface Heroprops {
@@ -40,7 +38,7 @@ function Hero({ timeline }: Heroprops) {
         amount: 0.3,
       },
     });
-  }, []);
+  }, [timeline]);
 
   return (
     <HeroContainer ref={HeroCont}>

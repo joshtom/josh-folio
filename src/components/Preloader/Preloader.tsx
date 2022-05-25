@@ -11,7 +11,6 @@ import {
   Trans,
   WrapperContainer,
 } from "./Preloader.styles";
-import ConditionallyRender from "../ConditionalRender/ConditionalRender";
 
 interface PreloaderProps {
   timeline?: any;
