@@ -26,10 +26,10 @@ function Project() {
         <ProjectFooter>
           <Title>SOCIAL LIFESTYLE PLATFORM</Title>
           <Info>
-            <article>
+            <p>
               I've built products that solve real-life problems ranging from
               Businesses to companies{" "}
-            </article>
+            </p>
             <p> VISIT SITE </p>
           </Info>
         </ProjectFooter>
@@ -48,10 +48,10 @@ function Project() {
         <ProjectFooter>
           <Title>ROBUST EVENT MANAGEMENT SYSTEM</Title>
           <Info>
-            <article>
+            <p>
               I've built products that solve real-life problems ranging from
               Businesses to companies{" "}
-            </article>
+            </p>
             <p> VISIT SITE </p>
           </Info>
         </ProjectFooter>

@@ -1,5 +1,6 @@
 import { cVar } from "@src/helpers";
 import styled from "styled-components";
+
 const ProjectWrapper = styled.div`
   background: transparent;
   color: ${cVar("light")};
@@ -7,12 +8,20 @@ const ProjectWrapper = styled.div`
   margin: auto;
   margin-top: 5rem;
   margin-bottom: 7rem;
+
+  ${({ theme }) => theme.media.custom(0, 1024)} {
+    width: 85%;
+  }
+  ${({ theme }) => theme.media.custom(0, 768)} {
+    width: 90%;
+  }
 `;
 
 const Heading = styled.div`
   color: ${cVar("primary")};
   text-transform: uppercase;
   font-size: 24px;
+  letter-spacing: ${({ theme }) => theme.letterSpacing("0.01")};
 `;
 const Wrapper = styled.div`
   width: 100%;
@@ -29,6 +38,10 @@ const ProjectName = styled.div`
   margin: 0 auto;
   margin-top: 30px;
 
+  ${({ theme }) => theme.media.mobile} {
+    font-size: 10vw;
+  }
+
   p {
     white-space: nowrap;
   }
@@ -38,17 +51,22 @@ const ProjectBanner = styled.div`
   width: 100%;
   height: 470px;
   background-color: ${cVar("pink")};
+  background: #fef7cd;
   margin-top: 1.5rem;
 `;
 
 const ProjectFooter = styled.div`
   display: grid;
-  justify-content: space-between;
   grid-template-columns: 3fr 2fr;
   align-items: center;
   margin-top: 1.5rem;
-  flex-wrap: wrap;
-  /* background-color: red; */
+
+  /* ${({ theme }) => theme.media.mobile} {
+    grid-template-columns: 1fr;
+  } */
+  ${({ theme }) => theme.media.custom(0, 1024)} {
+    grid-template-columns: 1fr;
+  }
 `;
 const Title = styled.h3`
   font-size: 48px;
@@ -56,13 +74,21 @@ const Title = styled.h3`
   font-family: ${cVar("dinAlternate")};
   /* background-color: red; */
   width: 60%;
+
+  ${({ theme }) => theme.media.custom(0, 1024)} {
+    font-size: 48px;
+    width: 100%;
+  }
+  ${({ theme }) => theme.media.mobile} {
+    font-size: 8vw;
+  }
 `;
 
 const Info = styled.div`
   display: flex;
   flex-direction: column;
 
-  article {
+  p {
     margin-bottom: 10px;
   }
 `;

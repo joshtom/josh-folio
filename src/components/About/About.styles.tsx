@@ -10,6 +10,13 @@ const AboutContainer = styled.div`
   h1 {
     color: ${cVar("light")};
   }
+
+  ${({ theme }) => theme.media.custom(0, 1024)} {
+    width: 85%;
+  }
+  ${({ theme }) => theme.media.custom(0, 768)} {
+    width: 90%;
+  }
 `;
 const AboutParagraph = styled.p`
   font-size: 20px;

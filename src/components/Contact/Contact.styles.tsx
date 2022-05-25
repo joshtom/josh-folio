@@ -7,11 +7,18 @@ const ContactContainer = styled.div`
   height: auto;
   color: ${cVar("light")};
   border-bottom: 0.5px solid ${cVar("pink")};
-  border-bottom: 1px solid ${cVar('grayMid')};
+  border-bottom: 1px solid ${cVar("grayMid")};
   display: flex;
   flex-direction: column;
   padding: 25px 0px;
   margin-bottom: 0;
+
+  ${({ theme }) => theme.media.custom(0, 1024)} {
+    width: 85%;
+  }
+  ${({ theme }) => theme.media.custom(0, 768)} {
+    width: 90%;
+  }
 `;
 
 const Heading = styled.h1`
@@ -34,7 +41,7 @@ const Email = styled.div`
   width: auto;
   border-radius: 91px;
   margin: 40px auto;
-  font-size: 28px;
+  /* font-size: 28px; */
 
   p {
     color: ${cVar("dark")};
@@ -46,11 +53,19 @@ const Email = styled.div`
 `;
 
 const Socials = styled.ul`
-  width: 100%;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
   justify-content: center;
   align-items: center;
-  gap: 40px;
+  gap: 20px;
+  width: 70%;
+  margin: 0 auto;
+
+  ${({ theme }) => theme.media.mobile} {
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    width: 100%;
+  }
 `;
 
 const List = styled.li`
@@ -59,7 +74,7 @@ const List = styled.li`
 
   a {
     color: ${cVar("pink")};
-    font-size: 18px;
+    /* font-size: 18px; */
     letter-spacing: ${({ theme }) => theme.letterSpacing()};
     cursor: none;
   }

@@ -28,6 +28,15 @@ const LogoArea = styled.p`
   &:hover {
     background-color: ${cVar("primary")};
   }
+
+  ${({ theme }) => theme.media.mobile} {
+    width: 50px;
+    height: 50px;
+
+    svg {
+      width: 18px;
+    }
+  }
 `;
 
 const LinkArea = styled.ul`
@@ -55,7 +64,6 @@ const MenuArea = styled.div`
     font-size: 20px;
   }
 `;
-
 
 const Links = styled.li`
   font-weight: 700;
