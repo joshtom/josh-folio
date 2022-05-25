@@ -13,7 +13,6 @@ import {
   ScrollerContainer,
 } from "./Hero.styles";
 import Header from "../Header/Header";
-import Image from "next/image";
 import Scroller from "@src/assets/icons/Scroller";
 import PlaceholderImage from "@assets/images/placeholder.png";
 import ArrowIcon from "@assets/icons/Arrow";
