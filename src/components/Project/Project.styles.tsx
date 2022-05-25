@@ -17,7 +17,6 @@ const Heading = styled.div`
 const Wrapper = styled.div`
   width: 100%;
   height: 100%;
-  /* border: 1px solid red; */
   position: relative;
   margin-bottom: 4.5rem;
 `;
@@ -62,17 +61,13 @@ const Title = styled.h3`
 const Info = styled.div`
   display: flex;
   flex-direction: column;
-  /* background-color: yellow; */
-  /* background-color: black; */
 
   article {
     margin-bottom: 10px;
-    /* text-align: justify; */
   }
 `;
 
-const Footer = styled.footer`
-  /* background: red; */
+const Footer = styled.footer`≈ß
   width: 100%;
   height: auto;
   display: flex;

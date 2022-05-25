@@ -6,6 +6,7 @@ export const COLORS = {
   logoDark: "--logo-dark",
   light: "--light",
   gray: "--gray",
+  grayMid: "--gray-mid",
   grayDark: "--gray-dark",
   grayDarker: "--gray-darker",
   white: "--text-white",

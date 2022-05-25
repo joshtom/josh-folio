@@ -6,11 +6,19 @@ const AboutContainer = styled.div`
   margin: 2rem auto;
   height: auto;
   background-color: ${cVar("dark")};
-  /* background: red; */
-  /* background-color: red; */
+  padding: 25px 0px;
   h1 {
     color: ${cVar("light")};
   }
 `;
+const AboutParagraph = styled.p`
+  font-size: 20px;
+  line-height: 40px;
+  color: ${cVar("pink")};
+  text-align: justify;
+  font-weight: 100;
+  font-family: ${cVar("dmMono")};
+  margin-bottom: 20px;
+`;
 
-export { AboutContainer };
+export { AboutContainer, AboutParagraph };

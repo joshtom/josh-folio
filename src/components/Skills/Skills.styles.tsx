@@ -22,7 +22,8 @@ const Skill = styled.div`
   letter-spacing: ${({ theme }) => theme.letterSpacing()};
   width: auto;
   color: ${cVar("pink")};
-  border: 1.3px solid #aaaaaa57;
+  border: 1px solid ${cVar("grayMid")};
+  /* border:  1px solid ${cVar("primary")}; */
   display: flex;
   justify-content: center;
   align-items: center;

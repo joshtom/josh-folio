@@ -1,12 +1,55 @@
+import Logo from "@src/assets/icons/Logo";
+import { LogoArea } from "../Header/Header.styles";
 import { LineText } from "../LineText/LineText";
-import { ContactContainer } from "./Contact.styles";
+import {
+  ContactContainer,
+  Email,
+  Socials,
+  List,
+  Heading,
+} from "./Contact.styles";
 
 function Contact() {
   return (
     <>
       <LineText>Contact</LineText>
       <ContactContainer>
-        <h1> Contact </h1>
+        <Heading>Let's Work On Something Cool Together</Heading>
+        <Email>
+          🌍 <p>joshuaolarjide@gmail.com </p>
+        </Email>
+        <Socials>
+          <List>
+            <a href="#" aria-label="resume">
+              RESUME
+            </a>
+          </List>
+          <List>
+            <a href="#" aria-label="resume">
+              MEDIUM
+            </a>
+          </List>
+          <List>
+            <a href="#" aria-label="resume">
+              TWITTER
+            </a>
+          </List>
+          <List>
+            <a href="#" aria-label="resume">
+              LINKEDIN
+            </a>
+          </List>
+          <List>
+            <a href="#" aria-label="resume">
+              GITHUB
+            </a>
+          </List>
+          <List>
+            <LogoArea>
+              <Logo />
+            </LogoArea>
+          </List>
+        </Socials>
       </ContactContainer>
     </>
   );

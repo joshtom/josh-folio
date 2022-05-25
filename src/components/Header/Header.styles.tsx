@@ -15,7 +15,7 @@ const LogoArea = styled.p`
   align-self: center;
   justify-items: center;
   font-family: ${cVar("dinAlternate")};
-  background-color: ${cVar("logoDark")};
+  background-color: ${cVar("primary")};
   width: 63px;
   height: 63px;
   border-radius: 50%;

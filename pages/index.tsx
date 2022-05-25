@@ -6,21 +6,18 @@ import Head from "next/head";
 import styled from "styled-components";
 import gsap from "gsap";
 import Defaultlayout from "@src/layout/DefaultLayout";
-// import Preloader from "@src/components/Preloader/Preloader";
 import Skills from "@src/components/Skills/Skills";
 import Project from "@src/components/Project/Project";
 import About from "@src/components/About/About";
 import Contact from "@src/components/Contact/Contact";
-
-const Text = styled.h1`
-  color: ${cVar("light")};
-  font-family: ${cVar("dinAlternate")};
-`;
+import Footer from "@src/components/Footer/Footer";
+// import Preloader from "@src/components/Preloader/Preloader";
 
 const Container = styled.div`
   width: 100%;
   height: auto;
   background-color: ${cVar("black2")};
+  padding-bottom: 3rem;
 `;
 
 const Home: NextPage = () => {
@@ -41,6 +38,7 @@ const Home: NextPage = () => {
         <Project />
         <About />
         <Contact />
+        <Footer />
       </Container>
     </Defaultlayout>
   );
