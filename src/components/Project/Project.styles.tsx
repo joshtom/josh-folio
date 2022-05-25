@@ -2,7 +2,7 @@ import { cVar } from "@src/helpers";
 import styled from "styled-components";
 const ProjectWrapper = styled.div`
   background: transparent;
-  color: ${cVar('light')};
+  color: ${cVar("light")};
   width: 75%;
   margin: auto;
   margin-top: 5rem;
@@ -67,7 +67,7 @@ const Info = styled.div`
   }
 `;
 
-const Footer = styled.footer`≈ß
+const Footer = styled.footer`
   width: 100%;
   height: auto;
   display: flex;
