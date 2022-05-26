@@ -22,7 +22,6 @@ const AboutParagraph = styled.p`
   font-size: 20px;
   line-height: 40px;
   color: ${cVar("pink")};
-  text-align: justify;
   font-weight: 100;
   font-family: ${cVar("dmMono")};
   margin-bottom: 20px;

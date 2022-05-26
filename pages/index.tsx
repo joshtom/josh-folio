@@ -34,11 +34,11 @@ const Home: NextPage = () => {
         </Head>
         <Preloader timeline={timeline} />
         <Hero timeline={gsaptimeline} />
-        <Skills />
-        <Project />
-        <About />
-        <Contact />
-        <Footer />
+        <Skills timeline={gsaptimeline}/>
+        <Project timeline={gsaptimeline}/>
+        <About timeline={gsaptimeline}/>
+        <Contact timeline={gsaptimeline}/>
+        <Footer timeline={gsaptimeline}/>
       </Container>
     </Defaultlayout>
   );
