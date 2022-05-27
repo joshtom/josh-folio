@@ -10,6 +10,7 @@
 <!-- TEXT STAGGER ENTRANCE -->
 <!-- https://www.youtube.com/watch?v=p0T9HVQUu3Q -->
 <!-- https://splitting.js.org/guide.html#cols -->
+<!-- https://webanimation.blog/blog/wavy-text-animation-using-react-hooks-with-gsap-v3 -->
 
 <!-- https://codepen.io/kohlej/pen/RwoyRgo -->
 <!-- https://codepen.io/kohlej/pen/RwoyRgo?editors=0010 -->

@@ -105,9 +105,9 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       },
       ease: Linear.easeNone,
       onComplete: () => {
-        // setTimeout(() => {
-        //   completeAnimate();
-        // }, 700);
+        setTimeout(() => {
+          completeAnimate();
+        }, 700);
       },
     });
   }, []);
