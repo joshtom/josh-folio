@@ -40,21 +40,21 @@ const Footer = styled.div`
   justify-content: space-between;
   align-items: flex-end;
   overflow: hidden;
+
+  ${({ theme }) => theme.media.mobile} {
+    flex-direction: column-reverse;
+    align-items: flex-start;
+  }
 `;
 
-const Text = styled.p`
-  font-size: 3vw;
+const Wrap = styled.div`
   color: ${cVar("black2")};
   font-family: ${cVar("dinAlternate")};
   text-transform: uppercase;
   overflow: hidden;
-  margin: 10px;
   font-weight: 500;
   line-height: 1.1;
   padding: 0;
-  ${({ theme }) => theme.media.mobile} {
-    font-size: 50px;
-  }
 `;
 
 const RandomText = styled.p`
@@ -62,8 +62,9 @@ const RandomText = styled.p`
   color: ${cVar("black2")};
   margin-bottom: 20px;
   ${({ theme }) => theme.media.mobile} {
-    width: 60%;
+    width: 100%;
     margin-bottom: 0px;
+    /* font-size: 24px; */
   }
 `;
 const Countdown = styled.p`
@@ -75,6 +76,13 @@ const Countdown = styled.p`
 
   & > span {
     font-size: 15vw;
+  }
+  ${({ theme }) => theme.media.mobile} {
+    margin-bottom: 1rem;
+
+    & > span {
+      font-size: 100px;
+    }
   }
 `;
 
@@ -100,7 +108,7 @@ export {
   Wrapper,
   ImageWrapper,
   SubText,
-  Text,
+  Wrap,
   RandomText,
   Countdown,
   Trans,

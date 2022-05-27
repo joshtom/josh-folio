@@ -4,13 +4,15 @@ import gsap, { Linear } from "gsap";
 import {
   Header,
   Footer,
-  Text,
+  Wrap,
   Wrapper,
   RandomText,
   Countdown,
   Trans,
   WrapperContainer,
 } from "./Preloader.styles";
+import Image from "next/image";
+import PreloaderImage from "@assets/images/preloader.png";
 
 interface PreloaderProps {
   timeline?: any;
@@ -103,9 +105,9 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       },
       ease: Linear.easeNone,
       onComplete: () => {
-        setTimeout(() => {
-          completeAnimate();
-        }, 1000);
+        // setTimeout(() => {
+        //   completeAnimate();
+        // }, 700);
       },
     });
   }, []);
@@ -118,7 +120,7 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       >
         <path
           className="path"
-          stroke={cVar("warning")}
+          stroke={cVar("pink")}
           strokeWidth="2px"
           dur="10s"
           vectorEffect="non-scaling-stroke"
@@ -131,9 +133,10 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       </Trans>
       <WrapperContainer ref={wrappercontainer}>
         <Header>
-          <Text ref={htext1}>
-            <span>Joshua Olajide</span>
-          </Text>
+          <Wrap ref={htext1}>
+            {/* <span>Joshua Olajide</span> */}
+            <Image src={PreloaderImage} width="200" height="200" />
+          </Wrap>
         </Header>
         <Footer>
           <RandomText ref={fText1}>{randomQuote}</RandomText>

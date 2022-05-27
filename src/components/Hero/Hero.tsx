@@ -21,23 +21,19 @@ interface Heroprops {
   timeline?: any;
 }
 function Hero({ timeline }: Heroprops) {
-  // const tl = gsap.timeline();
-  // const main = useRef(null);
   const HeroCont = useRef(null);
 
   useEffect(() => {
-    timeline.from(HeroCont.current, {
-      delay: 9,
-      duration: 6.0,
-      // ease: "power4.out",
-      ease: "bounce.out",
-      // skewY: 7,
-      // y: 400,
-      opacity: 0,
-      stagger: {
-        amount: 0.3,
+    timeline.fromTo(
+      HeroCont.current,
+      {
+        opacity: 0,
       },
-    });
+      {
+        delay: 9,
+        opacity: 1,
+      }
+    );
   }, [timeline]);
 
   return (
