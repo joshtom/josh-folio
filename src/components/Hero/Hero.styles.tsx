@@ -9,7 +9,7 @@ const HeroContainer = styled.div`
   height: auto;
   background-color: transparent;
   overflow: hidden;
-  /* opacity: 0; */
+  opacity: 0;
 
   ${({ theme }) => theme.media.custom(0, 1024)} {
     width: 85%;

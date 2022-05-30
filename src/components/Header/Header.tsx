@@ -1,8 +1,15 @@
 import Link from "next/link";
-import { HeaderContainer, LogoArea, MenuArea, LinkArea, Links } from "./Header.styles";
+import {
+  HeaderContainer,
+  LogoArea,
+  MenuArea,
+  LinkArea,
+  Links,
+} from "./Header.styles";
 import { MouseContext } from "@context/mouse-context";
-import { useContext, useRef, useEffect } from "react";
+import { useContext, useRef, useEffect, Ref } from "react";
 import Logo from "@src/assets/icons/Logo";
+import gsap from "gsap";
 
 interface HeaderProps {
   timeline: any;
@@ -10,7 +17,47 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ timeline }) => {
   let header = useRef(null);
+  const linkTop = useRef(null);
+  const linkTop2 = useRef(null);
+  const linkTop3 = useRef(null);
+  const linkBottom = useRef(null);
+  const linkBottom2 = useRef(null);
+  const linkBottom3 = useRef(null); // Continue from here. Make all nav link animate on hoverer
   const { cursorChangeHandler } = useContext(MouseContext);
+
+  const handleLinkAnimationEnter = (
+    linkTop: React.RefObject<HTMLElement>,
+    linkBottom: React.RefObject<HTMLElement>
+  ) => {
+    cursorChangeHandler("hovered");
+
+    gsap.timeline().to(linkTop.current, {
+      y: -40,
+      duration: 0.6,
+      skewY: 15,
+    });
+    gsap.to(linkBottom.current, {
+      y: 0,
+      duration: 0.3,
+      skewY: 0,
+    });
+  };
+
+  const handleLinkAnimationLeave = (
+    linkTop: React.RefObject<HTMLElement>,
+    linkBottom: React.RefObject<HTMLElement>
+  ) => {
+    cursorChangeHandler("");
+    gsap.timeline().to(linkBottom.current, {
+      y: 40,
+      duration: 0.6,
+    });
+    gsap.to(linkTop.current, {
+      y: 0,
+      duration: 0.3,
+      skewY: 0,
+    });
+  };
 
   useEffect(() => {
     timeline.from(header.current, {
@@ -27,32 +74,35 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
       </LogoArea>
       <LinkArea>
         <Links
-          onMouseEnter={() => cursorChangeHandler("hovered")}
-          onMouseLeave={() => cursorChangeHandler("")}
+          onMouseEnter={() => handleLinkAnimationEnter(linkTop, linkBottom)}
+          onMouseLeave={() => handleLinkAnimationLeave(linkTop, linkBottom)}
         >
-          <Link href="#project">
-            <a data-replace="PROJECTS">
-              <span>PROJECTS</span>
+          <Link href="/project" passHref>
+            <a>
+              <span ref={linkTop}>PROJECTS</span>
+              <span ref={linkBottom}>PROJECTS</span>
             </a>
           </Link>
         </Links>
         <Links
-          onMouseEnter={() => cursorChangeHandler("hovered")}
-          onMouseLeave={() => cursorChangeHandler("")}
+          onMouseEnter={() => handleLinkAnimationEnter(linkTop2, linkBottom2)}
+          onMouseLeave={() => handleLinkAnimationLeave(linkTop2, linkBottom2)}
         >
           <Link href="#project" passHref>
-            <a data-replace="ABOUT">
-              <span>ABOUT</span>
+            <a>
+              <span ref={linkTop2}>ABOUT</span>
+              <span ref={linkBottom2}>ABOUT</span>
             </a>
           </Link>
         </Links>
         <Links
-          onMouseEnter={() => cursorChangeHandler("hovered")}
-          onMouseLeave={() => cursorChangeHandler("")}
+          onMouseEnter={() => handleLinkAnimationEnter(linkTop3, linkBottom3)}
+          onMouseLeave={() => handleLinkAnimationLeave(linkTop3, linkBottom3)}
         >
           <Link href="#project">
-            <a data-replace="CONTACT">
-              <span>CONTACT</span>
+            <a>
+              <span ref={linkTop3}>CONTACT</span>
+              <span ref={linkBottom3}>CONTACT</span>
             </a>
           </Link>
         </Links>

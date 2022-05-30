@@ -69,8 +69,30 @@ const Links = styled.li`
   font-weight: 700;
   color: ${cVar("pink")};
   cursor: none;
+  /* background-color: green; */
+  overflow: hidden;
 
   a {
+    color: ${cVar("white")};
+    /* border: 1px solid red; */
+    /* padding: 20px; */
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    height: 30px;
+    position: relative;
+
+    span {
+      &:nth-child(2) {
+        /* background-color: red; */
+        position: absolute;
+        top: 0;
+        transform: translateY(40px);
+      }
+    }
+  }
+
+  /* a {
     position: relative;
     display: inline-block;
     color: ${cVar("pink")};
@@ -117,7 +139,7 @@ const Links = styled.li`
     &:hover span {
       transform: translate3d(-200%, 0, 0);
     }
-  }
+  } */
 `;
 
 export { HeaderContainer, LogoArea, LinkArea, MenuArea, Links };

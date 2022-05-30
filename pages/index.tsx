@@ -11,7 +11,7 @@ import Project from "@src/components/Project/Project";
 import About from "@src/components/About/About";
 import Contact from "@src/components/Contact/Contact";
 import Footer from "@src/components/Footer/Footer";
-import Preloader from "@src/components/Preloader/Preloader";
+// import Preloader from "@src/components/Preloader/Preloader";
 
 const Container = styled.div`
   width: 100%;
@@ -22,7 +22,7 @@ const Container = styled.div`
 
 const Home: NextPage = () => {
   const timeline = gsap.timeline();
-  const gsaptimeline = gsap;
+  const gsaptimeline = gsap.timeline();
 
   return (
     <Defaultlayout>

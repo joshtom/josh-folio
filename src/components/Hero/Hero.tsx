@@ -16,11 +16,13 @@ import Header from "../Header/Header";
 import Scroller from "@src/assets/icons/Scroller";
 import ArrowIcon from "@assets/icons/Arrow";
 import SplitTextToChars from "@src/SplitTextToChars/SplitTextToChars";
+import gsap from "gsap";
 
 interface Heroprops {
   timeline?: any;
 }
 function Hero({ timeline }: Heroprops) {
+  let timeDelay = 1;
   const HeroCont = useRef(null);
   const wavyTextRef = useRef(null);
   const wavyTextRef1 = useRef(null);
@@ -28,19 +30,7 @@ function Hero({ timeline }: Heroprops) {
   const section2 = useRef(null);
   const section3 = useRef(null);
   const scroller = useRef(null);
-
-  // useEffect(() => {
-  //   timeline.fromTo(
-  //     HeroCont.current,
-  //     {
-  //       opacity: 0,
-  //     },
-  //     {
-  //       // delay: 9,
-  //       opacity: 1,
-  //     }
-  //   );
-  // }, [timeline]);
+  const theTimeline = gsap.timeline();
 
   useEffect(() => {
     if (!wavyTextRef.current || !wavyTextRef1.current) return;
@@ -50,41 +40,53 @@ function Hero({ timeline }: Heroprops) {
     timeline.set(wavyTextRef.current, { perspective: 400 });
     timeline.set(wavyTextRef1.current, { perspective: 400 });
 
-    timeline.from(
-      [chars, chars1],
-      {
-        duration: 0.5,
+    timeline
+      .fromTo(
+        HeroCont.current,
+        {
+          opacity: 0,
+        },
+        {
+          delay: timeDelay,
+          opacity: 1,
+        }
+      )
+      .from(
+        [chars, chars1],
+        {
+          duration: 0.5,
+          opacity: 0,
+          scale: 1,
+          y: 40,
+          ease: "back",
+          rotationX: -90,
+          transformOrigin: "0% 50% -50",
+          stagger: {
+            amount: 0.6,
+          },
+        },
+        "+=0"
+      );
+
+    theTimeline
+      .from([section1.current, section2.current, section3.current], {
+        delay: timeDelay + 1,
         opacity: 0,
         scale: 1,
-        y: 40,
         ease: "back",
-        rotationX: -90,
-        transformOrigin: "0% 50% -50",
+        y: 30,
         stagger: {
           amount: 0.6,
         },
-      },
-      "+=0"
-    );
-    timeline.from([section1.current, section2.current, section3.current], {
-      // duration: 0.2,
-      opacity: 0,
-      scale: 1,
-      ease: "back",
-      y: 30,
-      stagger: {
-        amount: 0.6,
-      },
-    });
-    timeline.from(scroller.current, {
-      duration: 0.7,
-      delay: 1,
-      opacity: 0,
-      scale: 1,
-      rotation: -180,
-      ease: "power4.out",
-    });
-  }, []);
+      })
+      .from(scroller.current, {
+        duration: 0.7,
+        opacity: 0,
+        scale: 1,
+        rotation: -180,
+        ease: "power4.out",
+      });
+  }, [timeline]);
 
   return (
     <HeroContainer ref={HeroCont}>
