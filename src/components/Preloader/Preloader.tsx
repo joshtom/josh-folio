@@ -96,7 +96,8 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
     animate();
     let startCount = 0;
     let endCount = 100;
-    let duration = 5;
+    // let duration = 5;
+    let duration = 2;
     let num = { var: startCount };
     timeline.to(num, duration, {
       var: endCount,
