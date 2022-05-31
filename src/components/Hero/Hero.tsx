@@ -17,6 +17,7 @@ import Scroller from "@src/assets/icons/Scroller";
 import ArrowIcon from "@assets/icons/Arrow";
 import SplitTextToChars from "@src/SplitTextToChars/SplitTextToChars";
 import gsap from "gsap";
+import { AnimateBanner } from "../Project/Project.styles";
 
 interface Heroprops {
   timeline?: any;
@@ -30,6 +31,8 @@ function Hero({ timeline }: Heroprops) {
   const section2 = useRef(null);
   const section3 = useRef(null);
   const scroller = useRef(null);
+  const animeBanner = useRef(null);
+  const image = useRef(null);
   const theTimeline = gsap.timeline();
 
   useEffect(() => {
@@ -69,10 +72,22 @@ function Hero({ timeline }: Heroprops) {
       );
 
     theTimeline
-      .from([section1.current, section2.current, section3.current], {
+      .to(animeBanner.current, {
         delay: timeDelay + 1,
+        duration: 1,
+        x: "100%",
+        ease: "power2.out",
+      })
+      .from(image.current, {
+        scale: 1.2,
+        duration: 1,
+        delay: -1,
+        ease: "power2.out",
+      })
+      .from([section2.current, section3.current], {
         opacity: 0,
         scale: 1,
+        delay: -1,
         ease: "back",
         y: 30,
         stagger: {
@@ -105,7 +120,9 @@ function Hero({ timeline }: Heroprops) {
         </MainHead>
         <MainBody>
           <Section1 ref={section1}>
+            <AnimateBanner ref={animeBanner} />
             <img
+              ref={image}
               src="https://res.cloudinary.com/drqltx8ye/image/upload/q_auto:best/v1652971643/fococlipping-20220224-05210_1_mydqw8.png"
               width="100%"
               height="100%"

@@ -34,8 +34,7 @@ function Footer({ timeline }: Footerprops) {
   const Cont = useRef(null);
   useEffect(() => {
     timeline.from(Cont.current, {
-      delay: 9,
-      duration: 6.0,
+      // delay: 9,
       // ease: "power4.out",
       ease: "bounce.out",
       // skewY: 7,

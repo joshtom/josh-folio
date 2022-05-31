@@ -61,7 +61,9 @@ const RandomText = styled.p`
   color: ${cVar("primary")};
   color: ${cVar("black2")};
   margin-bottom: 20px;
+  font-family: ${cVar("dmSans")};
   font-size: 30px;
+  font-weight: 100;
   ${({ theme }) => theme.media.mobile} {
     width: 100%;
     margin-bottom: 0px;

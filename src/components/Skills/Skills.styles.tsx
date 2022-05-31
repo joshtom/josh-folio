@@ -5,6 +5,10 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   height: auto;
+  overflow: hidden;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   ${({ theme }) => theme.media.mobile} {
     overflow: scroll;

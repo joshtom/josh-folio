@@ -117,6 +117,7 @@ const Section1 = styled.section`
   overflow: hidden;
   & > img {
     object-fit: fill;
+    /* position: relative; */
   }
 `;
 const Section2 = styled.section`

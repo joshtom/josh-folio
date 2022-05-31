@@ -23,7 +23,8 @@ function Skills({ timeline }: Skillprops) {
     });
   }, [timeline]);
   return (
-    <Container ref={Cont}>
+    // <Container ref={Cont}>
+    <Container>
       <Skillset
         data-scroll
         data-scroll-speed="3"
@@ -35,9 +36,9 @@ function Skills({ timeline }: Skillprops) {
         ))}
       </Skillset>
       <Skillset
-        style={{ marginTop: "30px", marginLeft: "-100%" }}
+        style={{ marginTop: "30px" }}
         data-scroll
-        data-scroll-speed="-2"
+        data-scroll-speed="-1"
         data-scroll-position="top"
         data-scroll-direction="horizontal"
       >

@@ -7,6 +7,7 @@ export const SkillsetTop = [
   "nuxtjs",
   "vuex",
   "reactjs",
+  "gatsbyjs",
 ];
 export const SkillsetBottom = [
   "typescript",
@@ -17,6 +18,5 @@ export const SkillsetBottom = [
   "graphql",
   "gsap",
   "sass",
-  "gatsbyjs",
   "typescript",
 ];

@@ -28,6 +28,7 @@ const Wrapper = styled.div`
   height: 100%;
   position: relative;
   margin-bottom: 4.5rem;
+  overflow-x: hidden;
 `;
 
 const ProjectName = styled.div`
@@ -53,6 +54,27 @@ const ProjectBanner = styled.div`
   background-color: ${cVar("pink")};
   background: #fef7cd;
   margin-top: 1.5rem;
+  position: relative;
+  overflow: hidden;
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+  }
+`;
+
+const AnimateBanner = styled.div`
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100%;
+  background-color: ${cVar("dark")};
+  z-index: 1;
 `;
 
 const ProjectFooter = styled.div`
@@ -60,6 +82,7 @@ const ProjectFooter = styled.div`
   grid-template-columns: 3fr 2fr;
   align-items: center;
   margin-top: 1.5rem;
+  overflow: hidden;
 
   /* ${({ theme }) => theme.media.mobile} {
     grid-template-columns: 1fr;
@@ -110,4 +133,5 @@ export {
   Title,
   Info,
   Footer,
+  AnimateBanner,
 };

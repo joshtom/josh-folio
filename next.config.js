@@ -1,22 +1,3 @@
-const withImages = require("next-images");
-// module.exports = withImages({
-//   images: {
-//     disableStaticImages: true,
-//     domains: ["res.cloudinary.com"],
-//     loader: "cloudinary",
-//     path: "https://res.cloudinary.com/drqltx8ye/image/upload",
-//   },
-// });
-
-// const imagePlugin = withImages({
-//   images: {
-//     disableStaticImages: true,
-//     domains: ["res.cloudinary.com"],
-//     loader: "cloudinary",
-//     path: "https://res.cloudinary.com/drqltx8ye/image/upload",
-//   },
-// });
-
 // const nextConfig = {
 //   webpack(config) {
 //     config.module.rules.push({
@@ -30,3 +11,37 @@ const withImages = require("next-images");
 // };
 
 // module.exports = nextConfig;
+
+// const withSass = require("@zeit/next-sass");
+
+// const withCSS = require("@zeit/next-css");
+
+// const withTM = require("next-transpile-modules");
+
+// module.exports = withTM({
+//   transpileModules: ["gsap"],
+// });
+
+// module.exports = withCSS(
+//   withSass({
+//     webpack(config, options) {
+//       config.module.rules.push({
+//         test: /\.(png|jpg|gif|svg|eot|ttf|woff|woff2)$/,
+
+//         use: {
+//           loader: "url-loader",
+
+//           options: {
+//             limit: 100000,
+//           },
+//         },
+//       });
+
+//       return config;
+//     },
+//   })
+// );
+
+const withTM = require("next-transpile-modules")(["gsap"]);
+
+module.exports = withTM({});

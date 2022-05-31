@@ -38,8 +38,7 @@ export const GlobalStyles = createGlobalStyle`
     background-color: ${cVar("dark")};
     font-family: ${cVar("dinAlternate")};
     cursor: none;
-
-
+    
     @media (min-width: 400px) and (max-width: 1200px){
     font-size: calc( 16px + (21 - 16) * ( (100vw - 400px) / ( 1200 - 400) ));
     }

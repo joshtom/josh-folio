@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Hero from "@src/components/Hero/Hero";
 import { cVar } from "@src/helpers";
 import type { NextPage } from "next";

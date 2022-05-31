@@ -23,8 +23,13 @@ const AboutParagraph = styled.p`
   line-height: 40px;
   color: ${cVar("pink")};
   font-weight: 100;
-  font-family: ${cVar("dmMono")};
+  font-family: ${cVar("dmSans")};
   margin-bottom: 20px;
+  overflow: hidden;
 `;
 
-export { AboutContainer, AboutParagraph };
+const Overflow = styled.div`
+  overflow: hidden;
+`;
+
+export { AboutContainer, AboutParagraph, Overflow };
