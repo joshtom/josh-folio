@@ -10,7 +10,7 @@ const Wrapper = styled.div`
   color: ${cVar("pink")};
   width: 100%;
   text-align: center;
-  border-bottom: 1px solid ${cVar("primary")};
+  border-bottom: 1px solid ${cVar("grayMid")};
   /* border-width: 0; */
   line-height: 0rem;
   margin: 2rem 0;
@@ -20,8 +20,14 @@ const Wrapper = styled.div`
 
   & > span {
     background: ${cVar("dark")};
-    padding: 0 15px;
+    padding: 7px 20px;
     z-index: 1;
+    border: 1px solid ${cVar("grayMid")};
+    border-radius: 45px;
+    font-family: ${cVar("dmSans")};
+    text-transform: capitalize;
+    font-weight: 500;
+    /* font-size: 12px; */
     /* position: absolute; */
   }
 `;

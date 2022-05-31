@@ -9,6 +9,7 @@ import {
   List,
   Heading,
 } from "./Contact.styles";
+import { Overflow } from "../About/About.styles";
 
 interface Contactprops {
   timeline?: any;
@@ -33,7 +34,9 @@ function Contact({ timeline }: Contactprops) {
     <div ref={Cont}>
       <LineText>Contact</LineText>
       <ContactContainer>
-        <Heading>Let&apos;s Work On Something Cool Together</Heading>
+        <Overflow>
+          <Heading>Let&apos;s Work On Something Cool Together</Heading>
+        </Overflow>
 
         <Email>
           <a href="mailto:joshuaolarjide@gmail.com">
