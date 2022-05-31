@@ -94,7 +94,11 @@ function Hero({ timeline }: Heroprops) {
       {/* <Main ref={main}> */}
       <Main>
         <MainHead>
-          <HeroHeading ref={wavyTextRef}> Joshua Olajide</HeroHeading>
+          <HeroHeading ref={wavyTextRef} desktop={true}>
+            {" "}
+            Joshua Olajide
+          </HeroHeading>
+          <HeroHeading desktop={false}> Joshua Olajide</HeroHeading>
           <ScrollerContainer ref={scroller}>
             <Scroller />
           </ScrollerContainer>
@@ -107,7 +111,7 @@ function Hero({ timeline }: Heroprops) {
               height="100%"
             />
           </Section1>
-          <MainBodyHeading>Frontend Developer</MainBodyHeading>
+          <MainBodyHeading> Frontend Developer</MainBodyHeading>
           <Section2 ref={section2}>
             I’m a frontend developer that loves to create scalable, fast and
             mobile-first web applications.

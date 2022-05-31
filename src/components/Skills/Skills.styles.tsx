@@ -5,7 +5,10 @@ const Container = styled.div`
   width: 100%;
   height: 100%;
   height: auto;
-  /* overflow: scroll; */
+
+  ${({ theme }) => theme.media.mobile} {
+    overflow: scroll;
+  }
 `;
 
 const Skillset = styled.div`

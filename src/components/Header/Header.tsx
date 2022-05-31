@@ -33,13 +33,14 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
 
     gsap.timeline().to(linkTop.current, {
       y: -40,
-      duration: 0.6,
+      duration: 0.9,
       skewY: 15,
     });
     gsap.to(linkBottom.current, {
       y: 0,
-      duration: 0.3,
+      duration: 0.45,
       skewY: 0,
+      ease: "back",
     });
   };
 
@@ -50,11 +51,12 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
     cursorChangeHandler("");
     gsap.timeline().to(linkBottom.current, {
       y: 40,
-      duration: 0.6,
+      duration: 0.9,
+      ease: "back",
     });
     gsap.to(linkTop.current, {
       y: 0,
-      duration: 0.3,
+      duration: 0.45,
       skewY: 0,
     });
   };

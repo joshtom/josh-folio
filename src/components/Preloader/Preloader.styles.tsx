@@ -61,10 +61,11 @@ const RandomText = styled.p`
   color: ${cVar("primary")};
   color: ${cVar("black2")};
   margin-bottom: 20px;
+  font-size: 30px;
   ${({ theme }) => theme.media.mobile} {
     width: 100%;
     margin-bottom: 0px;
-    /* font-size: 24px; */
+    font-size: 24px;
   }
 `;
 const Countdown = styled.p`

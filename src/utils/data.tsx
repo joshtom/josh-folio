@@ -7,18 +7,9 @@ export const SkillsetTop = [
   "nuxtjs",
   "vuex",
   "reactjs",
-  "reactjs",
-  "reactjs",
-  "reactjs",
-  "reactjs",
 ];
 export const SkillsetBottom = [
   "typescript",
-  "tailwindcss",
-  "tailwindcss",
-  "tailwindcss",
-  "tailwindcss",
-  "tailwindcss",
   "tailwindcss",
   "chakraui",
   "redux",

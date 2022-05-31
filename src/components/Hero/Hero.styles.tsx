@@ -19,7 +19,7 @@ const HeroContainer = styled.div`
   }
 `;
 
-const HeroHeading = styled.h1`
+const HeroHeading = styled.h1<{ desktop: boolean }>`
   color: ${cVar("gray")};
   font-size: 7vw;
   font-family: ${cVar("dinAlternate")};
@@ -29,11 +29,14 @@ const HeroHeading = styled.h1`
   letter-spacing: 0.01em;
   align-self: center;
   overflow: hidden;
+  /* If desktop is true, Only show on desktop */
+  display: ${({ desktop }) => (desktop ? "inline-block" : "none")};
 
   ${({ theme }) => theme.media.mobile} {
     font-size: 12vw;
     line-height: 1.2;
     font-weight: 900;
+    display: ${({ desktop }) => (desktop ? "none" : "inline-block")};
   }
 `;
 
