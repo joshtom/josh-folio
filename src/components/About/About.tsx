@@ -1,4 +1,4 @@
-import { Fragment, useEffect, useRef } from "react";
+import { useEffect, useRef } from "react";
 import { cVar } from "@src/helpers";
 import { Heading } from "../Contact/Contact.styles";
 import { LineText } from "../LineText/LineText";

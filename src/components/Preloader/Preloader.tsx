@@ -63,6 +63,8 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
         });
       },
     });
+
+    // https://greensock.com/forums/topic/24859-locomotive-scroll-direction-with-scrolltrigger/
   };
 
   const animate = () => {

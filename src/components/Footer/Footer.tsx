@@ -32,6 +32,7 @@ interface Footerprops {
 
 function Footer({ timeline }: Footerprops) {
   const Cont = useRef(null);
+
   useEffect(() => {
     timeline.from(Cont.current, {
       // delay: 9,

@@ -36,6 +36,15 @@ const Heading = styled.h1`
   }
 `;
 
+const OverflowEmail = styled.div`
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+`;
+
 const Email = styled.div`
   background-color: ${cVar("pink")};
   padding: 10px 30px;
@@ -84,6 +93,7 @@ const Socials = styled.ul`
 const List = styled.li`
   display: flex;
   text-transform: uppercase;
+  overflow: hidden;
 
   a {
     color: ${cVar("pink")};
@@ -93,4 +103,4 @@ const List = styled.li`
   }
 `;
 
-export { ContactContainer, Heading, Email, Socials, List };
+export { ContactContainer, OverflowEmail, Heading, Email, Socials, List };
