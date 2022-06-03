@@ -51,17 +51,6 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       opacity: 0,
       autoAlpha: 0,
       ease: "power2.easeOut",
-      onComplete: () => {
-        // Add smooth scroll once everything is complete
-        import("locomotive-scroll").then((locomotiveModule) => {
-          let scroll = new locomotiveModule.default({
-            el: document.querySelector("#main-container"),
-            smooth: true,
-            multiplier: 1,
-            class: "is-reveal",
-          });
-        });
-      },
     });
 
     // https://greensock.com/forums/topic/24859-locomotive-scroll-direction-with-scrolltrigger/
@@ -98,8 +87,7 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
     animate();
     let startCount = 0;
     let endCount = 100;
-    // let duration = 5;
-    let duration = 2;
+    let duration = 5;
     let num = { var: startCount };
     timeline.to(num, duration, {
       var: endCount,

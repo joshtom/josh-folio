@@ -3,7 +3,6 @@ import Logo from "@src/assets/icons/Logo";
 import { LogoArea } from "../Header/Header.styles";
 import { LineText } from "../LineText/LineText";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import {
   ContactContainer,
   Email,
@@ -30,21 +29,7 @@ function Contact({ timeline }: Contactprops) {
   const email = useRef(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger);
-    }
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: Cont.current,
-        start: "top-=40px center+=100px",
-        // end: "top-=40px",
-        end: "bottom",
-        // scrub: true,
-        markers: true,
-        toggleActions: "play none none none",
-      },
-    });
+    const tl = gsap.timeline();
 
     tl.from(
       [
@@ -70,25 +55,13 @@ function Contact({ timeline }: Contactprops) {
       }
     );
   }, []);
-  // useEffect(() => {
-  //   timeline.from(Cont.current, {
-  //     // delay: 9,
-  //     // ease: "power4.out",
-  //     ease: "bounce.out",
-  //     // skewY: 7,
-  //     // y: 400,
-  //     opacity: 0,
-  //     stagger: {
-  //       amount: 0.3,
-  //     },
-  //   });
-  // }, [timeline]);
+  
   return (
     <div ref={Cont}>
       <LineText>Contact</LineText>
       <ContactContainer>
         <Overflow>
-          <Heading ref={header}>
+          <Heading ref={header} className="ANIMATE-TEXT">
             Let&apos;s Work On Something Cool Together
           </Heading>
         </Overflow>

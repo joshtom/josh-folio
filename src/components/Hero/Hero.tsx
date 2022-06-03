@@ -17,14 +17,13 @@ import Scroller from "@src/assets/icons/Scroller";
 import ArrowIcon from "@assets/icons/Arrow";
 import SplitTextToChars from "@src/SplitTextToChars/SplitTextToChars";
 import { AnimateBanner } from "../Project/Project.styles";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { gsap } from "gsap/dist/gsap";
 
 interface Heroprops {
   timeline?: any;
 }
 function Hero({ timeline }: Heroprops) {
-  let timeDelay = 1;
+  let timeDelay = 8;
   const HeroCont = useRef(null);
   const wavyTextRef = useRef(null);
   const wavyTextRef1 = useRef(null);
@@ -37,28 +36,13 @@ function Hero({ timeline }: Heroprops) {
   const theTimeline = gsap.timeline();
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger);
-    }
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: HeroCont.current,
-        start: "top top",
-        // end: "top-=40px",
-        end: "bottom",
-        // scrub: true,
-        scrub: 0.2,
-        markers: true,
-        toggleActions: "play none none none",
-      },
-    });
+    const tl = gsap.timeline();
 
     tl.to(scroller.current, {
       duration: 1,
-      rotate: 360*5
-    })
-  }, [])
+      rotate: 360 * 5,
+    });
+  }, []);
 
   useEffect(() => {
     if (!wavyTextRef.current || !wavyTextRef1.current) return;
@@ -129,7 +113,7 @@ function Hero({ timeline }: Heroprops) {
   }, [timeline]);
 
   return (
-    <HeroContainer ref={HeroCont}>
+    <HeroContainer ref={HeroCont} className="smooth-scroll">
       <Header timeline={timeline} />
       {/* <Main ref={main}> */}
       <Main>

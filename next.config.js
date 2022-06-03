@@ -42,6 +42,7 @@
 //   })
 // );
 
-const withTM = require("next-transpile-modules")(["gsap"]);
+// Return the line below incase scroll trigger stopped working
+// const withTM = require("next-transpile-modules")(["gsap"]);
 
-module.exports = withTM({});
+// module.exports = withTM({});

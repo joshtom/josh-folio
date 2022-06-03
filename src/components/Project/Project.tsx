@@ -11,13 +11,16 @@ import {
   Info,
   Footer,
 } from "./Project.styles";
-// import MoreProject from "@assets/icons/moreProject.png";
+import MoreProject from "@assets/icons/moreProject.png";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import Image from "next/image";
 
 interface Projectprops {
   timeline?: any;
 }
+
+const hoverEffect =
+  typeof window !== `undefined` ? require("hover-effect").default : null;
 
 function Project({ timeline }: Projectprops) {
   const Cont = useRef(null);
@@ -37,33 +40,8 @@ function Project({ timeline }: Projectprops) {
   const footer1 = useRef(null);
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger);
-    }
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: wrapper1.current,
-        start: "top-=40px center+=100px",
-        // end: "top-=40px",
-        end: "bottom",
-        // scrub: true,
-        markers: true,
-        toggleActions: "play none none none",
-      },
-    });
-
-    const tl2 = gsap.timeline({
-      scrollTrigger: {
-        trigger: wrapper2.current,
-        start: "top-=40px center+=100px",
-        // end: "top-=40px",
-        end: "bottom",
-        // scrub: true,
-        markers: true,
-        toggleActions: "play none none none",
-      },
-    });
+    const tl = gsap.timeline();
+    const tl2 = gsap.timeline();
 
     tl.to(animeBanner1.current, {
       duration: 1,
@@ -111,6 +89,24 @@ function Project({ timeline }: Projectprops) {
           amount: 0.8,
         },
       });
+
+    // image hover effect
+    Array.from(document.querySelectorAll(".project-banner")).forEach(
+      (el: any) => {
+        const imgs: any = Array.from(el.querySelectorAll("img"));
+        new hoverEffect({
+          parent: el,
+          intensity: 0.2,
+          speedIn: el.dataset.speedin || undefined,
+          speedOut: el.dataset.speedout || undefined,
+          easing: el.dataset.easing || undefined,
+          hover: el.dataset.hover || undefined,
+          image1: imgs[0].getAttribute("src"),
+          image2: imgs[1].getAttribute("src"),
+          displacementImage: el.dataset.displacement,
+        });
+      }
+    );
   }, []);
 
   useEffect(() => {
@@ -129,7 +125,9 @@ function Project({ timeline }: Projectprops) {
   return (
     // <ProjectWrapper ref={Cont}>
     <ProjectWrapper className="skewElem">
-      <Heading ref={heading}>Selected Projects</Heading>
+      <Heading ref={heading} className="ANIMATE-TEXT">
+        Selected Projects
+      </Heading>
       <Wrapper ref={wrapper1} id="theWrapper">
         <ProjectName>
           <p
@@ -142,11 +140,19 @@ function Project({ timeline }: Projectprops) {
             ASIKO
           </p>
         </ProjectName>
-        <ProjectBanner>
-          <AnimateBanner ref={animeBanner1} />
+        <ProjectBanner
+          className="project-banner"
+          data-displacement="/images/myDistorsionImage.webp"
+        >
+          {/* <AnimateBanner ref={animeBanner1} /> */}
           <img
             ref={image1}
             src="https://images.unsplash.com/photo-1529025530948-67e8a5c69b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+            alt="banner-image"
+          />
+          <img
+            ref={image1}
+            src=" https://images.unsplash.com/photo-1648737966636-2fc3a5fffc8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
             alt="banner-image"
           />
         </ProjectBanner>
@@ -176,8 +182,16 @@ function Project({ timeline }: Projectprops) {
             INAWO{" "}
           </p>
         </ProjectName>
-        <ProjectBanner>
-          <AnimateBanner ref={animeBanner2} />
+        <ProjectBanner
+          className="project-banner"
+          data-displacement="/images/distortionImage2.jpeg"
+        >
+          {/* <AnimateBanner ref={animeBanner2} /> */}
+          <img
+            ref={image2}
+            src="https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+            alt="banner-image"
+          />
           <img
             ref={image2}
             src="https://images.unsplash.com/photo-1529025530948-67e8a5c69b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
@@ -195,7 +209,9 @@ function Project({ timeline }: Projectprops) {
           </Info>
         </ProjectFooter>
       </Wrapper>
-      <Footer>{/* <img src={MoreProject} /> */}</Footer>
+      <Footer>
+        <Image src={MoreProject} />
+      </Footer>
     </ProjectWrapper>
   );
 }

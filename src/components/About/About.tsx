@@ -4,7 +4,6 @@ import { Heading } from "../Contact/Contact.styles";
 import { LineText } from "../LineText/LineText";
 import { AboutContainer, AboutParagraph, Overflow } from "./About.styles";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 interface Aboutprops {
   timeline?: any;
@@ -17,48 +16,32 @@ function About({ timeline }: Aboutprops) {
   const p2 = useRef(null);
   const p3 = useRef(null);
 
-  useEffect(() => {
-    if (typeof window !== "undefined") {
-      gsap.registerPlugin(ScrollTrigger);
-    }
+  // useEffect(() => {
+  //   const tl = gsap.timeline();
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: Cont.current,
-        start: "top-=40px center+=100px",
-        // end: "top-=40px",
-        end: "bottom",
-        // scrub: true,
-        markers: true,
-        toggleActions: "play none none none",
-      },
-    });
+  //   tl.from([header.current, p1.current, p2.current, p3.current], {
+  //     duration: 1,
+  //     y: 400,
+  //     ease: "power4.out",
+  //     skewY: 16,
+  //     scale: 1,
+  //     opacity: 0,
+  //     stagger: {
+  //       amount: 0.8,
+  //     },
+  //   });
+  // }, []);
 
-    tl.from([header.current, p1.current, p2.current, p3.current], {
-      duration: 1,
-      y: 400,
-      ease: "power4.out",
-      skewY: 16,
-      scale: 1,
-      opacity: 0,
-      stagger: {
-        amount: 0.8,
-      },
-    });
-  }, []);
-  useEffect(() => {
-    timeline.from(Cont.current, {
-      // delay: 9,
-      // ease: "power4.out",
-      ease: "bounce.out",
-      // skewY: 7,
-      // y: 400,
-      opacity: 0,
-      stagger: {
-        amount: 0.3,
-      },
-    });
-  }, [timeline]);
+  // useEffect(() => {
+  //   timeline.from(Cont.current, {
+  //     ease: "bounce.out",
+  //     opacity: 0,
+  //     stagger: {
+  //       amount: 0.3,
+  //     },
+  //   });
+  // }, [timeline]);
+
   return (
     <div ref={Cont}>
       {/* <div> */}

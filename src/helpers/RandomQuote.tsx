@@ -3,7 +3,7 @@ export const RandomQuote = [
   "Checking stackoverflow for error fix 🥷",
   "Adjusting font size 📝",
   "IE just messed this up, rewriting the CSS 🫤",
-  "Breathe, overthinking no dy solve problem 😶‍🌫️",
+  "Breathe, overthinking no dy solve problem 😶‍",
   "Deploying to live 🚀",
   "NEPA!!! Not again 😢",
   "Ooops, bad network 😐",

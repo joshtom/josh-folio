@@ -19,7 +19,8 @@ const ProjectWrapper = styled.div`
 
 const Heading = styled.div`
   color: ${cVar("primary")};
-  text-transform: uppercase;
+  /* text-transform: uppercase; */
+  font-family: ${cVar("dmMono")};
   font-size: 24px;
   letter-spacing: ${({ theme }) => theme.letterSpacing("0.01")};
 `;
@@ -45,6 +46,9 @@ const ProjectName = styled.div`
 
   p {
     white-space: nowrap;
+    &:hover {
+      color: ${cVar("primary")};
+    }
   }
 `;
 
@@ -56,13 +60,48 @@ const ProjectBanner = styled.div`
   margin-top: 1.5rem;
   position: relative;
   overflow: hidden;
+  background-size: cover;
+
+  canvas {
+    position: absolute;
+    // border-radius: inherit !important;
+    z-index: 0;
+    width: 100% !important;
+    height: 100% !important;
+  }
 
   img {
     width: 100%;
     height: 100%;
+
+    &:hover {
+      &:nth-child(2) {
+        opacity: 1;
+      }
+    }
+
+    &:nth-child(1) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+    &:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+      transition: opacity 0.3s;
+    }
+  }
+
+  /* img {
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     position: absolute;
-  }
+  } */
 `;
 
 const AnimateBanner = styled.div`

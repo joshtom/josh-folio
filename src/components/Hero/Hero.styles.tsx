@@ -29,6 +29,7 @@ const HeroHeading = styled.h1<{ desktop: boolean }>`
   letter-spacing: 0.01em;
   align-self: center;
   overflow: hidden;
+
   /* If desktop is true, Only show on desktop */
   display: ${({ desktop }) => (desktop ? "inline-block" : "none")};
 
@@ -125,6 +126,7 @@ const Section2 = styled.section`
   border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
   height: 160px;
+
   ${({ theme }) => theme.media.smallLaptop} {
     min-height: 100%;
   }

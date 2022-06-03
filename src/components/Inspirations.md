@@ -33,3 +33,9 @@
 
 <!-- HOVER ON LINK  -->
 <!-- https://css-tricks.com/css-link-hover-effects/ -->
+
+<!-- LINEAR GRADIENT -->
+<!-- background-image: linear-gradient(90deg,#b0f3f1,#ffcfdf);
+-webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+ -->
