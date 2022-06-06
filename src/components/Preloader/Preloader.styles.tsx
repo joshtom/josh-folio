@@ -41,7 +41,7 @@ const Footer = styled.div`
   align-items: flex-end;
   overflow: hidden;
 
-  ${({ theme }) => theme.media.mobile} {
+  ${({ theme }) => theme.media.custom(0, 768)} {
     flex-direction: column-reverse;
     align-items: flex-start;
   }

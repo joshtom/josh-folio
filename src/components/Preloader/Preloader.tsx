@@ -76,7 +76,6 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
         stagger: {
           amount: 0.5,
           each: 0.1,
-          from: "random",
           ease: "power3.out",
         },
       });

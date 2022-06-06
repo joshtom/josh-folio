@@ -16,6 +16,7 @@ const HeroContainer = styled.div`
   }
   ${({ theme }) => theme.media.custom(0, 768)} {
     width: 90%;
+    margin-top: 30px;
   }
 `;
 
@@ -160,6 +161,11 @@ const MainFooter = styled.h1`
   text-transform: uppercase;
   overflow-wrap: normal;
   margin-top: 20px;
+
+  ${({ theme }) => theme.media.smallLaptop} {
+    margin-top: 50px;
+    /* background-color: red; */
+  }
   ${({ theme }) => theme.media.mobile} {
     display: none;
   }
