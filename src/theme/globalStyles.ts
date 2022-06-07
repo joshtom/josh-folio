@@ -17,6 +17,8 @@ export const GlobalStyles = createGlobalStyle`
     --gray-darker: #141414;
     --black: #000000;
     --logo-dark: #171717;
+    --asiko-color: #f5a623;
+    --inawo-color: #587B7F;
     cursor: none;
     -webkit-touch-callout: none; 
     -webkit-user-select: none; 
@@ -28,6 +30,10 @@ export const GlobalStyles = createGlobalStyle`
     --default-margin: 2rem auto;
     ${({ theme }) => theme.media.custom(0, 1240)} {
       --default-margin: 1rem auto;
+    }
+
+    a {
+      cursor: none;
     }
   }
 

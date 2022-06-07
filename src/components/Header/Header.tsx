@@ -40,25 +40,6 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
   const openText = useRef(null);
   const closeText = useRef(null);
 
-  const handleLinkAnimationEnter = (
-    linkTop: React.RefObject<HTMLElement>,
-    linkBottom: React.RefObject<HTMLElement>
-  ) => {
-    cursorChangeHandler("hovered");
-
-    gsap.timeline().to(linkTop.current, {
-      y: -40,
-      duration: 0.9,
-      skewY: 15,
-    });
-    gsap.to(linkBottom.current, {
-      y: 0,
-      duration: 0.45,
-      skewY: 0,
-      ease: "back",
-    });
-  };
-
   let handleMobileNav = useCallback(() => {
     setOpen((open) => !open);
     if (open) {
@@ -185,35 +166,32 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
         </LogoArea>
         <LinkArea>
           <Links
-            onMouseEnter={() => handleLinkAnimationEnter(linkTop, linkBottom)}
-            onMouseLeave={() => handleLinkAnimationLeave(linkTop, linkBottom)}
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
           >
             <Link href="/project" passHref>
               <a>
                 <span ref={linkTop}>PROJECTS</span>
-                <span ref={linkBottom}>PROJECTS</span>
               </a>
             </Link>
           </Links>
           <Links
-            onMouseEnter={() => handleLinkAnimationEnter(linkTop2, linkBottom2)}
-            onMouseLeave={() => handleLinkAnimationLeave(linkTop2, linkBottom2)}
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
           >
             <Link href="#project" passHref>
               <a>
                 <span ref={linkTop2}>ABOUT</span>
-                <span ref={linkBottom2}>ABOUT</span>
               </a>
             </Link>
           </Links>
           <Links
-            onMouseEnter={() => handleLinkAnimationEnter(linkTop3, linkBottom3)}
-            onMouseLeave={() => handleLinkAnimationLeave(linkTop3, linkBottom3)}
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
           >
             <Link href="#project">
               <a>
                 <span ref={linkTop3}>CONTACT</span>
-                <span ref={linkBottom3}>CONTACT</span>
               </a>
             </Link>
           </Links>

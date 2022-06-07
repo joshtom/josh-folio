@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import { MouseContext } from "@context/mouse-context";
 import Logo from "@src/assets/icons/Logo";
 import { LogoArea } from "../Header/Header.styles";
 import { LineText } from "../LineText/LineText";
@@ -27,6 +28,7 @@ function Contact({ timeline }: Contactprops) {
   const a5 = useRef(null);
   const logo = useRef(null);
   const email = useRef(null);
+  const { cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -55,7 +57,7 @@ function Contact({ timeline }: Contactprops) {
       }
     );
   }, []);
-  
+
   return (
     <div ref={Cont}>
       <LineText>Contact</LineText>
@@ -67,34 +69,53 @@ function Contact({ timeline }: Contactprops) {
         </Overflow>
 
         <OverflowEmail>
-          <Email ref={email}>
+          <Email
+            ref={email}
+            onMouseEnter={() => cursorChangeHandler("contact")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
             <a href="mailto:joshuaolarjide@gmail.com">
               🌍 <p>joshuaolarjide@gmail.com </p>
             </a>
           </Email>
         </OverflowEmail>
         <Socials>
-          <List>
+          <List
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
             <a href="#" aria-label="resume" ref={a1}>
               RESUME
             </a>
           </List>
-          <List>
+          <List
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
             <a href="#" aria-label="resume" ref={a2}>
               MEDIUM
             </a>
           </List>
-          <List>
+          <List
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
             <a href="#" aria-label="resume" ref={a3}>
               TWITTER
             </a>
           </List>
-          <List>
+          <List
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
             <a href="#" aria-label="resume" ref={a4}>
               LINKEDIN
             </a>
           </List>
-          <List>
+          <List
+            onMouseEnter={() => cursorChangeHandler("hovered")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
             <a href="#" aria-label="resume" ref={a5}>
               GITHUB
             </a>

@@ -6,7 +6,9 @@ export type cursorType =
   | ""
   | "ahover"
   | "linkhover"
-  | "buttonhover";
+  | "buttonhover"
+  | "scrolldown"
+  | "contact";
 export const MouseContext = createContext({
   cursorType: "",
   cursorChangeHandler: (cursorType: cursorType) => {},

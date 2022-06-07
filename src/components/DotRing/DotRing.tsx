@@ -9,6 +9,8 @@ const DotRing = () => {
     if (cursor === "ahover") return "Goto";
     else if (cursor === "linkhover") return "View";
     else if (cursor === "buttonhover") return "Button";
+    else if (cursor === "scrolldown") return "Scroll Down";
+    else if (cursor === "contact") return "Let's talk";
     return null;
   };
   const { cursorType } = useContext(MouseContext);

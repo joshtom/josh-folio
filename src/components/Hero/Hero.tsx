@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
 import {
   HeroContainer,
   HeroHeading,
@@ -13,6 +13,7 @@ import {
   ScrollerContainer,
 } from "./Hero.styles";
 import Header from "../Header/Header";
+import { MouseContext } from "@context/mouse-context";
 import Scroller from "@src/assets/icons/Scroller";
 import ArrowIcon from "@assets/icons/Arrow";
 import SplitTextToChars from "@src/SplitTextToChars/SplitTextToChars";
@@ -34,6 +35,7 @@ function Hero({ timeline }: Heroprops) {
   const animeBanner = useRef(null);
   const image = useRef(null);
   const theTimeline = gsap.timeline();
+  const { cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -123,7 +125,11 @@ function Hero({ timeline }: Heroprops) {
             Joshua Olajide
           </HeroHeading>
           <HeroHeading desktop={false}> Joshua Olajide</HeroHeading>
-          <ScrollerContainer ref={scroller}>
+          <ScrollerContainer
+            ref={scroller}
+            onMouseEnter={() => cursorChangeHandler("scrolldown")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
             <Scroller />
           </ScrollerContainer>
         </MainHead>

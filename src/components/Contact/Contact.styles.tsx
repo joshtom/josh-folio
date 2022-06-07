@@ -94,12 +94,16 @@ const List = styled.li`
   display: flex;
   text-transform: uppercase;
   overflow: hidden;
+  ${({ theme }) => theme.transition};
 
   a {
     color: ${cVar("pink")};
-    /* font-size: 18px; */
     letter-spacing: ${({ theme }) => theme.letterSpacing()};
     cursor: none;
+    ${({ theme }) => theme.transition};
+    &:hover {
+      font-style: italic;
+    }
   }
 `;
 

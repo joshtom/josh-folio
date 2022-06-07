@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import { MouseContext } from "@context/mouse-context";
 import {
   ProjectWrapper,
   Heading,
@@ -6,7 +7,6 @@ import {
   ProjectName,
   ProjectBanner,
   ProjectFooter,
-  AnimateBanner,
   Title,
   Info,
   Footer,
@@ -37,7 +37,7 @@ function Project({ timeline }: Projectprops) {
   const title2 = useRef(null);
   const a2 = useRef(null);
   const p2 = useRef(null);
-  const footer1 = useRef(null);
+  const { cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -129,7 +129,7 @@ function Project({ timeline }: Projectprops) {
         Selected Projects
       </Heading>
       <Wrapper ref={wrapper1} id="theWrapper">
-        <ProjectName>
+        <ProjectName color="asiko">
           <p
             data-scroll
             data-scroll-speed="2"
@@ -143,11 +143,13 @@ function Project({ timeline }: Projectprops) {
         <ProjectBanner
           className="project-banner"
           data-displacement="/images/myDistorsionImage.webp"
+          onMouseEnter={() => cursorChangeHandler("linkhover")}
+          onMouseLeave={() => cursorChangeHandler("")}
         >
           {/* <AnimateBanner ref={animeBanner1} /> */}
           <img
             ref={image1}
-            src="https://images.unsplash.com/photo-1529025530948-67e8a5c69b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+            src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGZhc2hpb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
             alt="banner-image"
           />
           <img
@@ -157,7 +159,13 @@ function Project({ timeline }: Projectprops) {
           />
         </ProjectBanner>
         <ProjectFooter>
-          <Title ref={title1}>SOCIAL LIFESTYLE PLATFORM</Title>
+          <Title
+            ref={title1}
+            onMouseEnter={() => cursorChangeHandler("linkhover")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            SOCIAL LIFESTYLE PLATFORM
+          </Title>
           <Info>
             <p ref={p1}>
               I&apos;ve built products that solve real-life problems ranging
@@ -170,7 +178,7 @@ function Project({ timeline }: Projectprops) {
 
       {/*  */}
       <Wrapper ref={wrapper2} id="theWrapper">
-        <ProjectName>
+        <ProjectName color="inawo">
           <p
             data-scroll
             data-scroll-speed="4"
@@ -185,6 +193,8 @@ function Project({ timeline }: Projectprops) {
         <ProjectBanner
           className="project-banner"
           data-displacement="/images/distortionImage2.jpeg"
+          onMouseEnter={() => cursorChangeHandler("linkhover")}
+          onMouseLeave={() => cursorChangeHandler("")}
         >
           {/* <AnimateBanner ref={animeBanner2} /> */}
           <img
@@ -199,7 +209,13 @@ function Project({ timeline }: Projectprops) {
           />
         </ProjectBanner>
         <ProjectFooter>
-          <Title ref={title2}>ROBUST EVENT MANAGEMENT SYSTEM</Title>
+          <Title
+            ref={title2}
+            onMouseEnter={() => cursorChangeHandler("linkhover")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            ROBUST EVENT MANAGEMENT SYSTEM
+          </Title>
           <Info>
             <p ref={p2}>
               I&apos;ve built products that solve real-life problems ranging
@@ -210,7 +226,14 @@ function Project({ timeline }: Projectprops) {
         </ProjectFooter>
       </Wrapper>
       <Footer>
-        <Image src={MoreProject} />
+        <a
+          href="https://github.com/joshtom"
+          target="_blank"
+          onMouseEnter={() => cursorChangeHandler("hovered")}
+          onMouseLeave={() => cursorChangeHandler("")}
+        >
+          <Image src={MoreProject} />
+        </a>
       </Footer>
     </ProjectWrapper>
   );

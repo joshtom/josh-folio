@@ -12,7 +12,7 @@ const Ring = styled.div`
   border-radius: 50%;
   transform: translate(-50%, -50%);
   -webkit-transition-duration: 100ms;
-  transition-duration: 150ms;
+  transition-duration: 100ms;
   -webkit-transition-timing-function: ease-out;
   transition-timing-function: ease-out;
   will-change: width, height, transform, border;
@@ -28,6 +28,19 @@ const Ring = styled.div`
     background-color: ${cVar("pink")};
     mix-blend-mode: difference;
   }
+
+  &.scrolldown,
+  &.linkhover,
+  &.contact {
+    /* border-width: 3px; */
+    border: none;
+    width: 100px;
+    height: 100px;
+    background-color: ${cVar("pink")};
+    word-wrap: break-word;
+    white-space: nowrap;
+  }
+
   ${({ theme }) => theme.media.tablet} {
     display: none;
   }
@@ -50,7 +63,10 @@ const Dot = styled.div`
   pointer-events: none;
   background-color: ${cVar("pink")};
 
-  &.hovered {
+  &.hovered,
+  &.scrolldown,
+  &.linkhover,
+  &.contact {
     display: none;
   }
 

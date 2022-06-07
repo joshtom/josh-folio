@@ -11,6 +11,8 @@ export const COLORS = {
   grayDarker: "--gray-darker",
   white: "--text-white",
   pink: "--text-pink",
+  asikoColor: "--asiko-color",
+  inawoColor: "--inawo-color",
 };
 
 export const FONT_FAMILY = {

@@ -88,77 +88,27 @@ const Links = styled.li`
   font-weight: 700;
   color: ${cVar("pink")};
   cursor: none;
-  /* background-color: green; */
   overflow: hidden;
+  transition: all 300ms ease-in-out;
 
   a {
     color: ${cVar("white")};
-    /* border: 1px solid red; */
-    /* padding: 20px; */
     display: flex;
     flex-direction: column;
     overflow: hidden;
     height: 30px;
     position: relative;
-
+    /* ${({ theme }) => theme.transition}; */
     span {
-      &:nth-child(2) {
-        /* background-color: red; */
-        position: absolute;
-        top: 0;
-        transform: translateY(40px);
+      transition: all 1s ease-in-out;
+    }
+
+    &:hover {
+      span {
+        font-style: italic;
       }
     }
   }
-
-  /* a {
-    position: relative;
-    display: inline-block;
-    color: ${cVar("pink")};
-    font-weight: 700;
-    overflow: hidden;
-    line-height: 2;
-    font-size: 16px;
-    letter-spacing: ${({ theme }) => theme.letterSpacing()};
-    cursor: none;
-
-    &::before,
-    &::after {
-      content: "";
-      position: absolute;
-      width: 100%;
-      left: 0;
-    }
-
-    &::after {
-      content: attr(data-replace);
-      top: 0;
-      transform-origin: 100% 50%;
-      transform: translate3d(200%, 0, 0);
-    }
-
-    &:hover::after,
-    &:focus::after {
-      transform: translate3d(0, 0, 0);
-      transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-
-    &:hover::before {
-      transform-origin: 0% 50%;
-      transform: scaleX(1);
-    }
-    &:hover::after {
-      transform: translate3d(0, 0, 0);
-    }
-
-    span {
-      display: inline-block;
-      transition: transform 0.5s cubic-bezier(0.76, 0, 0.24, 1);
-    }
-    &:hover span {
-      transform: translate3d(-200%, 0, 0);
-    }
-  } */
 `;
 
 // Mobile navigation styling.

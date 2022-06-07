@@ -19,8 +19,7 @@ const ProjectWrapper = styled.div`
 
 const Heading = styled.div`
   color: ${cVar("primary")};
-  /* text-transform: uppercase; */
-  font-family: ${cVar("dmMono")};
+  text-transform: uppercase;
   font-size: 24px;
   letter-spacing: ${({ theme }) => theme.letterSpacing("0.01")};
 `;
@@ -32,9 +31,15 @@ const Wrapper = styled.div`
   overflow-x: hidden;
 `;
 
-const ProjectName = styled.div`
-  border-top: 1px solid ${cVar("primary")};
-  border-bottom: 1px solid ${cVar("primary")};
+const projectColor = (color: "asiko" | "inawo") => {
+  if (color === "asiko") return `${cVar("asikoColor")}`;
+  else if (color === "inawo") return `${cVar("inawoColor")}`;
+};
+
+// Check the color passed in the ProjectName component and use that to determine the color that would be applied
+const ProjectName = styled.div<{ color: "asiko" | "inawo" }>`
+  border-top: 1px solid ${({ color }) => projectColor(color)};
+  border-bottom: 1px solid ${({ color }) => projectColor(color)};
   font-size: 64px;
   overflow: scroll;
   margin: 0 auto;
@@ -47,7 +52,7 @@ const ProjectName = styled.div`
   p {
     white-space: nowrap;
     &:hover {
-      color: ${cVar("primary")};
+      color: ${({ color }) => projectColor(color)};
     }
   }
 `;
@@ -64,15 +69,16 @@ const ProjectBanner = styled.div`
 
   canvas {
     position: absolute;
-    // border-radius: inherit !important;
     z-index: 0;
     width: 100% !important;
     height: 100% !important;
+    object-fit: contain;
   }
 
   img {
     width: 100%;
     height: 100%;
+    object-fit: cover;
 
     &:hover {
       &:nth-child(2) {
@@ -95,13 +101,6 @@ const ProjectBanner = styled.div`
       transition: opacity 0.3s;
     }
   }
-
-  /* img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    position: absolute;
-  } */
 `;
 
 const AnimateBanner = styled.div`
@@ -158,10 +157,31 @@ const Info = styled.div`
 const Footer = styled.footer`
   width: 100%;
   height: auto;
-  display: flex;
+  display: inline-flex;
   justify-content: center;
   align-items: center;
+
+  & > a {
+    &:hover,
+    &:focus-visible,
+    &:focus-within {
+      animation: rotate-animation 10s infinite linear;
+    }
+  }
+
+  @keyframes rotate-animation {
+    0% {
+      transform: rotate(0deg);
+    }
+    50% {
+      transform: rotate(180deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
 `;
+
 export {
   ProjectWrapper,
   Heading,
