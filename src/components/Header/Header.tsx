@@ -73,22 +73,19 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
     menuTl.current = gsap.timeline({ paused: true });
 
     // Animated Menu Text
-    menuTl.current
-      .to(openText.current, {
-        y: -40,
-        autoAlpha: 0,
-        skewY: 15,
-        duration: 0.9,
-        ease: "back",
-      })
-      .from(closeText.current, {
-        y: 40,
-        ease: "back",
-        delay: -4,
-        skewY: -15,
-        duration: 0.45,
-        autoAlpha: 0,
-      });
+    menuTl.current.to(openText.current, {
+      y: -40,
+      autoAlpha: 0,
+      skewY: 15,
+      duration: 0.9,
+      ease: "back",
+    });
+    menuTl.current.to(closeText.current, {
+      y: 0,
+      ease: "back",
+      autoAlpha: 1,
+      delay: 0.1,
+    });
 
     // Animate menu navigation
     navtl.current

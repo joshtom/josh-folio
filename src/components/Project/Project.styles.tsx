@@ -67,12 +67,15 @@ const ProjectBanner = styled.div`
   overflow: hidden;
   background-size: cover;
 
+  ${({ theme }) => theme.media.mobile} {
+    height: 300px;
+  }
+
   canvas {
     position: absolute;
     z-index: 0;
     width: 100% !important;
     height: 100% !important;
-    object-fit: contain;
   }
 
   img {

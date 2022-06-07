@@ -62,7 +62,6 @@ const LinkArea = styled.ul`
 
 const MenuArea = styled.div`
   display: none;
-  /* background-color: red; */
   color: ${cVar("pink")};
   justify-content: flex-end;
   height: auto;
@@ -79,7 +78,7 @@ const MenuArea = styled.div`
     right: 0;
 
     &:last-child {
-      /* transform: translateY(40px); */
+      transform: translateY(40px);
     }
   }
 `;
@@ -98,7 +97,6 @@ const Links = styled.li`
     overflow: hidden;
     height: 30px;
     position: relative;
-    /* ${({ theme }) => theme.transition}; */
     span {
       transition: all 1s ease-in-out;
     }
@@ -124,12 +122,10 @@ const MobileContainer = styled.div`
   z-index: 10;
   padding-top: 150px;
   transform: translateX(100%);
-  /* display: none; */
 `;
 
 const MobileNav = styled.div`
   width: 100%;
-  /* background: red; */
   min-height: auto;
   display: flex;
   flex-direction: column;

@@ -125,11 +125,7 @@ function Hero({ timeline }: Heroprops) {
             Joshua Olajide
           </HeroHeading>
           <HeroHeading desktop={false}> Joshua Olajide</HeroHeading>
-          <ScrollerContainer
-            ref={scroller}
-            onMouseEnter={() => cursorChangeHandler("scrolldown")}
-            onMouseLeave={() => cursorChangeHandler("")}
-          >
+          <ScrollerContainer ref={scroller}>
             <Scroller />
           </ScrollerContainer>
         </MainHead>
