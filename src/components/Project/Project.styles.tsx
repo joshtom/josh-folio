@@ -18,10 +18,19 @@ const ProjectWrapper = styled.div`
 `;
 
 const Heading = styled.div`
-  color: ${cVar("primary")};
+  color: ${cVar("pinkDeep")};
+  font-family: ${cVar("dinAlternate")};
   text-transform: uppercase;
-  font-size: 24px;
+  font-size: 36px;
+  /* width: 30%; */
   letter-spacing: ${({ theme }) => theme.letterSpacing("0.01")};
+`;
+const SubHeading = styled.p`
+  font-family: ${cVar("dmSans")};
+  color: ${cVar("gray")};
+  font-weight: 100;
+  width: 35%;
+  margin-top: 1rem;
 `;
 const Wrapper = styled.div`
   width: 100%;
@@ -188,6 +197,7 @@ const Footer = styled.footer`
 export {
   ProjectWrapper,
   Heading,
+  SubHeading,
   Wrapper,
   ProjectName,
   ProjectBanner,

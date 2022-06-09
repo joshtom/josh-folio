@@ -25,7 +25,6 @@ const Wrapper = styled.div`
     border: 1px solid ${cVar("grayMid")};
     border-radius: 45px;
     font-family: ${cVar("dmSans")};
-    text-transform: capitalize;
     font-weight: 500;
     /* font-size: 12px; */
     /* position: absolute; */

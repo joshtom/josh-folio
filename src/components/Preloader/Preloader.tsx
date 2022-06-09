@@ -34,7 +34,7 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
   const completeAnimate = () => {
     timeline
       .to(trans.current, {
-        duration: 0.8,
+        duration: 0.9,
         attr: { d: start },
         ease: "Power2.easeIn",
       })
@@ -110,7 +110,7 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       >
         <path
           className="path"
-          stroke={cVar("pink")}
+          stroke={cVar("dark")}
           strokeWidth="2px"
           dur="10s"
           vectorEffect="non-scaling-stroke"
@@ -131,7 +131,7 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
         <Footer>
           <RandomText ref={fText1}>{randomQuote}</RandomText>
           <Countdown ref={fText2}>
-            <span>{countdown.toFixed()}</span>
+            <span>{countdown.toFixed()}%</span>
           </Countdown>
         </Footer>
       </WrapperContainer>

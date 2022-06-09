@@ -3,6 +3,7 @@ import { MouseContext } from "@context/mouse-context";
 import {
   ProjectWrapper,
   Heading,
+  SubHeading,
   Wrapper,
   ProjectName,
   ProjectBanner,
@@ -125,9 +126,14 @@ function Project({ timeline }: Projectprops) {
   return (
     // <ProjectWrapper ref={Cont}>
     <ProjectWrapper className="skewElem">
-      <Heading ref={heading} className="ANIMATE-TEXT">
-        Selected Projects
+      <Heading ref={heading} >
+        {/* Selected Projects */}I build Product that works 🚀
       </Heading>
+      <SubHeading>
+        {" "}
+        Not only do I pay attention to every detail but I build product consumed
+        by humans.{" "}
+      </SubHeading>
       <Wrapper ref={wrapper1} id="theWrapper">
         <ProjectName color="asiko">
           <p

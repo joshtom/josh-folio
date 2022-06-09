@@ -1,5 +1,6 @@
 export const COLORS = {
   primary: "--primary",
+  secondary: "--secondary",
   warning: "--warning",
   black2: "--black",
   dark: "--dark",
@@ -11,6 +12,7 @@ export const COLORS = {
   grayDarker: "--gray-darker",
   white: "--text-white",
   pink: "--text-pink",
+  pinkDeep: "--text-pink-deep",
   asikoColor: "--asiko-color",
   inawoColor: "--inawo-color",
 };

@@ -139,9 +139,9 @@ function Hero({ timeline }: Heroprops) {
               height="100%"
             />
           </Section1>
-          <MainBodyHeading> Frontend Developer</MainBodyHeading>
+          <MainBodyHeading> Front-end Engineer</MainBodyHeading>
           <Section2 ref={section2}>
-            I’m a frontend developer that loves to create scalable, fast and
+            I’m a frontend engineer that loves to create scalable, fast and
             mobile-first web applications.
           </Section2>
           <Section3 ref={section3}>
@@ -157,7 +157,7 @@ function Hero({ timeline }: Heroprops) {
             </section>
           </Section3>
         </MainBody>
-        <MainFooter ref={wavyTextRef1}>Frontend Developer</MainFooter>
+        <MainFooter ref={wavyTextRef1}>Front-end Engineer</MainFooter>
       </Main>
     </HeroContainer>
   );

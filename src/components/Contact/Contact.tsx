@@ -60,7 +60,7 @@ function Contact({ timeline }: Contactprops) {
 
   return (
     <div ref={Cont}>
-      <LineText>Contact</LineText>
+      <LineText>shoot your shot 🌍</LineText>
       <ContactContainer>
         <Overflow>
           <Heading ref={header} className="ANIMATE-TEXT">

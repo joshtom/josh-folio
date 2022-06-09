@@ -7,10 +7,13 @@ export const GlobalStyles = createGlobalStyle`
     --din-alternate: 'DIN Alternate', sans-serif;
     --dm-mono: 'DM Mono', monospace;
     --light: #ffffff;
-    --dark: #060606;
+    /* --dark: #060606; */
+    --dark: #161a19;
     --primary: #FE3F00;
+    --secondary: #7f9993;
     --warning: #FEF7CD;
     --text-pink: #FDEEE7;
+    --text-pink-deep: #dbb59b;
     --gray: #E5E5E5;
     --gray-dark: #C4C4C4;
     --gray-mid: #aaaaaa57;
@@ -52,6 +55,5 @@ export const GlobalStyles = createGlobalStyle`
     @media (min-width: 1200px){
           font-size: 18px;
       }
-
 
   }`;

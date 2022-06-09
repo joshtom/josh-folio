@@ -14,7 +14,7 @@ html,
 body {
   height: 100%;
 }
-body {
+kw body {
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
 }
@@ -60,10 +60,10 @@ h6 {
 .ANIMATE-TEXT {
   background: linear-gradient(
     to right,
-    #fff 20%,
-    #b0f3f1 40%,
-    #b0f3f1 60%,
-    #ffcfdf 80%
+    var(--text-pink) 20%,
+    var(--secondary) 40%,
+    var(--secondary) 60%,
+    var(--gray-dark) 80%
   );
   background-size: 200% auto;
 

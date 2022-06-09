@@ -18,6 +18,27 @@ const HeroContainer = styled.div`
     width: 90%;
     margin-top: 30px;
   }
+
+  &::after {
+    z-index: 1000;
+    content: "";
+    pointer-events: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: url("/images/shadow.png") no-repeat 100% 0%;
+    background-size: cover;
+    animation: move 5s infinite alternate 1s;
+    transform-origin: 100% 0%;
+  }
+
+  @keyframes move {
+    to {
+      transform: scaleX(1.1);
+    }
+  }
 `;
 
 const HeroHeading = styled.h1<{ desktop: boolean }>`

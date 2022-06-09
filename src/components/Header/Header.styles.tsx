@@ -34,7 +34,7 @@ const LogoArea = styled.p`
   ${({ theme }) => theme.transition.default};
 
   &:hover {
-    background-color: ${cVar("primary")};
+    background-color: ${cVar("black2")};
   }
 
   ${({ theme }) => theme.media.mobile} {

@@ -45,7 +45,7 @@ function About({ timeline }: Aboutprops) {
   return (
     <div ref={Cont}>
       {/* <div> */}
-      <LineText>About</LineText>
+      <LineText>So far so good ✌️</LineText>
       <AboutContainer>
         <Overflow>
           <Heading

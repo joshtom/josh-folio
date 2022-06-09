@@ -16,7 +16,8 @@ import Preloader from "@src/components/Preloader/Preloader";
 const Container = styled.div`
   width: 100%;
   height: auto;
-  background-color: ${cVar("black2")};
+  /* background-color: ${cVar("black2")}; */
+  background-color: ${cVar("dark")};
   padding-bottom: 3rem;
 `;
 
