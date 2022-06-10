@@ -22,8 +22,11 @@ const Heading = styled.div`
   font-family: ${cVar("dinAlternate")};
   text-transform: uppercase;
   font-size: 36px;
-  /* width: 30%; */
   letter-spacing: ${({ theme }) => theme.letterSpacing("0.01")};
+
+  ${({ theme }) => theme.media.mobile} {
+    font-size: 24px;
+  }
 `;
 const SubHeading = styled.p`
   font-family: ${cVar("dmSans")};
@@ -31,6 +34,10 @@ const SubHeading = styled.p`
   font-weight: 100;
   width: 35%;
   margin-top: 1rem;
+
+  ${({ theme }) => theme.media.mobile} {
+    width: 100%;
+  }
 `;
 const Wrapper = styled.div`
   width: 100%;

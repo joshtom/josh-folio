@@ -14,11 +14,7 @@ import {
 } from "./Contact.styles";
 import { Overflow } from "../About/About.styles";
 
-interface Contactprops {
-  timeline?: any;
-}
-
-function Contact({ timeline }: Contactprops) {
+function Contact() {
   const Cont = useRef(null);
   const header = useRef(null);
   const a1 = useRef(null);
@@ -59,7 +55,7 @@ function Contact({ timeline }: Contactprops) {
   }, []);
 
   return (
-    <div ref={Cont}>
+    <div ref={Cont} id="contact">
       <LineText>shoot your shot 🌍</LineText>
       <ContactContainer>
         <Overflow>
@@ -92,7 +88,12 @@ function Contact({ timeline }: Contactprops) {
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <a href="#" aria-label="resume" ref={a2}>
+            <a
+              href="https://medium.com/@olajidejoshua4real"
+              target="_blank"
+              aria-label="medium"
+              ref={a2}
+            >
               MEDIUM
             </a>
           </List>
@@ -100,7 +101,12 @@ function Contact({ timeline }: Contactprops) {
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <a href="#" aria-label="resume" ref={a3}>
+            <a
+              href="https://twitter.com/olatojosh"
+              target="_blank"
+              aria-label="twitter"
+              ref={a3}
+            >
               TWITTER
             </a>
           </List>
@@ -108,7 +114,12 @@ function Contact({ timeline }: Contactprops) {
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <a href="#" aria-label="resume" ref={a4}>
+            <a
+              href="https://www.linkedin.com/in/joshtom/"
+              target="_blank"
+              aria-label="resume"
+              ref={a4}
+            >
               LINKEDIN
             </a>
           </List>
@@ -116,14 +127,21 @@ function Contact({ timeline }: Contactprops) {
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <a href="#" aria-label="resume" ref={a5}>
+            <a
+              href="https://github.com/joshtom"
+              target="_blank"
+              aria-label="resume"
+              ref={a5}
+            >
               GITHUB
             </a>
           </List>
           <List>
-            <LogoArea ref={logo}>
-              <Logo />
-            </LogoArea>
+            <a href="#home" data-scroll-to>
+              <LogoArea ref={logo}>
+                <Logo />
+              </LogoArea>
+            </a>
           </List>
         </Socials>
       </ContactContainer>

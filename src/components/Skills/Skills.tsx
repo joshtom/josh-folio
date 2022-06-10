@@ -10,21 +10,14 @@ function Skills({ timeline }: Skillprops) {
   const Cont = useRef(null);
   useEffect(() => {
     timeline.from(Cont.current, {
-      // delay: 9,
-      duration: 6.0,
-      // ease: "power4.out",
-      ease: "bounce.out",
-      // skewY: 7,
-      // y: 400,
+      duration: 1.0,
+      ease: "back",
+      y: 50,
       opacity: 0,
-      stagger: {
-        amount: 0.3,
-      },
     });
   }, [timeline]);
   return (
-    // <Container ref={Cont}>
-    <Container>
+    <Container ref={Cont}>
       <Skillset
         data-scroll
         data-scroll-speed="3"

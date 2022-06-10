@@ -1,5 +1,4 @@
 import { useCallback, useState } from "react";
-import Link from "next/link";
 import {
   HeaderContainer,
   LogoArea,
@@ -25,9 +24,6 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
   const linkTop = useRef(null);
   const linkTop2 = useRef(null);
   const linkTop3 = useRef(null);
-  const linkBottom = useRef(null);
-  const linkBottom2 = useRef(null);
-  const linkBottom3 = useRef(null); // Continue from here. Make all nav link animate on hoverer
   const mobilecont = useRef(null);
   const mobilenav = useRef(null);
   const sayhello = useRef(null);
@@ -50,23 +46,6 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
       menuTl.current.reverse();
     }
   }, [open]);
-
-  const handleLinkAnimationLeave = (
-    linkTop: React.RefObject<HTMLElement>,
-    linkBottom: React.RefObject<HTMLElement>
-  ) => {
-    cursorChangeHandler("");
-    gsap.timeline().to(linkBottom.current, {
-      y: 40,
-      duration: 0.9,
-      ease: "back",
-    });
-    gsap.to(linkTop.current, {
-      y: 0,
-      duration: 0.45,
-      skewY: 0,
-    });
-  };
 
   useEffect(() => {
     navtl.current = gsap.timeline({ paused: true });
@@ -106,7 +85,7 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
 
     //
     timeline.from(header.current, {
-      // delay: 9,
+      delay: 0.5,
       ease: "power4.out",
       y: 30,
       opacity: 1,
@@ -166,31 +145,25 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <Link href="/project" passHref>
-              <a>
-                <span ref={linkTop}>PROJECTS</span>
-              </a>
-            </Link>
+            <a href="#project" data-scroll-to>
+              <span ref={linkTop}>PROJECTS</span>
+            </a>
           </Links>
           <Links
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <Link href="#project" passHref>
-              <a>
-                <span ref={linkTop2}>ABOUT</span>
-              </a>
-            </Link>
+            <a href="#about" data-scroll-to>
+              <span ref={linkTop2}>ABOUT</span>
+            </a>
           </Links>
           <Links
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <Link href="#project">
-              <a>
-                <span ref={linkTop3}>CONTACT</span>
-              </a>
-            </Link>
+            <a href="#contact" data-scroll-to>
+              <span ref={linkTop3}>CONTACT</span>
+            </a>
           </Links>
         </LinkArea>
         <MenuArea onClick={handleMobileNav}>

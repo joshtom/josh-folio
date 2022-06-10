@@ -1,50 +1,18 @@
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import { cVar } from "@src/helpers";
 import { Heading } from "../Contact/Contact.styles";
 import { LineText } from "../LineText/LineText";
 import { AboutContainer, AboutParagraph, Overflow } from "./About.styles";
-import { gsap } from "gsap";
 
-interface Aboutprops {
-  timeline?: any;
-}
-
-function About({ timeline }: Aboutprops) {
+function About() {
   const Cont = useRef(null);
   const header = useRef(null);
   const p1 = useRef(null);
   const p2 = useRef(null);
   const p3 = useRef(null);
 
-  // useEffect(() => {
-  //   const tl = gsap.timeline();
-
-  //   tl.from([header.current, p1.current, p2.current, p3.current], {
-  //     duration: 1,
-  //     y: 400,
-  //     ease: "power4.out",
-  //     skewY: 16,
-  //     scale: 1,
-  //     opacity: 0,
-  //     stagger: {
-  //       amount: 0.8,
-  //     },
-  //   });
-  // }, []);
-
-  // useEffect(() => {
-  //   timeline.from(Cont.current, {
-  //     ease: "bounce.out",
-  //     opacity: 0,
-  //     stagger: {
-  //       amount: 0.3,
-  //     },
-  //   });
-  // }, [timeline]);
-
   return (
-    <div ref={Cont}>
-      {/* <div> */}
+    <div ref={Cont} id="about">
       <LineText>So far so good ✌️</LineText>
       <AboutContainer>
         <Overflow>
@@ -52,8 +20,7 @@ function About({ timeline }: Aboutprops) {
             ref={header}
             style={{ color: `${cVar("pink")}`, marginBottom: "20px" }}
           >
-            {" "}
-            In the last few years...{" "}
+            Over the last few years
           </Heading>
         </Overflow>
         <Overflow>

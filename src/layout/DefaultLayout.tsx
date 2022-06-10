@@ -34,13 +34,11 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
 
     // update locomotive scroll
     window.addEventListener("load", () => {
-      let image = document.querySelector("img");
       // @ts-ignore
-      const isLoaded = image!.complete && image!.naturalHeight !== 0;
       locoScroll.update();
     });
 
-    // console.clear();
+    console.clear();
     console.log.apply(console, [
       "Designed by Blessing Omotoyingbo 🎨 and Developed by Joshua Olajide  🥷 \n",
     ]);

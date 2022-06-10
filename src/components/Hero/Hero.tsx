@@ -1,4 +1,4 @@
-import { useEffect, useRef, useContext } from "react";
+import { useEffect, useRef } from "react";
 import {
   HeroContainer,
   HeroHeading,
@@ -13,7 +13,6 @@ import {
   ScrollerContainer,
 } from "./Hero.styles";
 import Header from "../Header/Header";
-import { MouseContext } from "@context/mouse-context";
 import Scroller from "@src/assets/icons/Scroller";
 import ArrowIcon from "@assets/icons/Arrow";
 import SplitTextToChars from "@src/SplitTextToChars/SplitTextToChars";
@@ -35,7 +34,6 @@ function Hero({ timeline }: Heroprops) {
   const animeBanner = useRef(null);
   const image = useRef(null);
   const theTimeline = gsap.timeline();
-  const { cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => {
     const tl = gsap.timeline();
@@ -115,13 +113,11 @@ function Hero({ timeline }: Heroprops) {
   }, [timeline]);
 
   return (
-    <HeroContainer ref={HeroCont} className="smooth-scroll">
+    <HeroContainer ref={HeroCont} className="smooth-scroll" id="home">
       <Header timeline={timeline} />
-      {/* <Main ref={main}> */}
       <Main>
         <MainHead>
           <HeroHeading ref={wavyTextRef} desktop={true}>
-            {" "}
             Joshua Olajide
           </HeroHeading>
           <HeroHeading desktop={false}> Joshua Olajide</HeroHeading>
@@ -139,15 +135,15 @@ function Hero({ timeline }: Heroprops) {
               height="100%"
             />
           </Section1>
-          <MainBodyHeading> Front-end Engineer</MainBodyHeading>
+          <MainBodyHeading> Frontend Engineer</MainBodyHeading>
           <Section2 ref={section2}>
             I’m a frontend engineer that loves to create scalable, fast and
-            mobile-first web applications.
+            mobile-first web applications
           </Section2>
           <Section3 ref={section3}>
             <p>
-              Currently at <b>Flutterwave</b>, Open for freelance project and
-              collaboration
+              I Currently work at <b>FLUTTERWAVE</b>, Open for fulltime role and
+              / collaboration
             </p>
             <section>
               <span>CONTACT ME</span>

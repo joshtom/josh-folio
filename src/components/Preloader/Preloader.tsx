@@ -52,8 +52,6 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       autoAlpha: 0,
       ease: "power2.easeOut",
     });
-
-    // https://greensock.com/forums/topic/24859-locomotive-scroll-direction-with-scrolltrigger/
   };
 
   const animate = () => {
@@ -97,7 +95,7 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       onComplete: () => {
         setTimeout(() => {
           completeAnimate();
-        }, 700);
+        }, 400);
       },
     });
   }, []);

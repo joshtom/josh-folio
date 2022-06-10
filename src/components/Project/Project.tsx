@@ -112,11 +112,7 @@ function Project({ timeline }: Projectprops) {
 
   useEffect(() => {
     timeline.from(Cont.current, {
-      // delay: 9,
-      // ease: "power4.out",
-      ease: "bounce.out",
-      // skewY: 7,
-      // y: 400,
+      ease: "bounce.in",
       opacity: 0,
       stagger: {
         amount: 0.3,
@@ -124,11 +120,13 @@ function Project({ timeline }: Projectprops) {
     });
   }, [timeline]);
   return (
-    // <ProjectWrapper ref={Cont}>
-    <ProjectWrapper className="skewElem">
-      <Heading ref={heading} >
-        {/* Selected Projects */}I build Product that works 🚀
-      </Heading>
+    <ProjectWrapper
+      ref={Cont}
+      className="skewElem"
+      id="project"
+      data-scroll-container
+    >
+      <Heading ref={heading}>I build Product that works 🚀</Heading>
       <SubHeading>
         {" "}
         Not only do I pay attention to every detail but I build product consumed
