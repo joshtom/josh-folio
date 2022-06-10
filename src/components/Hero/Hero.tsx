@@ -1,4 +1,5 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useContext } from "react";
+import { MouseContext } from "@context/mouse-context";
 import {
   HeroContainer,
   HeroHeading,
@@ -23,6 +24,7 @@ interface Heroprops {
   timeline?: any;
 }
 function Hero({ timeline }: Heroprops) {
+  const { cursorChangeHandler } = useContext(MouseContext);
   let timeDelay = 8;
   const HeroCont = useRef(null);
   const wavyTextRef = useRef(null);
@@ -113,7 +115,7 @@ function Hero({ timeline }: Heroprops) {
   }, [timeline]);
 
   return (
-    <HeroContainer ref={HeroCont} className="smooth-scroll" >
+    <HeroContainer ref={HeroCont} className="smooth-scroll">
       <Header timeline={timeline} />
       <Main>
         <MainHead>
@@ -145,7 +147,10 @@ function Hero({ timeline }: Heroprops) {
               I Currently work at <b>FLUTTERWAVE</b>, Open for fulltime role and
               / collaboration
             </p>
-            <section>
+            <section
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")}
+            >
               <span>CONTACT ME</span>
               <span>
                 <ArrowIcon />

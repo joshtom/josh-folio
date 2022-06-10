@@ -172,6 +172,34 @@ const Section3 = styled.section`
     bottom: 0;
     margin-top: 20px;
     display: inline-flex;
+
+    &:before {
+      position: absolute;
+      content: "";
+      width: 39%;
+      border: 1px solid white;
+      top: -16px;
+      left: -17px;
+      bottom: -4px;
+      border-radius: 50%;
+      ${({ theme }) => theme.transition.default};
+      box-shadow: 0px 2px 12px ${cVar("pink")};
+    }
+
+    &:hover::before,
+    &:focus::before,
+    &:focus-within::before {
+      width: 177px;
+      border-radius: 38px;
+      box-shadow: none;
+    }
+
+    span {
+      /* font-size: 14px; */
+      svg {
+        width: 30px;
+      }
+    }
   }
   ${({ theme }) => theme.media.mobile} {
     height: auto;

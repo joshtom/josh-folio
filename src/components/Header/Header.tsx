@@ -1,4 +1,4 @@
-import { useCallback, useState } from "react";
+import { useCallback, useState, useContext, useRef, useEffect, Fragment } from "react";
 import {
   HeaderContainer,
   LogoArea,
@@ -11,7 +11,6 @@ import {
   MobileSocial,
 } from "./Header.styles";
 import { MouseContext } from "@context/mouse-context";
-import { useContext, useRef, useEffect, Fragment } from "react";
 import Logo from "@src/assets/icons/Logo";
 import gsap, { Elastic } from "gsap";
 
