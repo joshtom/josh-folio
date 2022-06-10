@@ -55,6 +55,7 @@ const Wrap = styled.div`
   font-weight: 500;
   line-height: 1.1;
   padding: 0;
+  opacity: 0;
 `;
 
 const RandomText = styled.p`
@@ -65,6 +66,7 @@ const RandomText = styled.p`
   font-family: ${cVar("dmSans")};
   font-size: 30px;
   font-weight: 100;
+  opacity: 0;
   ${({ theme }) => theme.media.mobile} {
     width: 100%;
     margin-bottom: 0px;
@@ -72,11 +74,11 @@ const RandomText = styled.p`
   }
 `;
 const Countdown = styled.p`
-  /* font-family: ${cVar("dmMono")}; */
   color: ${cVar("primary")};
-  color: ${cVar("pinkDeep")};
+  /* color: ${cVar("pinkDeep")}; */
   line-height: 0.9;
   overflow: hidden;
+  opacity: 0;
 
   & > span {
     font-size: 15vw;

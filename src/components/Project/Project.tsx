@@ -137,6 +137,7 @@ function Project({ timeline }: Projectprops) {
           <p
             data-scroll
             data-scroll-speed="2"
+            data-scroll-repeat={true}
             data-scroll-position="top"
             data-scroll-direction="horizontal"
           >

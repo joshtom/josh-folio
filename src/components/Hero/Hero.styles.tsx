@@ -10,13 +10,14 @@ const HeroContainer = styled.div`
   background-color: transparent;
   overflow: hidden;
   opacity: 0;
+  position: relative;
 
   ${({ theme }) => theme.media.custom(0, 1024)} {
     width: 85%;
   }
   ${({ theme }) => theme.media.custom(0, 768)} {
     width: 90%;
-    margin-top: 30px;
+    /* margin-top: 30px; */
   }
 
   &::after {
@@ -90,6 +91,10 @@ const Main = styled.main`
   height: auto;
   color: ${cVar("gray")};
   margin-top: 3rem;
+
+  ${({ theme }) => theme.media.mobile} {
+    margin-top: 5rem;
+  }
 `;
 const MainHead = styled.header`
   display: grid;

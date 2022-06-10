@@ -10,7 +10,7 @@ export const COLORS = {
   grayMid: "--gray-mid",
   grayDark: "--gray-dark",
   grayDarker: "--gray-darker",
-  white: "--text-white",
+  white: "--light",
   pink: "--text-pink",
   pinkDeep: "--text-pink-deep",
   asikoColor: "--asiko-color",

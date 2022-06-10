@@ -14,7 +14,6 @@ const DefaultLayoutContainer = styled.div`
 const locomotiveScroll =
   typeof window !== "undefined" ? require("locomotive-scroll").default : null;
 
-
 function Defaultlayout({ children }: DefaultLayoutProps) {
   const MainContainer = useRef(null);
   let locoScroll: any;
@@ -26,7 +25,6 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
       el: MainContainer.current,
       smooth: true,
       reloadOnContextChange: true,
-      // multiplier: 0.65,
       inertia: 0.3,
       multiplier: 0.65,
       class: "is-reveal",
@@ -34,8 +32,10 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
 
     // update locomotive scroll
     window.addEventListener("load", () => {
+      const getTop = document.querySelector("#home");
       // @ts-ignore
       locoScroll.update();
+      locoScroll.scrollTo(getTop);
     });
 
     console.clear();
@@ -50,9 +50,10 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
 
   return (
     <DefaultLayoutContainer
-      id="main-container"
+      id="home"
       data-scroll-container
       ref={MainContainer}
+      style={{ background: "red" }}
     >
       {children}
     </DefaultLayoutContainer>

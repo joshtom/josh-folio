@@ -9,12 +9,19 @@ interface Skillprops {
 function Skills({ timeline }: Skillprops) {
   const Cont = useRef(null);
   useEffect(() => {
-    timeline.from(Cont.current, {
-      duration: 1.0,
-      ease: "back",
-      y: 50,
-      opacity: 0,
-    });
+    timeline.fromTo(
+      Cont.current,
+      {
+        opacity: 0,
+        y: 50,
+      },
+      {
+        duration: 1.0,
+        ease: "back",
+        y: 0,
+        opacity: 1,
+      }
+    );
   }, [timeline]);
   return (
     <Container ref={Cont}>

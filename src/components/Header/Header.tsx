@@ -95,19 +95,30 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
     <Fragment>
       <MobileContainer ref={mobilecont}>
         <MobileNav ref={mobilenav}>
-          <MobileNavLink>
-            <a> project </a>
+          <MobileNavLink onClick={handleMobileNav}>
+            <a href="#project" data-scroll-to>
+              {" "}
+              project{" "}
+            </a>
           </MobileNavLink>
-          <MobileNavLink>
-            <a> about </a>
+          <MobileNavLink onClick={handleMobileNav}>
+            <a href="#about" data-scroll-to>
+              {" "}
+              about{" "}
+            </a>
           </MobileNavLink>
-          <MobileNavLink>
-            <a> contact </a>
+          <MobileNavLink onClick={handleMobileNav}>
+            <a href="#contact" data-scroll-to>
+              {" "}
+              contact{" "}
+            </a>
           </MobileNavLink>
         </MobileNav>
         <MobileSocial>
           <h2 ref={sayhello}>SAY HELLO ✌️</h2>
-          <p ref={email}>joshuaolarjide@gmail.com </p>
+          <a ref={email} href="mailto:joshuaolarjide@gmail.com">
+            joshuaolarjide@gmail.com{" "}
+          </a>
           <ul ref={socials}>
             <li>
               <a href="#md" target="_blank">

@@ -137,7 +137,12 @@ function Contact() {
             </a>
           </List>
           <List>
-            <a href="#home" data-scroll-to>
+            <a
+              href="#home"
+              data-scroll-to
+              data-scroll-offset="-100"
+              data-scroll-speed="-2"
+            >
               <LogoArea ref={logo}>
                 <Logo />
               </LogoArea>

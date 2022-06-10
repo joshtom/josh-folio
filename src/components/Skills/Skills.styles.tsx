@@ -6,6 +6,7 @@ const Container = styled.div`
   height: 100%;
   height: auto;
   overflow: hidden;
+  opacity: 0;
   &::-webkit-scrollbar {
     display: none;
   }

@@ -113,7 +113,7 @@ function Hero({ timeline }: Heroprops) {
   }, [timeline]);
 
   return (
-    <HeroContainer ref={HeroCont} className="smooth-scroll" id="home">
+    <HeroContainer ref={HeroCont} className="smooth-scroll" >
       <Header timeline={timeline} />
       <Main>
         <MainHead>

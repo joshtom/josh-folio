@@ -66,17 +66,26 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
         attr: { d: end },
         ease: "Power2.easeOut",
       })
-      .from([htext1.current, fText1.current, fText2.current], {
-        duration: 0.5,
-        y: 400,
-        ease: "power2.out",
-        skewY: 15,
-        stagger: {
-          amount: 0.5,
-          each: 0.1,
-          ease: "power3.out",
+      .fromTo(
+        [htext1.current, fText1.current, fText2.current],
+        {
+          duration: 0.5,
+          y: 400,
+          skewY: 15,
+          opacity: 0,
         },
-      });
+        {
+          y: 0,
+          ease: "power2.out",
+          skewY: 0,
+          opacity: 1,
+          stagger: {
+            amount: 0.5,
+            each: 0.1,
+            ease: "power3.out",
+          },
+        }
+      );
   };
 
   useEffect(() => {
@@ -122,7 +131,6 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       <WrapperContainer ref={wrappercontainer}>
         <Header>
           <Wrap ref={htext1}>
-            {/* <span>Joshua Olajide</span> */}
             <Image src={PreloaderImage} width="200" height="200" />
           </Wrap>
         </Header>

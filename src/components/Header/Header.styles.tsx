@@ -11,7 +11,7 @@ const HeaderContainer = styled.div`
   ${({ theme }) => theme.media.custom(0, 768)} {
     position: absolute;
     z-index: 100;
-    width: 90%;
+    width: 100%;
     margin: auto;
     top: 30px;
   }
@@ -153,19 +153,22 @@ const MobileSocial = styled.div`
   font-size: 5vw;
 
   h2 {
-    color: white;
+    color: ${cVar("white")};
+    margin-bottom: 10px;
   }
 
-  p {
+  a {
     color: ${cVar("pink")};
     margin-top: 10px;
-    margin-bottom: 5px;
+    margin-bottom: 10px;
+    text-decoration: none;
   }
 
   ul {
     list-style-type: none;
     padding-left: 0;
     display: flex;
+    margin-top: 10px;
     li {
       margin-right: 20px;
       a {
