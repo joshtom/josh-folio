@@ -49,12 +49,7 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
   }, []);
 
   return (
-    <DefaultLayoutContainer
-      id="home"
-      data-scroll-container
-      ref={MainContainer}
-      style={{ background: "red" }}
-    >
+    <DefaultLayoutContainer id="home" data-scroll-container ref={MainContainer}>
       {children}
     </DefaultLayoutContainer>
   );

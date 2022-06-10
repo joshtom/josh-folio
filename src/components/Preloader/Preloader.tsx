@@ -109,7 +109,12 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
     });
   }, []);
   return (
-    <Wrapper ref={wrapper}>
+    <Wrapper
+      ref={wrapper}
+      data-scroll
+      data-scroll-sticky
+      data-scroll-target="#home"
+    >
       <Trans
         className="transition"
         viewBox="0 0 100 100"
