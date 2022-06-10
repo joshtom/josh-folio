@@ -167,23 +167,33 @@ const Section3 = styled.section`
   border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
   height: 160px;
+  a {
+    color: ${cVar("white")};
+  }
   & section {
     position: relative;
     bottom: 0;
-    margin-top: 20px;
+    margin-top: 30px;
     display: inline-flex;
 
     &:before {
       position: absolute;
       content: "";
       width: 39%;
-      border: 1px solid white;
+      border: 1px solid ${cVar("grayMid")};
       top: -16px;
       left: -17px;
       bottom: -4px;
       border-radius: 50%;
       ${({ theme }) => theme.transition.default};
       box-shadow: 0px 2px 12px ${cVar("pink")};
+
+      ${({ theme }) => theme.media.mobile} {
+        width: 188px;
+        box-shadow: none;
+        border-radius: 38px;
+        border: 1px solid ${cVar("logoDark")};
+      }
     }
 
     &:hover::before,
@@ -192,6 +202,7 @@ const Section3 = styled.section`
       width: 177px;
       border-radius: 38px;
       box-shadow: none;
+      border: 1px solid ${cVar("logoDark")};
     }
 
     span {

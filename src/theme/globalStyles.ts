@@ -7,7 +7,6 @@ export const GlobalStyles = createGlobalStyle`
     --din-alternate: 'DIN Alternate', sans-serif;
     --dm-mono: 'DM Mono', monospace;
     --light: #ffffff;
-    /* --dark: #060606; */
     --dark: #161a19;
     --primary: #FE3F00;
     --secondary: #7f9993;

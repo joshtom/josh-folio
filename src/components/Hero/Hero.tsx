@@ -147,15 +147,17 @@ function Hero({ timeline }: Heroprops) {
               I Currently work at <b>FLUTTERWAVE</b>, Open for fulltime role and
               / collaboration
             </p>
-            <section
-              onMouseEnter={() => cursorChangeHandler("hovered")}
-              onMouseLeave={() => cursorChangeHandler("")}
-            >
-              <span>CONTACT ME</span>
-              <span>
-                <ArrowIcon />
-              </span>
-            </section>
+            <a href="mailto:joshuaolarjide@gmail.com">
+              <section
+                onMouseEnter={() => cursorChangeHandler("hovered")}
+                onMouseLeave={() => cursorChangeHandler("")}
+              >
+                <span>CONTACT ME</span>
+                <span>
+                  <ArrowIcon />
+                </span>
+              </section>
+            </a>
           </Section3>
         </MainBody>
         <MainFooter ref={wavyTextRef1}>Front-end Engineer</MainFooter>
