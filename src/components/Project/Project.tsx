@@ -21,7 +21,6 @@ interface Projectprops {
   timeline?: any;
 }
 
-
 function Project({ timeline }: Projectprops) {
   const Cont = useRef(null);
   const heading = useRef(null);
@@ -187,7 +186,7 @@ function Project({ timeline }: Projectprops) {
         </ProjectName>
         <a href="https://url.com" target="_blank">
           <ProjectBanner
-            className="project-banner"
+            className="hover-img"
             data-displacement="/images/distortionImage2.jpeg"
             onMouseEnter={() => cursorChangeHandler("linkhover")}
             onMouseLeave={() => cursorChangeHandler("")}
