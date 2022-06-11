@@ -136,7 +136,7 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       <WrapperContainer ref={wrappercontainer}>
         <Header>
           <Wrap ref={htext1}>
-            <Image src={PreloaderImage} width="200" height="200" />
+            <Image src={PreloaderImage} width="150" height="150" />
           </Wrap>
         </Header>
         <Footer>

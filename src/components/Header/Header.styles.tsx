@@ -72,6 +72,8 @@ const MenuArea = styled.div`
     align-items: center;
     font-size: 20px;
     overflow: hidden;
+    width: 100px;
+    justify-self: flex-end;
   }
   p {
     position: absolute;
