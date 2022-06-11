@@ -70,7 +70,7 @@ function Contact() {
             onMouseEnter={() => cursorChangeHandler("contact")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <a href="mailto:joshuaolarjide@gmail.com">
+            <a href="mailto:joshuaolarjide@gmail.com" rel="noreferrer">
               🌍 <p>joshuaolarjide@gmail.com </p>
             </a>
           </Email>
@@ -80,7 +80,7 @@ function Contact() {
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <a href="#" aria-label="resume" ref={a1}>
+            <a href="#" aria-label="resume" ref={a1} rel="noreferrer">
               RESUME
             </a>
           </List>

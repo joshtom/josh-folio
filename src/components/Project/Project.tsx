@@ -184,7 +184,7 @@ function Project({ timeline }: Projectprops) {
             INAWO{" "}
           </p>
         </ProjectName>
-        <a href="https://url.com" target="_blank">
+        <a href="https://url.com" target="_blank" rel="noreferrer">
           <ProjectBanner
             className="hover-img"
             data-displacement="/images/distortionImage2.jpeg"

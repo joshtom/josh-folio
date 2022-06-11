@@ -104,19 +104,19 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
       <MobileContainer ref={mobilecont}>
         <MobileNav ref={mobilenav}>
           <MobileNavLink onClick={handleMobileNav}>
-            <a href="#project" data-scroll-to>
+            <a href="#project" data-scroll-to rel="noreferrer">
               {" "}
               project{" "}
             </a>
           </MobileNavLink>
           <MobileNavLink onClick={handleMobileNav}>
-            <a href="#about" data-scroll-to>
+            <a href="#about" data-scroll-to rel="noreferrer">
               {" "}
               about{" "}
             </a>
           </MobileNavLink>
           <MobileNavLink onClick={handleMobileNav}>
-            <a href="#contact" data-scroll-to>
+            <a href="#contact" data-scroll-to rel="noreferrer">
               {" "}
               contact{" "}
             </a>
@@ -129,25 +129,25 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
           </a>
           <ul ref={socials}>
             <li>
-              <a href="#md" target="_blank">
+              <a href="#md" target="_blank" rel="noreferrer">
                 {" "}
                 MD.{" "}
               </a>
             </li>
             <li>
-              <a href="#tw" target="_blank">
+              <a href="#tw" target="_blank" rel="noreferrer">
                 {" "}
                 TW.{" "}
               </a>
             </li>
             <li>
-              <a href="#ln" target="_blank">
+              <a href="#ln" target="_blank" rel="noreferrer">
                 {" "}
                 LN.{" "}
               </a>
             </li>
             <li>
-              <a href="#gh" target="_blank">
+              <a href="#gh" target="_blank" rel="noreferrer">
                 {" "}
                 GH.{" "}
               </a>
