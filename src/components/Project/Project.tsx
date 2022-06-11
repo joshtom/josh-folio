@@ -156,7 +156,7 @@ function Project({ timeline }: Projectprops) {
               I&apos;ve built products that solve real-life problems ranging
               from Businesses to companies{" "}
             </p>
-            <a href="https://url" target="_blank">
+            <a href="https://url" target="_blank" rel="noreferrer">
               <p
                 ref={a1}
                 onMouseEnter={() => cursorChangeHandler("hovered")}
@@ -216,7 +216,7 @@ function Project({ timeline }: Projectprops) {
               I&apos;ve built products that solve real-life problems ranging
               from Businesses to companies{" "}
             </p>
-            <a href="https://url" target="_blank">
+            <a href="https://url" target="_blank" rel="noreferrer">
               <p
                 ref={a2}
                 onMouseEnter={() => cursorChangeHandler("hovered")}
@@ -235,6 +235,7 @@ function Project({ timeline }: Projectprops) {
           target="_blank"
           onMouseEnter={() => cursorChangeHandler("hovered")}
           onMouseLeave={() => cursorChangeHandler("")}
+          rel="noreferrer"
         >
           <Image src={MoreProject} />
         </a>

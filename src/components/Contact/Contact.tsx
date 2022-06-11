@@ -93,6 +93,7 @@ function Contact() {
               target="_blank"
               aria-label="medium"
               ref={a2}
+              rel="noreferrer"
             >
               MEDIUM
             </a>
@@ -106,6 +107,7 @@ function Contact() {
               target="_blank"
               aria-label="twitter"
               ref={a3}
+              rel="noreferrer"
             >
               TWITTER
             </a>
@@ -119,6 +121,7 @@ function Contact() {
               target="_blank"
               aria-label="resume"
               ref={a4}
+              rel="noreferrer"
             >
               LINKEDIN
             </a>
@@ -132,6 +135,7 @@ function Contact() {
               target="_blank"
               aria-label="resume"
               ref={a5}
+              rel="noreferrer"
             >
               GITHUB
             </a>
@@ -142,6 +146,7 @@ function Contact() {
               data-scroll-to
               data-scroll-offset="-100"
               data-scroll-speed="-2"
+              rel="noreferrer"
             >
               <LogoArea ref={logo}>
                 <Logo />
