@@ -144,7 +144,7 @@ function Hero({ timeline }: Heroprops) {
           </Section2>
           <Section3 ref={section3}>
             <p>
-              I Currently work at <b>FLUTTERWAVE</b>, Open for fulltime role and
+              I currently work at <b>FLUTTERWAVE</b>, open for fulltime role and
               / collaboration
             </p>
             <a href="mailto:joshuaolarjide@gmail.com">

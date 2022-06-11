@@ -11,7 +11,7 @@ const Container = styled.div`
     display: none;
   }
 
-  ${({ theme }) => theme.media.mobile} {
+  ${({ theme }) => theme.media.custom(0, 768)} {
     overflow: scroll;
   }
 `;

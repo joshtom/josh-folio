@@ -13,6 +13,7 @@ import {
   Footer,
 } from "./Project.styles";
 import MoreProject from "@assets/icons/moreProject.png";
+import ArrowIcon from "@assets/icons/Arrow";
 import { gsap } from "gsap";
 import Image from "next/image";
 
@@ -20,8 +21,6 @@ interface Projectprops {
   timeline?: any;
 }
 
-const hoverEffect =
-  typeof window !== `undefined` ? require("hover-effect").default : null;
 
 function Project({ timeline }: Projectprops) {
   const Cont = useRef(null);
@@ -90,24 +89,6 @@ function Project({ timeline }: Projectprops) {
           amount: 0.8,
         },
       });
-
-    // image hover effect
-    Array.from(document.querySelectorAll(".project-banner")).forEach(
-      (el: any) => {
-        const imgs: any = Array.from(el.querySelectorAll("img"));
-        new hoverEffect({
-          parent: el,
-          intensity: 0.2,
-          speedIn: el.dataset.speedin || undefined,
-          speedOut: el.dataset.speedout || undefined,
-          easing: el.dataset.easing || undefined,
-          hover: el.dataset.hover || undefined,
-          image1: imgs[0].getAttribute("src"),
-          image2: imgs[1].getAttribute("src"),
-          displacementImage: el.dataset.displacement,
-        });
-      }
-    );
   }, []);
 
   useEffect(() => {
@@ -146,7 +127,7 @@ function Project({ timeline }: Projectprops) {
           </p>
         </ProjectName>
         <ProjectBanner
-          className="project-banner"
+          className="hover-img"
           data-displacement="/images/myDistorsionImage.webp"
           onMouseEnter={() => cursorChangeHandler("linkhover")}
           onMouseLeave={() => cursorChangeHandler("")}
@@ -171,12 +152,21 @@ function Project({ timeline }: Projectprops) {
           >
             SOCIAL LIFESTYLE PLATFORM
           </Title>
-          <Info>
+          <Info color="asiko">
             <p ref={p1}>
               I&apos;ve built products that solve real-life problems ranging
               from Businesses to companies{" "}
             </p>
-            <p ref={a1}> VISIT SITE </p>
+            <a href="https://url" target="_blank">
+              <p
+                ref={a1}
+                onMouseEnter={() => cursorChangeHandler("hovered")}
+                onMouseLeave={() => cursorChangeHandler("")}
+              >
+                {" "}
+                VISIT SITE <ArrowIcon />
+              </p>
+            </a>
           </Info>
         </ProjectFooter>
       </Wrapper>
@@ -195,24 +185,25 @@ function Project({ timeline }: Projectprops) {
             INAWO{" "}
           </p>
         </ProjectName>
-        <ProjectBanner
-          className="project-banner"
-          data-displacement="/images/distortionImage2.jpeg"
-          onMouseEnter={() => cursorChangeHandler("linkhover")}
-          onMouseLeave={() => cursorChangeHandler("")}
-        >
-          {/* <AnimateBanner ref={animeBanner2} /> */}
-          <img
-            ref={image2}
-            src="https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-            alt="banner-image"
-          />
-          <img
-            ref={image2}
-            src="https://images.unsplash.com/photo-1529025530948-67e8a5c69b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
-            alt="banner-image"
-          />
-        </ProjectBanner>
+        <a href="https://url.com" target="_blank">
+          <ProjectBanner
+            className="project-banner"
+            data-displacement="/images/distortionImage2.jpeg"
+            onMouseEnter={() => cursorChangeHandler("linkhover")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            <img
+              ref={image2}
+              src="https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+              alt="banner-image"
+            />
+            <img
+              ref={image2}
+              src="https://images.unsplash.com/photo-1529025530948-67e8a5c69b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+              alt="banner-image"
+            />
+          </ProjectBanner>
+        </a>
         <ProjectFooter>
           <Title
             ref={title2}
@@ -221,12 +212,21 @@ function Project({ timeline }: Projectprops) {
           >
             ROBUST EVENT MANAGEMENT SYSTEM
           </Title>
-          <Info>
+          <Info color="inawo">
             <p ref={p2}>
               I&apos;ve built products that solve real-life problems ranging
               from Businesses to companies{" "}
             </p>
-            <p ref={a2}> VISIT SITE </p>
+            <a href="https://url" target="_blank">
+              <p
+                ref={a2}
+                onMouseEnter={() => cursorChangeHandler("hovered")}
+                onMouseLeave={() => cursorChangeHandler("")}
+              >
+                {" "}
+                VISIT SITE <ArrowIcon />{" "}
+              </p>
+            </a>
           </Info>
         </ProjectFooter>
       </Wrapper>

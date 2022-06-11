@@ -17,7 +17,10 @@ const HeroContainer = styled.div`
   }
   ${({ theme }) => theme.media.custom(0, 768)} {
     width: 90%;
-    /* margin-top: 30px; */
+    padding-top: 6rem;
+  }
+  ${({ theme }) => theme.media.custom(0, 468)} {
+    padding-top: 3rem;
   }
 
   &::after {
@@ -31,7 +34,7 @@ const HeroContainer = styled.div`
     left: 0;
     background: url("/images/shadow.png") no-repeat 100% 0%;
     background-size: cover;
-    animation: move 5s infinite alternate 1s;
+    animation: move 7s infinite alternate 2s;
     transform-origin: 100% 0%;
   }
 
@@ -143,9 +146,9 @@ const Section1 = styled.section`
   width: 100%;
   height: auto;
   overflow: hidden;
+
   & > img {
     object-fit: fill;
-    /* position: relative; */
   }
 `;
 const Section2 = styled.section`
@@ -188,7 +191,7 @@ const Section3 = styled.section`
       ${({ theme }) => theme.transition.default};
       box-shadow: 0px 2px 12px ${cVar("pink")};
 
-      ${({ theme }) => theme.media.mobile} {
+      ${({ theme }) => theme.media.custom(0, 768)} {
         width: 188px;
         box-shadow: none;
         border-radius: 38px;
@@ -202,7 +205,7 @@ const Section3 = styled.section`
       width: 177px;
       border-radius: 38px;
       box-shadow: none;
-      border: 1px solid ${cVar("logoDark")};
+      border: 1px solid ${cVar("pink")};
     }
 
     span {

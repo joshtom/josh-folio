@@ -1,4 +1,5 @@
 import { cVar } from "@src/helpers";
+import { ProjectType } from "@src/utils/types";
 import styled from "styled-components";
 
 const ProjectWrapper = styled.div`
@@ -44,22 +45,24 @@ const Wrapper = styled.div`
   height: 100%;
   position: relative;
   margin-bottom: 4.5rem;
-  overflow-x: hidden;
 `;
 
-const projectColor = (color: "asiko" | "inawo") => {
+const projectColor = (color: ProjectType) => {
   if (color === "asiko") return `${cVar("asikoColor")}`;
   else if (color === "inawo") return `${cVar("inawoColor")}`;
 };
 
 // Check the color passed in the ProjectName component and use that to determine the color that would be applied
-const ProjectName = styled.div<{ color: "asiko" | "inawo" }>`
+const ProjectName = styled.div<{ color: ProjectType }>`
   border-top: 1px solid ${({ color }) => projectColor(color)};
   border-bottom: 1px solid ${({ color }) => projectColor(color)};
   font-size: 64px;
   overflow: scroll;
   margin: 0 auto;
   margin-top: 30px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
 
   ${({ theme }) => theme.media.mobile} {
     font-size: 10vw;
@@ -137,13 +140,8 @@ const AnimateBanner = styled.div`
 const ProjectFooter = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
-  align-items: center;
   margin-top: 1.5rem;
-  overflow: hidden;
 
-  /* ${({ theme }) => theme.media.mobile} {
-    grid-template-columns: 1fr;
-  } */
   ${({ theme }) => theme.media.custom(0, 1024)} {
     grid-template-columns: 1fr;
   }
@@ -152,8 +150,8 @@ const Title = styled.h3`
   font-size: 48px;
   font-size: 2.5vw;
   font-family: ${cVar("dinAlternate")};
-  /* background-color: red; */
   width: 60%;
+  margin-bottom: 20px;
 
   ${({ theme }) => theme.media.custom(0, 1024)} {
     font-size: 48px;
@@ -164,12 +162,56 @@ const Title = styled.h3`
   }
 `;
 
-const Info = styled.div`
+const Info = styled.div<{ color: ProjectType }>`
   display: flex;
   flex-direction: column;
 
   p {
-    margin-bottom: 10px;
+    font-family: ${cVar("dmSans")};
+    position: relative;
+    &:last-child {
+      margin-top: 40px;
+      color: ${({ color }) => projectColor(color)};
+      display: flex;
+
+      ${({ theme }) => theme.media.custom(0, 768)} {
+        margin-top: 20px;
+      }
+
+      svg {
+        path {
+          fill: ${({ color }) => projectColor(color)};
+        }
+      }
+
+      &:before {
+        position: absolute;
+        content: "";
+        width: 63px;
+        border: 1px solid ${cVar("white")};
+        top: -18px;
+        left: -15px;
+        bottom: -8px;
+        border-radius: 50%;
+        box-shadow: 0px 2px 12px ${cVar("pink")};
+        ${({ theme }) => theme.transition.default};
+
+        ${({ theme }) => theme.media.custom(0, 768)} {
+          box-shadow: none;
+          border-radius: 38px;
+          border: none;
+        }
+      }
+
+      &:hover::before,
+      &:focus::before,
+      &:focus-within::before {
+        width: 153px;
+        border-radius: 38px;
+        box-shadow: none;
+        border: 1px solid ${cVar("white")};
+      }
+    }
   }
 `;
 

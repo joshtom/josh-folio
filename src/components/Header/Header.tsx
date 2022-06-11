@@ -1,4 +1,11 @@
-import { useCallback, useState, useContext, useRef, useEffect, Fragment } from "react";
+import {
+  useCallback,
+  useState,
+  useContext,
+  useRef,
+  useEffect,
+  Fragment,
+} from "react";
 import {
   HeaderContainer,
   LogoArea,
@@ -40,9 +47,11 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
     if (open) {
       menuTl.current.play();
       navtl.current.play();
+      document.querySelector("body").style.overflow = "hidden";
     } else {
       navtl.current.reverse();
       menuTl.current.reverse();
+      document.querySelector("body").style.overflow = "auto";
     }
   }, [open]);
 

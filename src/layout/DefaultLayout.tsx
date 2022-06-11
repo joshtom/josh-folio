@@ -1,6 +1,5 @@
 import { ReactNode, useEffect, useRef } from "react";
 import styled from "styled-components";
-import gsap from "gsap";
 interface DefaultLayoutProps {
   children: ReactNode;
   preloader?: Boolean;
@@ -13,6 +12,9 @@ const DefaultLayoutContainer = styled.div`
 
 const locomotiveScroll =
   typeof window !== "undefined" ? require("locomotive-scroll").default : null;
+
+const hoverEffect =
+  typeof window !== `undefined` ? require("hover-effect").default : null;
 
 function Defaultlayout({ children }: DefaultLayoutProps) {
   const MainContainer = useRef(null);
@@ -36,6 +38,22 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
       // @ts-ignore
       locoScroll.update();
       locoScroll.scrollTo(getTop);
+    });
+
+    // image hover effect
+    Array.from(document.querySelectorAll(".hover-img")).forEach((el: any) => {
+      const imgs: any = Array.from(el.querySelectorAll("img"));
+      new hoverEffect({
+        parent: el,
+        intensity: 0.2,
+        speedIn: el.dataset.speedin || undefined,
+        speedOut: el.dataset.speedout || undefined,
+        easing: el.dataset.easing || undefined,
+        hover: el.dataset.hover || undefined,
+        image1: imgs[0].getAttribute("src"),
+        image2: imgs[1].getAttribute("src"),
+        displacementImage: el.dataset.displacement,
+      });
     });
 
     console.clear();
