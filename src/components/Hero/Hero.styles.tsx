@@ -157,6 +157,9 @@ const Section2 = styled.section`
   border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
   height: 160px;
+  color: ${cVar("white")};
+  line-height: 30px;
+  font-size: 16px;
 
   ${({ theme }) => theme.media.smallLaptop} {
     min-height: 100%;
@@ -171,6 +174,9 @@ const Section3 = styled.section`
   border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
   height: 160px;
+  color: ${cVar("white")};
+  line-height: 30px;
+  font-size: 16px;
   a {
     color: ${cVar("white")};
     letter-spacing: ${({ theme }) => theme.letterSpacing("0.07")};
@@ -190,7 +196,6 @@ const Section3 = styled.section`
       width: 53px;
       border: 1px solid ${cVar("primary")};
       top: -20px;
-      left: -17px;
       left: -10px;
       bottom: -9px;
       border-radius: 32px;
@@ -239,7 +244,7 @@ const MainFooter = styled.h1`
   overflow: hidden;
   text-transform: uppercase;
   overflow-wrap: normal;
-  margin-top: 20px;
+  margin-top: 40px;
 
   ${({ theme }) => theme.media.smallLaptop} {
     margin-top: 50px;

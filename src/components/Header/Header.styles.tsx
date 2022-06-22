@@ -115,7 +115,7 @@ const Links = styled.li`
 const MobileContainer = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: ${cVar("dark")};
+  background-color: ${cVar("black2")};
   position: fixed;
   top: 0;
   right: 0;
@@ -156,7 +156,8 @@ const MobileSocial = styled.div`
 
   h2 {
     color: ${cVar("white")};
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: ${({ theme }) => theme.letterSpacing("0.06")};
   }
 
   a {
@@ -170,9 +171,10 @@ const MobileSocial = styled.div`
     list-style-type: none;
     padding-left: 0;
     display: flex;
-    margin-top: 10px;
+    margin-top: 14px;
     li {
       margin-right: 20px;
+      letter-spacing: ${({ theme }) => theme.letterSpacing("0.06")};
       a {
         color: ${cVar("pink")};
       }

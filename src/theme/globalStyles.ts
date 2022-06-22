@@ -46,6 +46,7 @@ export const GlobalStyles = createGlobalStyle`
     scroll-behavior:smooth;
     background-color: ${cVar("dark")};
     font-family: ${cVar("dinAlternate")};
+    overflow: hidden;
     cursor: none;
     
     @media (min-width: 400px) and (max-width: 1200px){

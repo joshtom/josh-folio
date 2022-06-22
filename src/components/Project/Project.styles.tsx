@@ -215,15 +215,18 @@ const Info = styled.div<{ color: ProjectType }>`
     font-family: ${cVar("dmSans")};
     position: relative;
     &:last-child {
-      margin-top: 40px;
+      margin-top: 20px;
       color: ${cVar("white")};
       display: flex;
+      align-items: center;
 
       ${({ theme }) => theme.media.custom(0, 768)} {
         margin-top: 20px;
       }
-
       svg {
+        width: 25px;
+        margin-left: 10px;
+        ${({ theme }) => theme.transition.default};
         path {
           fill: ${cVar("primary")};
         }
@@ -232,12 +235,12 @@ const Info = styled.div<{ color: ProjectType }>`
       &:before {
         position: absolute;
         content: "";
-        width: 63px;
+        width: 50px;
         border: 1px solid ${cVar("primary")};
-        top: -18px;
+        top: -6px;
         left: -15px;
-        bottom: -8px;
-        border-radius: 50%;
+        bottom: -9px;
+        border-radius: 50px;
         ${({ theme }) => theme.transition.default};
 
         ${({ theme }) => theme.media.custom(0, 768)} {
@@ -247,10 +250,15 @@ const Info = styled.div<{ color: ProjectType }>`
         }
       }
 
+      &:hover > svg {
+        transform: rotate(45deg);
+        transform-origin: center;
+      }
+
       &:hover::before,
       &:focus::before,
       &:focus-within::before {
-        width: 153px;
+        width: 150px;
         border-radius: 38px;
         box-shadow: none;
         border: 1px solid ${cVar("primary")};

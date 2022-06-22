@@ -31,15 +31,20 @@ const Skill = styled.div`
   width: auto;
   color: ${cVar("pink")};
   border: 1px solid ${cVar("grayMid")};
-  /* border:  1px solid ${cVar("primary")}; */
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
   border-radius: 58px;
+  letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
+  ${({ theme }) => theme.transition.default};
 
   ${({ theme }) => theme.media.mobile} {
     padding: 20px 40px;
+  }
+
+  &:hover {
+    border: 1px solid ${cVar("primary")};
   }
 `;
 

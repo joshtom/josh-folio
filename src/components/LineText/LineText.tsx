@@ -18,7 +18,7 @@ const Wrapper = styled.div`
   position: relative;
 
   & > span {
-    background: transparent;
+    background: ${cVar("black2")};
     padding: 7px 20px;
     z-index: 1;
     border: 1px solid ${cVar("grayMid")};

@@ -1,7 +1,7 @@
 export const SkillsetTop = [
   "javascript",
   "framermotion",
-  "tailwindcss",
+  "bootstrap",
   "vuejs",
   "nextjs",
   "nuxtjs",
