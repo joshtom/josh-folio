@@ -43,6 +43,10 @@ const Skill = styled.div`
     padding: 20px 40px;
   }
 
+  &.is-reveal {
+    border: 1px solid ${cVar("pinkDeep")};
+  }
+
   &:hover {
     border: 1px solid ${cVar("primary")};
   }
