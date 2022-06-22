@@ -58,6 +58,7 @@ function Hero({ timeline }: Heroprops) {
       .fromTo(
         HeroCont.current,
         {
+          duration: 1,
           opacity: 0,
         },
         {
@@ -68,7 +69,7 @@ function Hero({ timeline }: Heroprops) {
       .from(
         [chars, chars1],
         {
-          duration: 0.5,
+          duration: 1,
           opacity: 0,
           scale: 1,
           y: 40,
@@ -91,7 +92,7 @@ function Hero({ timeline }: Heroprops) {
       })
       .from(image.current, {
         scale: 1.2,
-        duration: 1,
+        duration: 1.4,
         delay: -1,
         ease: "power2.out",
       })

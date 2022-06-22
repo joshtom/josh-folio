@@ -6,11 +6,11 @@ import { Dot, Ring } from "./DotRing.styles";
 
 const DotRing = () => {
   const cursorDisplay = (cursor: cursorType | string) => {
-    if (cursor === "ahover") return "Goto";
-    else if (cursor === "linkhover") return "View";
-    else if (cursor === "buttonhover") return "Button";
-    else if (cursor === "scrolldown") return "Scroll Down";
-    else if (cursor === "contact") return "Let's talk";
+    if (cursor === "ahover") return "GOTO";
+    else if (cursor === "linkhover") return "VIEW";
+    else if (cursor === "buttonhover") return "BUTTON";
+    else if (cursor === "scrolldown") return "SCROLL DOWN";
+    else if (cursor === "contact") return "LET'S TALK";
     return null;
   };
   const { cursorType } = useContext(MouseContext);

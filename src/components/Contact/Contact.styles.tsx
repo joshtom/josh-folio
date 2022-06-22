@@ -10,7 +10,7 @@ const ContactContainer = styled.div`
   border-bottom: 1px solid ${cVar("grayMid")};
   display: flex;
   flex-direction: column;
-  padding: 25px 0px;
+  padding: 25px 0px 40px 0;
   margin-bottom: 0;
 
   ${({ theme }) => theme.media.custom(0, 1024)} {
@@ -43,10 +43,11 @@ const OverflowEmail = styled.div`
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  ${({ theme }) => theme.transition.default};
 `;
 
 const Email = styled.div`
-  background-color: ${cVar("pink")};
+  background-color: ${cVar("grayDark")};
   padding: 10px 30px;
   display: inline-flex;
   justify-content: center;
@@ -55,32 +56,41 @@ const Email = styled.div`
   border-radius: 91px;
   margin: 40px auto;
   font-size: 28px;
+  ${({ theme }) => theme.transition.default};
 
   a {
     display: flex;
     cursor: none;
   }
 
-  ${({ theme }) => theme.media.mobile} {
-    font-size: 16px;
-  }
-
   p {
-    color: ${cVar("dark")};
+    color: ${cVar("pink")};
     letter-spacing: ${({ theme }) => theme.letterSpacing("-0.01")};
     font-family: ${cVar("dmSans")};
     font-weight: 500;
     margin-left: 20px;
   }
+
+  &:hover {
+    background-color: ${cVar("pink")};
+    p {
+      color: ${cVar("dark")};
+    }
+  }
+
+  ${({ theme }) => theme.media.mobile} {
+    font-size: 16px;
+  }
 `;
 
 const Socials = styled.ul`
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(5, 1fr);
   justify-content: center;
-  align-items: center;
+  place-items: center;
+  padding-left: 0;
   gap: 20px;
-  width: 70%;
+  width: 60%;
   margin: 0 auto;
 
   ${({ theme }) => theme.media.mobile} {
@@ -99,6 +109,7 @@ const List = styled.li`
   a {
     color: ${cVar("pink")};
     letter-spacing: ${({ theme }) => theme.letterSpacing()};
+    font-size: 16px;
     cursor: none;
     ${({ theme }) => theme.transition};
     &:hover {

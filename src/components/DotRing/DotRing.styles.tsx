@@ -11,12 +11,11 @@ const Ring = styled.div`
   border: 2px solid ${cVar("pink")};
   border-radius: 50%;
   transform: translate(-50%, -50%);
-  -webkit-transition-duration: 100ms;
-  transition-duration: 100ms;
-  -webkit-transition-timing-function: ease-out;
-  transition-timing-function: ease-out;
-  will-change: width, height, transform, border;
-  /* mix-blend-mode: difference; */
+  /* -webkit-transition-duration: 100ms;
+  transition-duration: 100ms; */
+  /* -webkit-transition-timing-function: ease-out; */
+  /* transition-timing-function: ease-out; */
+  /* will-change: width, height, transform, border; */
   z-index: 999;
   pointer-events: none;
   display: flex;
@@ -34,8 +33,8 @@ const Ring = styled.div`
   &.contact {
     /* border-width: 3px; */
     border: none;
-    width: 100px;
-    height: 100px;
+    width: 130px;
+    height: 130px;
     background-color: ${cVar("pink")};
     word-wrap: break-word;
     white-space: nowrap;
@@ -57,7 +56,7 @@ const Dot = styled.div`
   width: 8px;
   height: 8px;
   background-color: black;
-  border-radius: 100%;
+  border-radius: 50%;
   transform: translate(-50%, -50%);
   z-index: 999;
   pointer-events: none;

@@ -23,7 +23,7 @@ const HeroContainer = styled.div`
     padding-top: 3rem;
   }
 
-  &::after {
+  /* &::after {
     z-index: 1000;
     content: "";
     pointer-events: none;
@@ -42,7 +42,7 @@ const HeroContainer = styled.div`
     to {
       transform: scaleX(1.1);
     }
-  }
+  } */
 `;
 
 const HeroHeading = styled.h1<{ desktop: boolean }>`
@@ -149,6 +149,7 @@ const Section1 = styled.section`
 
   & > img {
     object-fit: fill;
+    background-color: ${cVar("dark")};
   }
 `;
 const Section2 = styled.section`
@@ -172,47 +173,57 @@ const Section3 = styled.section`
   height: 160px;
   a {
     color: ${cVar("white")};
+    letter-spacing: ${({ theme }) => theme.letterSpacing("0.07")};
+    font-size: 16px;
   }
   & section {
     position: relative;
     bottom: 0;
-    margin-top: 30px;
+    margin-top: 25px;
     display: inline-flex;
+    align-items: center;
 
     &:before {
       position: absolute;
       content: "";
       width: 39%;
-      border: 1px solid ${cVar("grayMid")};
-      top: -16px;
+      width: 53px;
+      border: 1px solid ${cVar("primary")};
+      top: -20px;
       left: -17px;
-      bottom: -4px;
-      border-radius: 50%;
+      left: -10px;
+      bottom: -9px;
+      border-radius: 32px;
       ${({ theme }) => theme.transition.default};
-      box-shadow: 0px 2px 12px ${cVar("pink")};
 
       ${({ theme }) => theme.media.custom(0, 768)} {
         width: 188px;
         box-shadow: none;
         border-radius: 38px;
-        border: 1px solid ${cVar("logoDark")};
+        border: 1px solid ${cVar("grayDark")};
       }
+    }
+    span {
+      margin-top: -12px;
+      margin-left: 10px;
+      svg {
+        width: 25px;
+        ${({ theme }) => theme.transition.default};
+      }
+    }
+
+    &:hover > span > svg {
+      transform: rotate(45deg);
+      transform-origin: center;
     }
 
     &:hover::before,
     &:focus::before,
     &:focus-within::before {
-      width: 177px;
+      width: 190px;
       border-radius: 38px;
       box-shadow: none;
-      border: 1px solid ${cVar("pink")};
-    }
-
-    span {
-      /* font-size: 14px; */
-      svg {
-        width: 30px;
-      }
+      border: 1px solid ${cVar("primary")};
     }
   }
   ${({ theme }) => theme.media.mobile} {

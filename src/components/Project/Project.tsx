@@ -3,7 +3,6 @@ import { MouseContext } from "@context/mouse-context";
 import {
   ProjectWrapper,
   Heading,
-  SubHeading,
   Wrapper,
   ProjectName,
   ProjectBanner,
@@ -107,13 +106,10 @@ function Project({ timeline }: Projectprops) {
       data-scroll-container
     >
       <Heading ref={heading}>I build Product that works 🚀</Heading>
-      <SubHeading>
-        {" "}
-        Not only do I pay attention to every detail but I build product consumed
-        by humans.{" "}
-      </SubHeading>
       <Wrapper ref={wrapper1} id="theWrapper">
-        <ProjectName color="asiko">
+        <ProjectName color="asiko" data-scroll>
+          {/* <span id="lineTop"></span>
+          <span id="lineBottom"></span> */}
           <p
             data-scroll
             data-scroll-speed="2"
@@ -131,7 +127,6 @@ function Project({ timeline }: Projectprops) {
           onMouseEnter={() => cursorChangeHandler("linkhover")}
           onMouseLeave={() => cursorChangeHandler("")}
         >
-          {/* <AnimateBanner ref={animeBanner1} /> */}
           <img
             ref={image1}
             src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGZhc2hpb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
@@ -172,7 +167,7 @@ function Project({ timeline }: Projectprops) {
 
       {/*  */}
       <Wrapper ref={wrapper2} id="theWrapper">
-        <ProjectName color="inawo">
+        <ProjectName color="inawo" data-scroll>
           <p
             data-scroll
             data-scroll-speed="4"

@@ -14,7 +14,8 @@ export const GlobalStyles = createGlobalStyle`
     --text-pink: #FDEEE7;
     --text-pink-deep: #dbb59b;
     --gray: #E5E5E5;
-    --gray-dark: #C4C4C4;
+    /* --gray-dark: #C4C4C4; */
+    --gray-dark: #262626;
     --gray-mid: #aaaaaa57;
     --gray-darker: #141414;
     --black: #000000;
@@ -54,6 +55,40 @@ export const GlobalStyles = createGlobalStyle`
     @media (min-width: 1200px){
           font-size: 18px;
       }
-      
+  }
+  /* Custom style */
+  .rotate {
+    transform: rotate(0deg);
+    transform-origin: center;
+    animation: rotate 7s infinite alternate 2s;
+    @keyframes rotate {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+  }
+  
+.ANIMATE-TEXT {
+  background: linear-gradient(
+    to right,
+    var(--text-pink) 20%,
+    var(--text-pink-deep) 40%,
+    var(--warning) 60%,
+    var(--light) 80%
+  );
+  background-size: 200% auto;
 
-  }`;
+  color: #000;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+
+  animation: shine 5s linear infinite;
+}
+
+@keyframes shine {
+  to {
+    background-position: 200% center;
+  }
+}
+  `;

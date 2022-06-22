@@ -5,7 +5,7 @@ const AboutContainer = styled.div`
   width: 75%;
   margin: 2rem auto;
   height: auto;
-  background-color: ${cVar("dark")};
+  background-color: transparent;
   padding: 25px 0px;
   h1 {
     color: ${cVar("light")};

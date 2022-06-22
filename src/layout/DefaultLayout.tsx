@@ -27,9 +27,10 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
       el: MainContainer.current,
       smooth: true,
       reloadOnContextChange: true,
-      inertia: 0.3,
-      multiplier: 0.65,
+      inertia: 1,
       class: "is-reveal",
+      offset: 0,
+      multiplier: 1,
     });
 
     // update locomotive scroll

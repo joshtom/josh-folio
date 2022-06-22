@@ -18,12 +18,12 @@ const HeaderContainer = styled.div`
 `;
 
 const LogoArea = styled.p`
-  color: ${cVar("pink")};
+  color: ${cVar("grayMid")};
   grid-area: logo;
   align-self: center;
   justify-items: center;
   font-family: ${cVar("dinAlternate")};
-  background-color: ${cVar("primary")};
+  background-color: ${cVar("grayMid")};
   width: 63px;
   height: 63px;
   border-radius: 50%;
@@ -34,7 +34,7 @@ const LogoArea = styled.p`
   ${({ theme }) => theme.transition.default};
 
   &:hover {
-    background-color: ${cVar("black2")};
+    background-color: ${cVar("primary")};
   }
 
   ${({ theme }) => theme.media.mobile} {

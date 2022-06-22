@@ -17,6 +17,7 @@ const FooterContainer = styled.footer`
   p {
     color: ${cVar("pink")};
     font-size: 18px;
+    text-transform: uppercase;
 
     span {
       ${({ theme }) => theme.media.custom(0, 768)} {

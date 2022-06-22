@@ -56,7 +56,7 @@ function Contact() {
 
   return (
     <div ref={Cont} id="contact">
-      <LineText>shoot your shot 🌍</LineText>
+      <LineText>shoot your shot 🚀</LineText>
       <ContactContainer>
         <Overflow>
           <Heading ref={header} className="ANIMATE-TEXT">
@@ -140,7 +140,7 @@ function Contact() {
               GITHUB
             </a>
           </List>
-          <List>
+          {/* <List>
             <a
               href="#home"
               data-scroll-to
@@ -152,7 +152,7 @@ function Contact() {
                 <Logo />
               </LogoArea>
             </a>
-          </List>
+          </List> */}
         </Socials>
       </ContactContainer>
     </div>
