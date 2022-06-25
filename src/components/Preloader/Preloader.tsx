@@ -13,7 +13,6 @@ import {
 } from "./Preloader.styles";
 import Image from "next/image";
 import PreloaderImage from "@assets/images/preloader.png";
-import { clearInterval } from "timers";
 
 interface PreloaderProps {
   timeline?: any;

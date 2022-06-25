@@ -32,6 +32,9 @@ function Hero({ timeline }: Heroprops) {
   const section1 = useRef(null);
   const section2 = useRef(null);
   const section3 = useRef(null);
+  const section4 = useRef(null);
+  const sectionLine1 = useRef(null);
+  const sectionLine2 = useRef(null);
   const scroller = useRef(null);
   const animeBanner = useRef(null);
   const image = useRef(null);
@@ -96,14 +99,18 @@ function Hero({ timeline }: Heroprops) {
         delay: -1,
         ease: "power2.out",
       })
-      .from([section2.current, section3.current], {
+      .from([sectionLine1.current, sectionLine2.current], {
+        scaleX: 0,
+        stagger: {
+          amount: 0.1,
+        },
+      })
+      .from([section2.current, section3.current, section4.current], {
         opacity: 0,
         scale: 1,
-        delay: -1,
-        ease: "back",
         y: 30,
         stagger: {
-          amount: 0.6,
+          amount: 0.1,
         },
       })
       .from(scroller.current, {
@@ -139,16 +146,24 @@ function Hero({ timeline }: Heroprops) {
             />
           </Section1>
           <MainBodyHeading> Frontend Engineer</MainBodyHeading>
-          <Section2 ref={section2}>
-            I’m a frontend engineer that loves to create scalable, fast and
-            mobile-first web applications
+          <Section2>
+            <span id="topLine" ref={sectionLine1}>
+              {" "}
+            </span>
+            <p ref={section2}>
+              I’m a frontend engineer that loves to create scalable, fast and
+              mobile-first web applications
+            </p>
           </Section2>
-          <Section3 ref={section3}>
-            <p>
+          <Section3>
+            <span id="topLine" ref={sectionLine2}>
+              {" "}
+            </span>
+            <p ref={section3}>
               I currently work at <b>FLUTTERWAVE</b>, open for fulltime role and
               / collaboration
             </p>
-            <a href="mailto:joshuaolarjide@gmail.com">
+            <a href="mailto:joshuaolarjide@gmail.com" ref={section4}>
               <section
                 onMouseEnter={() => cursorChangeHandler("hovered")}
                 onMouseLeave={() => cursorChangeHandler("")}

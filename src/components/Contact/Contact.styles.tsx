@@ -2,6 +2,8 @@ import { cVar } from "@src/helpers";
 import styled from "styled-components";
 
 const ContactContainer = styled.div`
+  /* background-color: red; */
+  position: relative;
   width: 75%;
   margin: 3rem auto;
   height: auto;
@@ -118,4 +120,57 @@ const List = styled.li`
   }
 `;
 
-export { ContactContainer, OverflowEmail, Heading, Email, Socials, List };
+const ScrollUp = styled.div`
+  position: absolute;
+  bottom: 46px;
+  right: 0;
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background-color: ${cVar("grayMid")};
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+  ${({ theme }) => theme.transition.default};
+
+  svg {
+    transform: rotate(315deg);
+    width: 20px;
+    ${({ theme }) => theme.transition.default};
+    animation: scroll 800ms cubic-bezier(0.76, 0, 0.24, 1) infinite alternate;
+
+    @keyframes scroll {
+      0% {
+        transform: translateY(-10px) rotate(315deg);
+      }
+
+      100% {
+        transform: translateY(0px) rotate(315deg);
+      }
+    }
+  }
+
+  &:hover {
+    background: ${cVar("primary")};
+    svg > path {
+      fill: ${cVar("pink")};
+    }
+  }
+
+  /* Responsiveness */
+  ${({ theme }) => theme.media.mobile} {
+    right: 27px;
+    bottom: 4px;
+  }
+`;
+
+export {
+  ContactContainer,
+  OverflowEmail,
+  Heading,
+  Email,
+  Socials,
+  List,
+  ScrollUp,
+};

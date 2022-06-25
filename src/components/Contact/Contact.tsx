@@ -1,7 +1,5 @@
 import { useEffect, useRef, useContext } from "react";
 import { MouseContext } from "@context/mouse-context";
-import Logo from "@src/assets/icons/Logo";
-import { LogoArea } from "../Header/Header.styles";
 import { LineText } from "../LineText/LineText";
 import { gsap } from "gsap";
 import {
@@ -11,8 +9,10 @@ import {
   List,
   Heading,
   OverflowEmail,
+  ScrollUp,
 } from "./Contact.styles";
 import { Overflow } from "../About/About.styles";
+import ArrowIcon from "@assets/icons/Arrow";
 
 function Contact() {
   const Cont = useRef(null);
@@ -153,6 +153,11 @@ function Contact() {
               </LogoArea>
             </a>
           </List> */}
+          <a href="#home" data-scroll-to style={{ cursor: "pointer" }}>
+            <ScrollUp>
+              <ArrowIcon />
+            </ScrollUp>
+          </a>
         </Socials>
       </ContactContainer>
     </div>

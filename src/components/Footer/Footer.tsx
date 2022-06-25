@@ -7,6 +7,7 @@ const FooterContainer = styled.footer`
   justify-content: space-between;
   width: 75%;
   margin: 20px auto 0 auto;
+  font-family: ${cVar("dmSans")};
 
   ${({ theme }) => theme.media.custom(0, 1024)} {
     width: 85%;

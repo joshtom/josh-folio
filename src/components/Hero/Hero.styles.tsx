@@ -138,6 +138,19 @@ const MainBody = styled.main`
   ${({ theme }) => theme.media.mobile} {
     grid-template-columns: 1fr;
   }
+
+  /* Top Line code goes here because it covers section 2 and 3 */
+  #topLine {
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 1px;
+    background-color: ${cVar("primary")};
+    left: 0;
+    right: 0;
+    transform-origin: center left;
+    /* transform: scaleX(0); */
+  }
 `;
 
 const Section1 = styled.section`
@@ -153,8 +166,8 @@ const Section1 = styled.section`
   }
 `;
 const Section2 = styled.section`
+  position: relative;
   font-family: ${cVar("dmSans")};
-  border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
   height: 160px;
   color: ${cVar("white")};
@@ -170,8 +183,8 @@ const Section2 = styled.section`
   }
 `;
 const Section3 = styled.section`
+  position: relative;
   font-family: ${cVar("dmSans")};
-  border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
   height: 160px;
   color: ${cVar("white")};
@@ -205,7 +218,7 @@ const Section3 = styled.section`
         width: 188px;
         box-shadow: none;
         border-radius: 38px;
-        border: 1px solid ${cVar("grayDark")};
+        border: none;
       }
     }
     span {
@@ -229,6 +242,10 @@ const Section3 = styled.section`
       border-radius: 38px;
       box-shadow: none;
       border: 1px solid ${cVar("primary")};
+
+      ${({ theme }) => theme.media.custom(0, 768)} {
+        border: none;
+      }
     }
   }
   ${({ theme }) => theme.media.mobile} {
@@ -248,17 +265,10 @@ const MainFooter = styled.h1`
 
   ${({ theme }) => theme.media.smallLaptop} {
     margin-top: 50px;
-    /* background-color: red; */
   }
   ${({ theme }) => theme.media.mobile} {
     display: none;
   }
-
-  /* &::after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-  } */
 `;
 export {
   HeroContainer,

@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Hero from "@src/components/Hero/Hero";
 import { cVar } from "@src/helpers";
 import type { NextPage } from "next";
@@ -20,6 +20,8 @@ const Container = styled.div`
   padding-bottom: 3rem;
 `;
 
+
+
 const Home: NextPage = () => {
   const timeline = gsap.timeline();
   const gsaptimeline = gsap.timeline();
@@ -33,14 +35,13 @@ const Home: NextPage = () => {
             name="description"
             content="I am a frontend engineer that loves to create scalable, fast and mobile-first web applications"
           />
-          <link rel="icon" href="/favicon.ico" />
+          <link rel="icon" href="/favicon.png" />
         </Head>
         <Preloader timeline={timeline} />
         <Hero timeline={gsaptimeline} />
         <Skills timeline={gsaptimeline} />
         <Project timeline={gsaptimeline} />
         <About />
-        {/* <Contact timeline={gsaptimeline} /> */}
         <Contact />
         <Footer timeline={gsaptimeline} />
       </Container>
