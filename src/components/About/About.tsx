@@ -38,9 +38,12 @@ function About() {
               color: `${cVar("pink")}`,
               marginBottom: "20px",
               lineHeight: "1.7",
+              fontSize: '20px',
+              fontFamily: `${cVar("dmSans")}`,
             }}
           >
-            Over the last few years my area of expertise spans across this areas
+            Over the last few years my area of expertise spans across these
+            areas.
           </p>
         </Overflow>
         {Panels.map((data, index) => (

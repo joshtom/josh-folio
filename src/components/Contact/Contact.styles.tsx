@@ -73,13 +73,6 @@ const Email = styled.div`
     margin-left: 20px;
   }
 
-  /* &:hover {
-    background-color: ${cVar("pink")};
-    p {
-      color: ${cVar("dark")};
-    }
-  } */
-
   ${({ theme }) => theme.media.mobile} {
     font-size: 16px;
   }
@@ -105,17 +98,48 @@ const Socials = styled.ul`
 const List = styled.li`
   display: flex;
   text-transform: uppercase;
-  overflow: hidden;
   ${({ theme }) => theme.transition};
 
   a {
     color: ${cVar("pink")};
-    letter-spacing: ${({ theme }) => theme.letterSpacing()};
+    display: flex;
+    flex-direction: column;
+    height: auto;
     font-size: 16px;
-    cursor: none;
-    ${({ theme }) => theme.transition};
+    letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
+    position: relative;
+    cursor: pointer !important;
+    ${({ theme }) => theme.transition.default};
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: ${cVar("pinkDeep")};
+      bottom: -4px;
+      left: 0;
+      pointer-events: none;
+    }
+
+    &::before {
+      content: "";
+    }
+
+    &.link::before {
+      transform-origin: 100% 50%;
+      transform: scale3d(0, 1, 1);
+      transition: transform 0.3s;
+      ${({ theme }) => theme.transition.default};
+    }
+
+    &.link:hover::before {
+      transform-origin: 0% 50%;
+      transform: scale3d(1, 1, 1);
+    }
+
     &:hover {
-      font-style: italic;
+      color: ${cVar("pinkDeep")};
     }
   }
 `;

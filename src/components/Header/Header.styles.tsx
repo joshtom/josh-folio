@@ -67,6 +67,8 @@ const MenuArea = styled.div`
   height: auto;
   position: relative;
   grid-area: links;
+  background-color: green;
+  width: 400px;
   ${({ theme }) => theme.media.custom(0, 768)} {
     display: flex;
     align-items: center;
@@ -88,25 +90,49 @@ const MenuArea = styled.div`
 const Links = styled.li`
   font-weight: 700;
   color: ${cVar("pink")};
-  cursor: none;
-  /* overflow: hidden; */
-  /* transition: all 300ms ease-in-out; */
+
+  position: relative;
 
   a {
-    color: ${cVar("white")};
+    color: ${cVar("light")};
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    height: 30px;
+    font-size: 16px;
+    height: auto;
+    letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
     position: relative;
-    span {
-      transition: all 1s ease-in-out;
+    cursor: pointer !important;
+    ${({ theme }) => theme.transition.default};
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: ${cVar("pinkDeep")};
+      bottom: -4px;
+      left: 0;
+      pointer-events: none;
+    }
+
+    &::before {
+      content: "";
+    }
+
+    &.link::before {
+      transform-origin: 100% 50%;
+      transform: scale3d(0, 1, 1);
+      transition: transform 0.3s;
+      ${({ theme }) => theme.transition.default};
+    }
+
+    &.link:hover::before {
+      transform-origin: 0% 50%;
+      transform: scale3d(1, 1, 1);
     }
 
     &:hover {
-      span {
-        font-style: italic;
-      }
+      color: ${cVar("pinkDeep")};
     }
   }
 `;

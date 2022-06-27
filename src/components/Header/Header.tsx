@@ -27,9 +27,6 @@ interface HeaderProps {
 
 const Header: React.FC<HeaderProps> = ({ timeline }) => {
   let header = useRef(null);
-  const linkTop = useRef(null);
-  const linkTop2 = useRef(null);
-  const linkTop3 = useRef(null);
   const mobilecont = useRef(null);
   const mobilenav = useRef(null);
   const sayhello = useRef(null);
@@ -54,6 +51,14 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
       document.querySelector("body").style.overflow = "auto";
     }
   }, [open]);
+
+  let handleHover = useCallback(() => {
+    cursorChangeHandler("hovered");
+  }, []);
+
+  let handleHoverOut = useCallback(() => {
+    cursorChangeHandler("");
+  }, []);
 
   useEffect(() => {
     navtl.current = gsap.timeline({ paused: true });
@@ -91,7 +96,7 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
         },
       });
 
-    //
+    // Entrance animation
     timeline.from(header.current, {
       delay: 0.5,
       ease: "power4.out",
@@ -99,6 +104,7 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
       opacity: 1,
     });
   }, [timeline]);
+
   return (
     <Fragment>
       <MobileContainer ref={mobilecont}>
@@ -160,29 +166,19 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
           <Logo />
         </LogoArea>
         <LinkArea>
-          <Links
-            onMouseEnter={() => cursorChangeHandler("hovered")}
-            onMouseLeave={() => cursorChangeHandler("")}
-            style={{ background: 'red' }}
-          >
-            <a href="#project" data-scroll-to>
-              <span ref={linkTop}>PROJECTS</span>
+          <Links onMouseEnter={handleHover} onMouseLeave={handleHoverOut}>
+            <a href="#project" data-scroll-to className="link">
+              PROJECTS
             </a>
           </Links>
-          <Links
-            onMouseEnter={() => cursorChangeHandler("hovered")}
-            onMouseLeave={() => cursorChangeHandler("")}
-          >
-            <a href="#about" data-scroll-to>
-              <span ref={linkTop2}>ABOUT</span>
+          <Links onMouseEnter={handleHover} onMouseLeave={handleHoverOut}>
+            <a href="#about" data-scroll-to className="link">
+              ABOUT
             </a>
           </Links>
-          <Links
-            onMouseEnter={() => cursorChangeHandler("hovered")}
-            onMouseLeave={() => cursorChangeHandler("")}
-          >
-            <a href="#contact" data-scroll-to>
-              <span ref={linkTop3}>CONTACT</span>
+          <Links onMouseEnter={handleHover} onMouseLeave={handleHoverOut}>
+            <a href="#contact" data-scroll-to className="link">
+              CONTACT
             </a>
           </Links>
         </LinkArea>
