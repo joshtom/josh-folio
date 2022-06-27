@@ -275,10 +275,24 @@ const Footer = styled.footer`
   align-items: center;
 
   & > a {
-    &:hover,
-    &:focus-visible,
-    &:focus-within {
-      animation: rotate-animation 10s infinite linear;
+    position: relative;
+    display: inline-block;
+    & > span {
+      &:hover,
+      &:focus-visible,
+      &:focus-within {
+        animation: rotate-animation 10s infinite linear;
+      }
+    }
+    & > section {
+      background-color: transparent;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      bottom: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 

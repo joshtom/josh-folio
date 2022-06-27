@@ -67,7 +67,6 @@ const MenuArea = styled.div`
   height: auto;
   position: relative;
   grid-area: links;
-  background-color: green;
   width: 400px;
   ${({ theme }) => theme.media.custom(0, 768)} {
     display: flex;

@@ -11,7 +11,9 @@ import {
   Info,
   Footer,
 } from "./Project.styles";
-import MoreProject from "@assets/icons/moreProject.png";
+// import MoreProject from "@assets/icons/moreProject.png";
+import MoreProject from "@assets/icons/mp.png";
+import Emoji from "@assets/icons/emoji.png";
 import ArrowIcon from "@assets/icons/Arrow";
 import { gsap } from "gsap";
 import Image from "next/image";
@@ -233,6 +235,9 @@ function Project({ timeline }: Projectprops) {
           rel="noreferrer"
         >
           <Image src={MoreProject} />
+          <section>
+            <Image src={Emoji} />
+          </section>
         </a>
       </Footer>
     </ProjectWrapper>
