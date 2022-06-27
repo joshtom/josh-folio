@@ -163,6 +163,7 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
           <Links
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
+            style={{ background: 'red' }}
           >
             <a href="#project" data-scroll-to>
               <span ref={linkTop}>PROJECTS</span>

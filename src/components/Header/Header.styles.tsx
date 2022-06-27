@@ -89,8 +89,8 @@ const Links = styled.li`
   font-weight: 700;
   color: ${cVar("pink")};
   cursor: none;
-  overflow: hidden;
-  transition: all 300ms ease-in-out;
+  /* overflow: hidden; */
+  /* transition: all 300ms ease-in-out; */
 
   a {
     color: ${cVar("white")};

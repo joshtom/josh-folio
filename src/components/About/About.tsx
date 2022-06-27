@@ -44,7 +44,11 @@ function About() {
           </p>
         </Overflow>
         {Panels.map((data, index) => (
-          <Accordion onClick={() => handleActive(data, index)} className="accordion">
+          <Accordion
+            onClick={() => handleActive(data, index)}
+            className="accordion"
+            key={data.id}
+          >
             <AccordionHeader
               role="tab"
               aria-expanded={isActive && selectedElement === index + 1}

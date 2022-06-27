@@ -73,12 +73,12 @@ const Email = styled.div`
     margin-left: 20px;
   }
 
-  &:hover {
+  /* &:hover {
     background-color: ${cVar("pink")};
     p {
       color: ${cVar("dark")};
     }
-  }
+  } */
 
   ${({ theme }) => theme.media.mobile} {
     font-size: 16px;

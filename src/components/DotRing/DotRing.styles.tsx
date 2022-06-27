@@ -7,37 +7,28 @@ const Ring = styled.div`
   left: 0;
   width: 35px;
   height: 35px;
-  border: 2px solid rgba(31, 30, 30, 0.808);
-  border: 2px solid ${cVar("pink")};
+  border: 1px solid ${cVar("light")};
   border-radius: 50%;
-  transform: translate(-50%, -50%);
-  /* -webkit-transition-duration: 100ms;
-  transition-duration: 100ms; */
-  /* -webkit-transition-timing-function: ease-out; */
-  /* transition-timing-function: ease-out; */
-  /* will-change: width, height, transform, border; */
   z-index: 999;
   pointer-events: none;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  overflow: hidden;
 
-  &.hovered {
-    border-width: 3px;
-    background-color: ${cVar("pink")};
-    mix-blend-mode: difference;
-  }
+  section {
+    text-align: center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: lighter;
 
-  &.scrolldown,
-  &.linkhover,
-  &.contact {
-    /* border-width: 3px; */
-    border: none;
-    width: 130px;
-    height: 130px;
-    background-color: ${cVar("pink")};
-    word-wrap: break-word;
-    white-space: nowrap;
+    span {
+      font-size: 10px;
+      ${({ theme }) => theme.letterSpacing("0.08")};
+    }
   }
 
   ${({ theme }) => theme.media.tablet} {
@@ -51,23 +42,14 @@ const Ring = styled.div`
 
 const Dot = styled.div`
   position: fixed;
-  top: 50%;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  background-color: black;
+  top: 15px;
+  left: 15px;
+  width: 5px;
+  height: 5px;
   border-radius: 50%;
-  transform: translate(-50%, -50%);
   z-index: 999;
   pointer-events: none;
   background-color: ${cVar("pink")};
-
-  &.hovered,
-  &.scrolldown,
-  &.linkhover,
-  &.contact {
-    display: none;
-  }
 
   ${({ theme }) => theme.media.tablet} {
     display: none;
