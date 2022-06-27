@@ -37,8 +37,8 @@ function About() {
             style={{
               color: `${cVar("pink")}`,
               marginBottom: "20px",
-              lineHeight: "1.7",
-              fontSize: '20px',
+              lineHeight: "1.4",
+              fontSize: "20px",
               fontFamily: `${cVar("dmSans")}`,
             }}
           >

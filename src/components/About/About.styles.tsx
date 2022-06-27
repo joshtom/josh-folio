@@ -112,7 +112,9 @@ const AccordionBody = styled.p`
   color: ${cVar("pink")};
   line-height: 41px;
   font-family: ${cVar("dmSans")};
-  padding-top: 20px;
+  padding: 20px 0;
+  font-weight: 100;
+  /* background-color: red; */
   opacity: 1;
   ${({ theme }) => theme.transition.default};
 
