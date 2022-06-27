@@ -17,6 +17,16 @@ const AboutContainer = styled.div`
   ${({ theme }) => theme.media.custom(0, 768)} {
     width: 90%;
   }
+  & > .accordion {
+    &:last-child {
+      & > header {
+        border-bottom: none;
+        &:focus {
+          border-bottom: 1px solid ${cVar("grayMid")};
+        }
+      }
+    }
+  }
 `;
 const AboutParagraph = styled.p`
   font-size: 20px;
@@ -47,7 +57,6 @@ const AccordionHeader = styled.header`
   width: 100%;
   border: none;
   text-align: left;
-  /* padding: 25px 60px 25px 25px; */
   padding: 25px 0;
   font-weight: 500;
   font-size: 17px;
@@ -65,7 +74,6 @@ const AccordionHeader = styled.header`
   &::before {
     content: "";
     position: absolute;
-    right: 25px;
     right: 0;
     top: 50%;
     width: 40px;
