@@ -26,7 +26,7 @@ export const Panels: { id: number; label: string; content: string }[] = [
     id: 1,
     label: "ENGINEERING",
     content:
-      "I have built products that solve real-life problems ranging from Businesses to companies with focus on creating fast, and accessible user experiences using advanced web technologies.  ",
+      "With my engineering skills I love to build products that solve real-life problems ranging from businesses to companies with focus on creating fast, and accessible user experiences using advanced web technologies.  ",
   },
   {
     id: 2,

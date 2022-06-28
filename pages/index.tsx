@@ -31,11 +31,6 @@ const Home: NextPage = () => {
       <Container>
         <Head>
           <title>Joshua Olajide | Home</title>
-          <meta
-            name="description"
-            content="I am a frontend engineer that loves to create scalable, fast and mobile-first web applications"
-          />
-          <link rel="icon" href="/favicon.png" />
         </Head>
         <Preloader timeline={timeline} />
         <Hero timeline={gsaptimeline} />

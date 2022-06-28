@@ -37,6 +37,7 @@ export default class MyDocument extends Document {
             href="https://fonts.gstatic.com"
             crossOrigin="anonymous"
           />
+          <link rel="icon" href="/favicon.png" />
           <link
             href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
             rel="stylesheet"
@@ -63,8 +64,7 @@ export default class MyDocument extends Document {
             content="Joshua Olajide | Frontend Engineer"
           />
           <meta property="og:url" content="https://josh-folio.netlify.app/" />
-          {/* Update this to a preview image later */}
-          {/* <meta property="og:image" content="webp/preview-image.png" /> */}
+          <meta property="og:image" content="webp/preloader2.png" />
           <meta
             property="og:description"
             content="I’m a frontend engineer that loves to create scalable, fast and
@@ -79,7 +79,7 @@ export default class MyDocument extends Document {
             content="I’m a frontend engineer that loves to create scalable, fast and
             mobile-first web applications"
           />
-          <meta name="twitter:image" content="webp/preview-image.png" />
+          <meta name="twitter:image" content="webp/preloader2.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content="https://josh-folio.netlify.app/" />
         </Head>
