@@ -124,17 +124,12 @@ function Hero({ timeline }: Heroprops) {
   }, [timeline]);
 
   useEffect(() => {
-    console.log(section1.current);
-
     new hoverEffect({
       parent: section1.current,
       imagesRatio: 4 / 9,
       intensity: 0.4,
       image1: "/images/fot2.png",
-      // image2: "https://picsum.photos/420/620",
-      image2: "/images/fot2.png",
-      // displacementImage:
-      //   "https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg",
+      image2: "/images/fot2.png", // Replace this with the image without grayscale
       displacementImage: "/images/myDistorsionImage.webp",
     });
   }, [section1]);
