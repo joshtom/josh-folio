@@ -7,6 +7,7 @@ const FooterContainer = styled.footer`
   justify-content: space-between;
   width: 75%;
   margin: 20px auto 0 auto;
+  font-family: ${cVar("dmSans")};
 
   ${({ theme }) => theme.media.custom(0, 1024)} {
     width: 85%;
@@ -17,6 +18,7 @@ const FooterContainer = styled.footer`
   p {
     color: ${cVar("pink")};
     font-size: 18px;
+    text-transform: uppercase;
 
     span {
       ${({ theme }) => theme.media.custom(0, 768)} {
@@ -35,11 +37,7 @@ function Footer({ timeline }: Footerprops) {
 
   useEffect(() => {
     timeline.from(Cont.current, {
-      // delay: 9,
-      // ease: "power4.out",
       ease: "bounce.out",
-      // skewY: 7,
-      // y: 400,
       opacity: 0,
       stagger: {
         amount: 0.3,

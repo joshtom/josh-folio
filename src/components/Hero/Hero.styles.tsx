@@ -23,7 +23,7 @@ const HeroContainer = styled.div`
     padding-top: 3rem;
   }
 
-  &::after {
+  /* &::after {
     z-index: 1000;
     content: "";
     pointer-events: none;
@@ -42,7 +42,7 @@ const HeroContainer = styled.div`
     to {
       transform: scaleX(1.1);
     }
-  }
+  } */
 `;
 
 const HeroHeading = styled.h1<{ desktop: boolean }>`
@@ -138,6 +138,19 @@ const MainBody = styled.main`
   ${({ theme }) => theme.media.mobile} {
     grid-template-columns: 1fr;
   }
+
+  /* Top Line code goes here because it covers section 2 and 3 */
+  #topLine {
+    position: absolute;
+    content: "";
+    top: 0;
+    height: 1px;
+    background-color: ${cVar("primary")};
+    left: 0;
+    right: 0;
+    transform-origin: center left;
+    /* transform: scaleX(0); */
+  }
 `;
 
 const Section1 = styled.section`
@@ -149,13 +162,19 @@ const Section1 = styled.section`
 
   & > img {
     object-fit: fill;
+    object-fit: contain;
+    background-color: ${cVar("dark")};
   }
+  
 `;
 const Section2 = styled.section`
+  position: relative;
   font-family: ${cVar("dmSans")};
-  border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
   height: 160px;
+  color: ${cVar("white")};
+  line-height: 30px;
+  font-size: 16px;
 
   ${({ theme }) => theme.media.smallLaptop} {
     min-height: 100%;
@@ -166,52 +185,68 @@ const Section2 = styled.section`
   }
 `;
 const Section3 = styled.section`
+  position: relative;
   font-family: ${cVar("dmSans")};
-  border-top: 1px solid ${cVar("primary")};
   padding-top: 1rem;
   height: 160px;
+  color: ${cVar("white")};
+  line-height: 30px;
+  font-size: 16px;
   a {
     color: ${cVar("white")};
+    letter-spacing: ${({ theme }) => theme.letterSpacing("0.07")};
+    font-size: 16px;
   }
   & section {
     position: relative;
     bottom: 0;
-    margin-top: 30px;
+    margin-top: 25px;
     display: inline-flex;
+    align-items: center;
 
     &:before {
       position: absolute;
       content: "";
       width: 39%;
-      border: 1px solid ${cVar("grayMid")};
-      top: -16px;
-      left: -17px;
-      bottom: -4px;
-      border-radius: 50%;
+      width: 53px;
+      border: 1px solid ${cVar("primary")};
+      top: -20px;
+      left: -10px;
+      bottom: -9px;
+      border-radius: 32px;
       ${({ theme }) => theme.transition.default};
-      box-shadow: 0px 2px 12px ${cVar("pink")};
 
       ${({ theme }) => theme.media.custom(0, 768)} {
         width: 188px;
         box-shadow: none;
         border-radius: 38px;
-        border: 1px solid ${cVar("logoDark")};
+        border: none;
       }
+    }
+    span {
+      margin-top: -12px;
+      margin-left: 10px;
+      svg {
+        width: 25px;
+        ${({ theme }) => theme.transition.default};
+      }
+    }
+
+    &:hover > span > svg {
+      transform: rotate(45deg);
+      transform-origin: center;
     }
 
     &:hover::before,
     &:focus::before,
     &:focus-within::before {
-      width: 177px;
+      width: 190px;
       border-radius: 38px;
       box-shadow: none;
-      border: 1px solid ${cVar("pink")};
-    }
+      border: 1px solid ${cVar("primary")};
 
-    span {
-      /* font-size: 14px; */
-      svg {
-        width: 30px;
+      ${({ theme }) => theme.media.custom(0, 768)} {
+        border: none;
       }
     }
   }
@@ -228,21 +263,14 @@ const MainFooter = styled.h1`
   overflow: hidden;
   text-transform: uppercase;
   overflow-wrap: normal;
-  margin-top: 20px;
+  margin-top: 40px;
 
   ${({ theme }) => theme.media.smallLaptop} {
     margin-top: 50px;
-    /* background-color: red; */
   }
   ${({ theme }) => theme.media.mobile} {
     display: none;
   }
-
-  /* &::after {
-    content: "";
-    display: inline-block;
-    width: 100%;
-  } */
 `;
 export {
   HeroContainer,

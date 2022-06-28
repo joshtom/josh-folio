@@ -8,6 +8,7 @@ interface DefaultLayoutProps {
 const DefaultLayoutContainer = styled.div`
   width: 100%;
   height: 100%;
+  overflow: hidden;
 `;
 
 const locomotiveScroll =
@@ -27,9 +28,10 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
       el: MainContainer.current,
       smooth: true,
       reloadOnContextChange: true,
-      inertia: 0.3,
-      multiplier: 0.65,
+      inertia: 1,
       class: "is-reveal",
+      offset: 0,
+      multiplier: 1,
     });
 
     // update locomotive scroll
@@ -45,13 +47,14 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
       const imgs: any = Array.from(el.querySelectorAll("img"));
       new hoverEffect({
         parent: el,
-        intensity: 0.2,
+        // imagesRatio: 9 / 16, // Use this aspect ratio when you get new image
+        intensity: 0.5,
         speedIn: el.dataset.speedin || undefined,
         speedOut: el.dataset.speedout || undefined,
         easing: el.dataset.easing || undefined,
         hover: el.dataset.hover || undefined,
-        image1: imgs[0].getAttribute("src"),
-        image2: imgs[1].getAttribute("src"),
+        image1: imgs[0]?.getAttribute("src"),
+        image2: imgs[1]?.getAttribute("src"),
         displacementImage: el.dataset.displacement,
       });
     });

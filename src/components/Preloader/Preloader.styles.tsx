@@ -61,7 +61,6 @@ const Wrap = styled.div`
 const RandomText = styled.p`
   color: ${cVar("primary")};
   color: ${cVar("black2")};
-  color: ${cVar("pinkDeep")};
   margin-bottom: 20px;
   font-family: ${cVar("dmSans")};
   font-size: 30px;
@@ -106,8 +105,7 @@ const Trans = styled.svg`
   top: 0;
   width: 100%;
   height: 100%;
-  /* fill: ${cVar("dark")}; */
-  fill: ${cVar("black2")};
+  fill: ${cVar("pink")};
 `;
 export {
   Header,

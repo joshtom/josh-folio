@@ -11,7 +11,6 @@ const Wrapper = styled.div`
   width: 100%;
   text-align: center;
   border-bottom: 1px solid ${cVar("grayMid")};
-  /* border-width: 0; */
   line-height: 0rem;
   margin: 2rem 0;
   text-transform: uppercase;
@@ -19,15 +18,13 @@ const Wrapper = styled.div`
   position: relative;
 
   & > span {
-    background: ${cVar("dark")};
+    background: ${cVar("black2")};
     padding: 7px 20px;
     z-index: 1;
     border: 1px solid ${cVar("grayMid")};
     border-radius: 45px;
     font-family: ${cVar("dmSans")};
     font-weight: 500;
-    /* font-size: 12px; */
-    /* position: absolute; */
   }
 `;
 

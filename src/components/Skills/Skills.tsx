@@ -32,7 +32,9 @@ function Skills({ timeline }: Skillprops) {
         data-scroll-direction="horizontal"
       >
         {SkillsetTop.map((data, key) => (
-          <Skill key={key}>{data} </Skill>
+          <Skill key={key} data-scroll data-scroll-repeat>
+            {data}{" "}
+          </Skill>
         ))}
       </Skillset>
       <Skillset
@@ -43,7 +45,9 @@ function Skills({ timeline }: Skillprops) {
         data-scroll-direction="horizontal"
       >
         {SkillsetBottom.map((data, key) => (
-          <Skill key={key}>{data} </Skill>
+          <Skill key={key} data-scroll data-scroll-repeat>
+            {data}{" "}
+          </Skill>
         ))}
       </Skillset>
     </Container>

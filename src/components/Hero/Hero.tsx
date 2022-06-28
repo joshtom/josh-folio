@@ -19,7 +19,8 @@ import ArrowIcon from "@assets/icons/Arrow";
 import SplitTextToChars from "@src/SplitTextToChars/SplitTextToChars";
 import { AnimateBanner } from "../Project/Project.styles";
 import { gsap } from "gsap/dist/gsap";
-
+const hoverEffect =
+  typeof window !== `undefined` ? require("hover-effect").default : null;
 interface Heroprops {
   timeline?: any;
 }
@@ -32,6 +33,9 @@ function Hero({ timeline }: Heroprops) {
   const section1 = useRef(null);
   const section2 = useRef(null);
   const section3 = useRef(null);
+  const section4 = useRef(null);
+  const sectionLine1 = useRef(null);
+  const sectionLine2 = useRef(null);
   const scroller = useRef(null);
   const animeBanner = useRef(null);
   const image = useRef(null);
@@ -58,6 +62,7 @@ function Hero({ timeline }: Heroprops) {
       .fromTo(
         HeroCont.current,
         {
+          duration: 1,
           opacity: 0,
         },
         {
@@ -68,7 +73,7 @@ function Hero({ timeline }: Heroprops) {
       .from(
         [chars, chars1],
         {
-          duration: 0.5,
+          duration: 1,
           opacity: 0,
           scale: 1,
           y: 40,
@@ -91,18 +96,22 @@ function Hero({ timeline }: Heroprops) {
       })
       .from(image.current, {
         scale: 1.2,
-        duration: 1,
+        duration: 1.4,
         delay: -1,
         ease: "power2.out",
       })
-      .from([section2.current, section3.current], {
+      .from([sectionLine1.current, sectionLine2.current], {
+        scaleX: 0,
+        stagger: {
+          amount: 0.1,
+        },
+      })
+      .from([section2.current, section3.current, section4.current], {
         opacity: 0,
         scale: 1,
-        delay: -1,
-        ease: "back",
         y: 30,
         stagger: {
-          amount: 0.6,
+          amount: 0.1,
         },
       })
       .from(scroller.current, {
@@ -113,6 +122,17 @@ function Hero({ timeline }: Heroprops) {
         ease: "power4.out",
       });
   }, [timeline]);
+
+  useEffect(() => {
+    new hoverEffect({
+      parent: section1.current,
+      imagesRatio: 4 / 9,
+      intensity: 0.4,
+      image1: "/images/fot2.png",
+      image2: "/images/fot2.png", // Replace this with the image without grayscale
+      displacementImage: "/images/myDistorsionImage.webp",
+    });
+  }, [section1]);
 
   return (
     <HeroContainer ref={HeroCont} className="smooth-scroll">
@@ -128,7 +148,7 @@ function Hero({ timeline }: Heroprops) {
           </ScrollerContainer>
         </MainHead>
         <MainBody>
-          <Section1 ref={section1}>
+          {/* <Section1 ref={section1}>
             <AnimateBanner ref={animeBanner} />
             <img
               ref={image}
@@ -136,18 +156,32 @@ function Hero({ timeline }: Heroprops) {
               width="100%"
               height="100%"
             />
+          </Section1> */}
+          <Section1
+            ref={section1}
+            style={{ width: "100%", height: 190, objectFit: "scale-down" }}
+          >
+            <AnimateBanner ref={animeBanner} />
           </Section1>
           <MainBodyHeading> Frontend Engineer</MainBodyHeading>
-          <Section2 ref={section2}>
-            I’m a frontend engineer that loves to create scalable, fast and
-            mobile-first web applications
+          <Section2>
+            <span id="topLine" ref={sectionLine1}>
+              {" "}
+            </span>
+            <p ref={section2}>
+              I’m a frontend engineer that loves to create scalable, fast and
+              mobile-first web applications
+            </p>
           </Section2>
-          <Section3 ref={section3}>
-            <p>
+          <Section3>
+            <span id="topLine" ref={sectionLine2}>
+              {" "}
+            </span>
+            <p ref={section3}>
               I currently work at <b>FLUTTERWAVE</b>, open for fulltime role and
               / collaboration
             </p>
-            <a href="mailto:joshuaolarjide@gmail.com">
+            <a href="mailto:joshuaolarjide@gmail.com" ref={section4}>
               <section
                 onMouseEnter={() => cursorChangeHandler("hovered")}
                 onMouseLeave={() => cursorChangeHandler("")}

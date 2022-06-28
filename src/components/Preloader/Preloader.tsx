@@ -30,6 +30,7 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
   const end = "M 0 100 V 0 Q 50 0 100 0 V 100 z";
   const [randomQuote, setRandomQuote] = useState("");
   let [countdown, setCountdown] = useState(0);
+  let interval = useRef(null);
 
   const completeAnimate = () => {
     timeline
@@ -90,6 +91,11 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
 
   useEffect(() => {
     setRandomQuote(RandomQuote[Math.floor(Math.random() * RandomQuote.length)]);
+    // interval.current = setInterval(() => {
+    //   setRandomQuote(
+    //     RandomQuote[Math.floor(Math.random() * RandomQuote.length)]
+    //   );
+    // }, 1000);
     animate();
     let startCount = 0;
     let endCount = 100;
@@ -107,6 +113,9 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
         }, 400);
       },
     });
+    // return () => {
+    //   clearInterval(interval.current);
+    // };
   }, []);
   return (
     <Wrapper
@@ -122,7 +131,7 @@ const Preloader: React.FC<PreloaderProps> = ({ timeline }) => {
       >
         <path
           className="path"
-          stroke={cVar("dark")}
+          stroke={cVar("pink")}
           strokeWidth="2px"
           dur="10s"
           vectorEffect="non-scaling-stroke"

@@ -54,7 +54,7 @@ const allSidesSpacing = (
   left: number
 ) => `${top}px ${right}px ${bottom}px ${left}px`;
 
-const letterSpacing = (space: string = "0.08em") => `${space}em`;
+const letterSpacing = (space: string = "0.08") => `${space}em`;
 
 const fontSize = {
   custom: customFontSize,
@@ -90,4 +90,12 @@ const transition = {
   default: "transition: 0.5s cubic-bezier(0.76, 0, 0.24, 1)",
 };
 
-export { media, fontSize, borderRadius, spacing, letterSpacing, border, transition };
+export {
+  media,
+  fontSize,
+  borderRadius,
+  spacing,
+  letterSpacing,
+  border,
+  transition,
+};

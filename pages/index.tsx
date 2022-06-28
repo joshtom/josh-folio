@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import Hero from "@src/components/Hero/Hero";
 import { cVar } from "@src/helpers";
 import type { NextPage } from "next";
@@ -16,8 +16,7 @@ import Preloader from "@src/components/Preloader/Preloader";
 const Container = styled.div`
   width: 100%;
   height: auto;
-  /* background-color: ${cVar("black2")}; */
-  background-color: ${cVar("dark")};
+  background-color: ${cVar("black2")};
   padding-bottom: 3rem;
 `;
 
@@ -30,18 +29,12 @@ const Home: NextPage = () => {
       <Container>
         <Head>
           <title>Joshua Olajide | Home</title>
-          <meta
-            name="description"
-            content="I am a frontend engineer that loves to create scalable, fast and mobile-first web applications"
-          />
-          <link rel="icon" href="/favicon.ico" />
         </Head>
         <Preloader timeline={timeline} />
         <Hero timeline={gsaptimeline} />
         <Skills timeline={gsaptimeline} />
         <Project timeline={gsaptimeline} />
         <About />
-        {/* <Contact timeline={gsaptimeline} /> */}
         <Contact />
         <Footer timeline={gsaptimeline} />
       </Container>

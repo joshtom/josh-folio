@@ -52,27 +52,72 @@ const projectColor = (color: ProjectType) => {
   else if (color === "inawo") return `${cVar("inawoColor")}`;
 };
 
+// Usage
+// border-top: 1px solid ${({ color }) => projectColor(color)};
+//  border-bottom: 1px solid ${({ color }) => projectColor(color)};
+
 // Check the color passed in the ProjectName component and use that to determine the color that would be applied
 const ProjectName = styled.div<{ color: ProjectType }>`
-  border-top: 1px solid ${({ color }) => projectColor(color)};
-  border-bottom: 1px solid ${({ color }) => projectColor(color)};
+  position: relative;
   font-size: 64px;
-  overflow: scroll;
   margin: 0 auto;
+  padding: 14px 0;
   margin-top: 30px;
   &::-webkit-scrollbar {
     display: none;
+  }
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background-color: ${cVar("primary")};
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 1px;
+    background-color: ${cVar("primary")};
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: center left;
+    transition: transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
 
   ${({ theme }) => theme.media.mobile} {
     font-size: 10vw;
   }
 
+  &.is-reveal {
+    transform: none;
+    opacity: 1;
+  }
+  &.is-reveal:after,
+  &.is-reveal:before {
+    transform: scaleX(1);
+  }
+  &.is-reveal:first-child {
+    transition-delay: 0.1s;
+  }
+  &.is-reveal:first-child:after {
+    transition-delay: 0.5s;
+  }
+  &.is-reveal:first-child:before {
+    transition-delay: 0.8s;
+  }
+
   p {
     white-space: nowrap;
-    &:hover {
-      color: ${({ color }) => projectColor(color)};
-    }
   }
 `;
 
@@ -80,11 +125,13 @@ const ProjectBanner = styled.div`
   width: 100%;
   height: 470px;
   background-color: ${cVar("pink")};
-  background: #fef7cd;
+  background: ${cVar("warning")};
   margin-top: 1.5rem;
   position: relative;
   overflow: hidden;
   background-size: cover;
+  background-size: contain;
+  background-position: center center;
 
   ${({ theme }) => theme.media.mobile} {
     height: 300px;
@@ -170,30 +217,32 @@ const Info = styled.div<{ color: ProjectType }>`
     font-family: ${cVar("dmSans")};
     position: relative;
     &:last-child {
-      margin-top: 40px;
-      color: ${({ color }) => projectColor(color)};
+      margin-top: 20px;
+      color: ${cVar("white")};
       display: flex;
+      align-items: center;
 
       ${({ theme }) => theme.media.custom(0, 768)} {
         margin-top: 20px;
       }
-
       svg {
+        width: 25px;
+        margin-left: 10px;
+        ${({ theme }) => theme.transition.default};
         path {
-          fill: ${({ color }) => projectColor(color)};
+          fill: ${cVar("primary")};
         }
       }
 
       &:before {
         position: absolute;
         content: "";
-        width: 63px;
-        border: 1px solid ${cVar("white")};
-        top: -18px;
+        width: 50px;
+        border: 1px solid ${cVar("primary")};
+        top: -6px;
         left: -15px;
-        bottom: -8px;
-        border-radius: 50%;
-        box-shadow: 0px 2px 12px ${cVar("pink")};
+        bottom: -9px;
+        border-radius: 50px;
         ${({ theme }) => theme.transition.default};
 
         ${({ theme }) => theme.media.custom(0, 768)} {
@@ -203,13 +252,18 @@ const Info = styled.div<{ color: ProjectType }>`
         }
       }
 
+      &:hover > svg {
+        transform: rotate(45deg);
+        transform-origin: center;
+      }
+
       &:hover::before,
       &:focus::before,
       &:focus-within::before {
-        width: 153px;
+        width: 150px;
         border-radius: 38px;
         box-shadow: none;
-        border: 1px solid ${cVar("white")};
+        border: 1px solid ${cVar("primary")};
       }
     }
   }
@@ -223,10 +277,24 @@ const Footer = styled.footer`
   align-items: center;
 
   & > a {
-    &:hover,
-    &:focus-visible,
-    &:focus-within {
-      animation: rotate-animation 10s infinite linear;
+    position: relative;
+    display: inline-block;
+    & > span {
+      &:hover,
+      &:focus-visible,
+      &:focus-within {
+        animation: rotate-animation 10s infinite linear;
+      }
+    }
+    & > section {
+      background-color: transparent;
+      position: absolute;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      bottom: 25%;
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
   }
 

@@ -1,58 +1,85 @@
-import { useRef } from "react";
 import { cVar } from "@src/helpers";
-import { Heading } from "../Contact/Contact.styles";
+import { Panels } from "@src/utils/data";
+import { useRef, useState, useEffect } from "react";
 import { LineText } from "../LineText/LineText";
-import { AboutContainer, AboutParagraph, Overflow } from "./About.styles";
+import {
+  AboutContainer,
+  Overflow,
+  Accordion,
+  AccordionHeader,
+  AccordionBody,
+} from "./About.styles";
 
 function About() {
   const Cont = useRef(null);
-  const header = useRef(null);
-  const p1 = useRef(null);
-  const p2 = useRef(null);
-  const p3 = useRef(null);
+  const [isActive, setIsActive] = useState(false);
+  const [selectedElement, setSelectedElement] = useState(0);
+  const [choose, setChoose] = useState([]);
+
+  const handleActive = (data: any, index: number) => {
+    if (data.id === index + 1) {
+      setIsActive(!isActive);
+      setSelectedElement(data.id);
+    }
+  };
+
+  useEffect(() => {
+    const accBodyHeight = document.querySelectorAll("#accBody");
+    const arr = [];
+    accBodyHeight.forEach((element) => {
+      arr.push(element.scrollHeight);
+    });
+    setChoose(arr);
+  }, []);
 
   return (
     <div ref={Cont} id="about">
-      <LineText>So far so good ✌️</LineText>
+      <LineText>About 😎</LineText>
       <AboutContainer>
         <Overflow>
-          <Heading
-            ref={header}
-            style={{ color: `${cVar("pink")}`, marginBottom: "20px" }}
+          <p
+            style={{
+              color: `${cVar("pink")}`,
+              marginBottom: "20px",
+              lineHeight: "1.4",
+              fontSize: "20px",
+              fontFamily: `${cVar("dmSans")}`,
+            }}
           >
-            Over the last few years
-          </Heading>
+            Over the last few years my area of expertise spans across these
+            areas.
+          </p>
         </Overflow>
-        <Overflow>
-          <AboutParagraph ref={p1}>
-            I&apos;ve built products that solve real-life problems ranging from
-            Businesses to companies with focus on creating fast, and accessible
-            user experiences using advanced web technologies. Not only these
-            makes me standout, but paying attention to every detail from any
-            DESIGN which makes me deliver clean, elegant and pixel-perfect
-            solutions.
-          </AboutParagraph>
-        </Overflow>
-        <Overflow>
-          <AboutParagraph ref={p2}>
-            I&apos;ve built products that solve real-life problems ranging from
-            Businesses to companies with focus on creating fast, and accessible
-            user experiences using advanced web technologies. Not only these
-            makes me standout, but paying attention to every detail from any
-            DESIGN which makes me deliver clean, elegant and pixel-perfect
-            solutions.
-          </AboutParagraph>
-        </Overflow>
-        <Overflow>
-          <AboutParagraph ref={p3}>
-            I&apos;ve built products that solve real-life problems ranging from
-            Businesses to companies with focus on creating fast, and accessible
-            user experiences using advanced web technologies. Not only these
-            makes me standout, but paying attention to every detail from any
-            DESIGN which makes me deliver clean, elegant and pixel-perfect
-            solutions.
-          </AboutParagraph>
-        </Overflow>
+        {Panels.map((data, index) => {
+          return (
+            <Accordion
+              onClick={() => handleActive(data, index)}
+              className="accordion"
+              key={data.id}
+            >
+              <AccordionHeader
+                role="tab"
+                aria-expanded={isActive && selectedElement === index + 1}
+              >
+                <p>{data.label}</p>
+              </AccordionHeader>
+              <AccordionBody
+                data-height={choose[index]}
+                id="accBody"
+                aria-expanded={isActive && selectedElement === index + 1}
+                style={{
+                  height: `${
+                    isActive && selectedElement === index + 1
+                      ? choose[index]
+                      : 0
+                  }px`,
+                }}
+              >
+                <p>{data.content}</p>
+              </AccordionBody>
+            </Accordion>
+          );
+        })}
       </AboutContainer>
     </div>
   );

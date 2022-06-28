@@ -1,7 +1,5 @@
 import { useEffect, useRef, useContext } from "react";
 import { MouseContext } from "@context/mouse-context";
-import Logo from "@src/assets/icons/Logo";
-import { LogoArea } from "../Header/Header.styles";
 import { LineText } from "../LineText/LineText";
 import { gsap } from "gsap";
 import {
@@ -11,8 +9,10 @@ import {
   List,
   Heading,
   OverflowEmail,
+  ScrollUp,
 } from "./Contact.styles";
 import { Overflow } from "../About/About.styles";
+import ArrowIcon from "@assets/icons/Arrow";
 
 function Contact() {
   const Cont = useRef(null);
@@ -56,7 +56,7 @@ function Contact() {
 
   return (
     <div ref={Cont} id="contact">
-      <LineText>shoot your shot 🌍</LineText>
+      <LineText>shoot your shot 🚀</LineText>
       <ContactContainer>
         <Overflow>
           <Heading ref={header} className="ANIMATE-TEXT">
@@ -80,7 +80,13 @@ function Contact() {
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <a href="#" aria-label="resume" ref={a1} rel="noreferrer">
+            <a
+              href="#"
+              aria-label="resume"
+              ref={a1}
+              rel="noreferrer"
+              className="link"
+            >
               RESUME
             </a>
           </List>
@@ -94,6 +100,7 @@ function Contact() {
               aria-label="medium"
               ref={a2}
               rel="noreferrer"
+              className="link"
             >
               MEDIUM
             </a>
@@ -108,6 +115,7 @@ function Contact() {
               aria-label="twitter"
               ref={a3}
               rel="noreferrer"
+              className="link"
             >
               TWITTER
             </a>
@@ -122,6 +130,7 @@ function Contact() {
               aria-label="resume"
               ref={a4}
               rel="noreferrer"
+              className="link"
             >
               LINKEDIN
             </a>
@@ -136,23 +145,16 @@ function Contact() {
               aria-label="resume"
               ref={a5}
               rel="noreferrer"
+              className="link"
             >
               GITHUB
             </a>
           </List>
-          <List>
-            <a
-              href="#home"
-              data-scroll-to
-              data-scroll-offset="-100"
-              data-scroll-speed="-2"
-              rel="noreferrer"
-            >
-              <LogoArea ref={logo}>
-                <Logo />
-              </LogoArea>
-            </a>
-          </List>
+          <a href="#home" data-scroll-to style={{ cursor: "pointer" }}>
+            <ScrollUp>
+              <ArrowIcon />
+            </ScrollUp>
+          </a>
         </Socials>
       </ContactContainer>
     </div>

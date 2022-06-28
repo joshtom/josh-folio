@@ -18,12 +18,12 @@ const HeaderContainer = styled.div`
 `;
 
 const LogoArea = styled.p`
-  color: ${cVar("pink")};
+  color: ${cVar("grayMid")};
   grid-area: logo;
   align-self: center;
   justify-items: center;
   font-family: ${cVar("dinAlternate")};
-  background-color: ${cVar("primary")};
+  background-color: ${cVar("grayMid")};
   width: 63px;
   height: 63px;
   border-radius: 50%;
@@ -34,7 +34,7 @@ const LogoArea = styled.p`
   ${({ theme }) => theme.transition.default};
 
   &:hover {
-    background-color: ${cVar("black2")};
+    background-color: ${cVar("primary")};
   }
 
   ${({ theme }) => theme.media.mobile} {
@@ -67,6 +67,7 @@ const MenuArea = styled.div`
   height: auto;
   position: relative;
   grid-area: links;
+  width: 400px;
   ${({ theme }) => theme.media.custom(0, 768)} {
     display: flex;
     align-items: center;
@@ -88,25 +89,49 @@ const MenuArea = styled.div`
 const Links = styled.li`
   font-weight: 700;
   color: ${cVar("pink")};
-  cursor: none;
-  overflow: hidden;
-  transition: all 300ms ease-in-out;
+
+  position: relative;
 
   a {
-    color: ${cVar("white")};
+    color: ${cVar("light")};
     display: flex;
     flex-direction: column;
-    overflow: hidden;
-    height: 30px;
+    font-size: 16px;
+    height: auto;
+    letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
     position: relative;
-    span {
-      transition: all 1s ease-in-out;
+    cursor: pointer !important;
+    ${({ theme }) => theme.transition.default};
+
+    &::before,
+    &::after {
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background: ${cVar("pinkDeep")};
+      bottom: -4px;
+      left: 0;
+      pointer-events: none;
+    }
+
+    &::before {
+      content: "";
+    }
+
+    &.link::before {
+      transform-origin: 100% 50%;
+      transform: scale3d(0, 1, 1);
+      transition: transform 0.3s;
+      ${({ theme }) => theme.transition.default};
+    }
+
+    &.link:hover::before {
+      transform-origin: 0% 50%;
+      transform: scale3d(1, 1, 1);
     }
 
     &:hover {
-      span {
-        font-style: italic;
-      }
+      color: ${cVar("pinkDeep")};
     }
   }
 `;
@@ -115,7 +140,7 @@ const Links = styled.li`
 const MobileContainer = styled.div`
   width: 100%;
   height: 100vh;
-  background-color: ${cVar("dark")};
+  background-color: ${cVar("black2")};
   position: fixed;
   top: 0;
   right: 0;
@@ -156,7 +181,8 @@ const MobileSocial = styled.div`
 
   h2 {
     color: ${cVar("white")};
-    margin-bottom: 10px;
+    margin-bottom: 20px;
+    letter-spacing: ${({ theme }) => theme.letterSpacing("0.06")};
   }
 
   a {
@@ -170,9 +196,10 @@ const MobileSocial = styled.div`
     list-style-type: none;
     padding-left: 0;
     display: flex;
-    margin-top: 10px;
+    margin-top: 14px;
     li {
       margin-right: 20px;
+      letter-spacing: ${({ theme }) => theme.letterSpacing("0.06")};
       a {
         color: ${cVar("pink")};
       }
