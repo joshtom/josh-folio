@@ -50,6 +50,6 @@ export const Panels: { id: number; label: string; content: string }[] = [
     id: 4,
     label: "COMMUNITY",
     content:
-      "I have enjoyed the benefits of several communities both local and international and I thought of giving back in my own little way. This my little quest of giving back brought me to limelight. Ohhh and I recently became an Organizer for Google`s Developers Group (Ibadan)",
+      "I have enjoyed the benefits of several communities both local and international and I thought of giving back in my own little way. This my little quest of giving back brought me to limelight. Also, I recently became an Organizer for Google`s Developers Group (Ibadan).",
   },
 ];

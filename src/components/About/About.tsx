@@ -59,8 +59,14 @@ function About() {
               <p>{data.label}</p>
             </AccordionHeader>
             <AccordionBody
+            data-height={height}
               id="accBody"
               aria-expanded={isActive && selectedElement === index + 1}
+              // style={{
+              //   height: `${
+              //     isActive && selectedElement === index + 1 ? height : 0
+              //   }px`,
+              // }}
               style={{
                 height: `${
                   isActive && selectedElement === index + 1 ? height : 0

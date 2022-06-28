@@ -108,18 +108,18 @@ const AccordionHeader = styled.header`
   }
 `;
 
-const AccordionBody = styled.p`
+const AccordionBody = styled.div`
   color: ${cVar("pink")};
   line-height: 41px;
   font-family: ${cVar("dmSans")};
   padding: 20px 0;
   font-weight: 100;
-  /* background-color: red; */
   opacity: 1;
   ${({ theme }) => theme.transition.default};
 
   &[aria-expanded="false"] {
     opacity: 0;
+    /* display: none; */
   }
 `;
 

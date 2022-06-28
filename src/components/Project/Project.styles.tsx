@@ -125,11 +125,13 @@ const ProjectBanner = styled.div`
   width: 100%;
   height: 470px;
   background-color: ${cVar("pink")};
-  background: #fef7cd;
+  background: ${cVar("warning")};
   margin-top: 1.5rem;
   position: relative;
   overflow: hidden;
   background-size: cover;
+  background-size: contain;
+  background-position: center center;
 
   ${({ theme }) => theme.media.mobile} {
     height: 300px;

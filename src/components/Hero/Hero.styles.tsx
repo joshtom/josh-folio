@@ -162,8 +162,10 @@ const Section1 = styled.section`
 
   & > img {
     object-fit: fill;
+    object-fit: contain;
     background-color: ${cVar("dark")};
   }
+  
 `;
 const Section2 = styled.section`
   position: relative;

@@ -19,7 +19,8 @@ import ArrowIcon from "@assets/icons/Arrow";
 import SplitTextToChars from "@src/SplitTextToChars/SplitTextToChars";
 import { AnimateBanner } from "../Project/Project.styles";
 import { gsap } from "gsap/dist/gsap";
-
+const hoverEffect =
+  typeof window !== `undefined` ? require("hover-effect").default : null;
 interface Heroprops {
   timeline?: any;
 }
@@ -122,6 +123,22 @@ function Hero({ timeline }: Heroprops) {
       });
   }, [timeline]);
 
+  useEffect(() => {
+    console.log(section1.current);
+
+    new hoverEffect({
+      parent: section1.current,
+      imagesRatio: 4 / 9,
+      intensity: 0.4,
+      image1: "/images/fot2.png",
+      // image2: "https://picsum.photos/420/620",
+      image2: "/images/fot2.png",
+      // displacementImage:
+      //   "https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg",
+      displacementImage: "/images/myDistorsionImage.webp",
+    });
+  }, [section1]);
+
   return (
     <HeroContainer ref={HeroCont} className="smooth-scroll">
       <Header timeline={timeline} />
@@ -136,7 +153,7 @@ function Hero({ timeline }: Heroprops) {
           </ScrollerContainer>
         </MainHead>
         <MainBody>
-          <Section1 ref={section1}>
+          {/* <Section1 ref={section1}>
             <AnimateBanner ref={animeBanner} />
             <img
               ref={image}
@@ -144,6 +161,12 @@ function Hero({ timeline }: Heroprops) {
               width="100%"
               height="100%"
             />
+          </Section1> */}
+          <Section1
+            ref={section1}
+            style={{ width: "100%", height: 190, objectFit: "scale-down" }}
+          >
+            <AnimateBanner ref={animeBanner} />
           </Section1>
           <MainBodyHeading> Frontend Engineer</MainBodyHeading>
           <Section2>

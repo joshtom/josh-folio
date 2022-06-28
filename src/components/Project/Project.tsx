@@ -11,13 +11,15 @@ import {
   Info,
   Footer,
 } from "./Project.styles";
-// import MoreProject from "@assets/icons/moreProject.png";
 import MoreProject from "@assets/icons/mp.png";
 import Emoji from "@assets/icons/emoji.png";
 import ArrowIcon from "@assets/icons/Arrow";
+// import ImageAsiko from "../../assets/images/imageAsiko.png";
 import { gsap } from "gsap";
 import Image from "next/image";
 
+const hoverEffect =
+  typeof window !== `undefined` ? require("hover-effect").default : null;
 interface Projectprops {
   timeline?: any;
 }
@@ -37,6 +39,7 @@ function Project({ timeline }: Projectprops) {
   const title2 = useRef(null);
   const a2 = useRef(null);
   const p2 = useRef(null);
+  const container = useRef(null);
   const { cursorChangeHandler } = useContext(MouseContext);
 
   useEffect(() => {
@@ -89,6 +92,16 @@ function Project({ timeline }: Projectprops) {
           amount: 0.8,
         },
       });
+
+    // HOVER EFFECT
+    new hoverEffect({
+      parent: container.current,
+      intensity: 0.3,
+      image1: "https://picsum.photos/400/600",
+      image2: "https://picsum.photos/420/620",
+      displacementImage:
+        "https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg",
+    });
   }, []);
 
   useEffect(() => {
@@ -110,8 +123,6 @@ function Project({ timeline }: Projectprops) {
       <Heading ref={heading}>I build Product that works 🚀</Heading>
       <Wrapper ref={wrapper1} id="theWrapper">
         <ProjectName color="asiko" data-scroll>
-          {/* <span id="lineTop"></span>
-          <span id="lineBottom"></span> */}
           <p
             data-scroll
             data-scroll-speed="2"
@@ -125,9 +136,11 @@ function Project({ timeline }: Projectprops) {
         </ProjectName>
         <ProjectBanner
           className="hover-img"
-          data-displacement="/images/myDistorsionImage.webp"
+          // data-displacement="/images/myDistorsionImage.webp"
+          data-displacement="https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg"
           onMouseEnter={() => cursorChangeHandler("linkhover")}
           onMouseLeave={() => cursorChangeHandler("")}
+          ref={container}
         >
           <img
             ref={image1}
@@ -190,12 +203,13 @@ function Project({ timeline }: Projectprops) {
           >
             <img
               ref={image2}
-              src="https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-              alt="banner-image"
+              // src="https://images.unsplash.com/photo-1529025530948-67e8a5c69b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+              // alt="banner-image"
+              src="/images/imageAsiko.png"
             />
             <img
               ref={image2}
-              src="https://images.unsplash.com/photo-1529025530948-67e8a5c69b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+              src="https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
               alt="banner-image"
             />
           </ProjectBanner>
