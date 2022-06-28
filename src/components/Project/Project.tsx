@@ -136,8 +136,8 @@ function Project({ timeline }: Projectprops) {
         </ProjectName>
         <ProjectBanner
           className="hover-img"
-          // data-displacement="/images/myDistorsionImage.webp"
-          data-displacement="https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg"
+          data-displacement="/images/myDistorsionImage.webp"
+          // data-displacement="https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg"
           onMouseEnter={() => cursorChangeHandler("linkhover")}
           onMouseLeave={() => cursorChangeHandler("")}
           ref={container}
@@ -203,14 +203,14 @@ function Project({ timeline }: Projectprops) {
           >
             <img
               ref={image2}
-              // src="https://images.unsplash.com/photo-1529025530948-67e8a5c69b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
-              // alt="banner-image"
-              src="/images/imageAsiko.png"
+              src="https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+              alt="banner-image"
             />
             <img
               ref={image2}
-              src="https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-              alt="banner-image"
+              // src="https://images.unsplash.com/photo-1529025530948-67e8a5c69b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
+              // alt="banner-image"
+              src="/images/imageAsiko.png"
             />
           </ProjectBanner>
         </a>

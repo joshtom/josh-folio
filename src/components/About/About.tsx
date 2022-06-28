@@ -13,8 +13,8 @@ import {
 function About() {
   const Cont = useRef(null);
   const [isActive, setIsActive] = useState(false);
-  const [height, setheight] = useState(0);
   const [selectedElement, setSelectedElement] = useState(0);
+  const [choose, setChoose] = useState([]);
 
   const handleActive = (data: any, index: number) => {
     if (data.id === index + 1) {
@@ -24,8 +24,12 @@ function About() {
   };
 
   useEffect(() => {
-    const accBodyHeight = document.querySelector("#accBody")?.scrollHeight;
-    setheight(accBodyHeight);
+    const accBodyHeight = document.querySelectorAll("#accBody");
+    const arr = [];
+    accBodyHeight.forEach((element) => {
+      arr.push(element.scrollHeight);
+    });
+    setChoose(arr);
   }, []);
 
   return (
@@ -46,37 +50,36 @@ function About() {
             areas.
           </p>
         </Overflow>
-        {Panels.map((data, index) => (
-          <Accordion
-            onClick={() => handleActive(data, index)}
-            className="accordion"
-            key={data.id}
-          >
-            <AccordionHeader
-              role="tab"
-              aria-expanded={isActive && selectedElement === index + 1}
+        {Panels.map((data, index) => {
+          return (
+            <Accordion
+              onClick={() => handleActive(data, index)}
+              className="accordion"
+              key={data.id}
             >
-              <p>{data.label}</p>
-            </AccordionHeader>
-            <AccordionBody
-            data-height={height}
-              id="accBody"
-              aria-expanded={isActive && selectedElement === index + 1}
-              // style={{
-              //   height: `${
-              //     isActive && selectedElement === index + 1 ? height : 0
-              //   }px`,
-              // }}
-              style={{
-                height: `${
-                  isActive && selectedElement === index + 1 ? height : 0
-                }px`,
-              }}
-            >
-              {data.content}
-            </AccordionBody>
-          </Accordion>
-        ))}
+              <AccordionHeader
+                role="tab"
+                aria-expanded={isActive && selectedElement === index + 1}
+              >
+                <p>{data.label}</p>
+              </AccordionHeader>
+              <AccordionBody
+                data-height={choose[index]}
+                id="accBody"
+                aria-expanded={isActive && selectedElement === index + 1}
+                style={{
+                  height: `${
+                    isActive && selectedElement === index + 1
+                      ? choose[index]
+                      : 0
+                  }px`,
+                }}
+              >
+                <p>{data.content}</p>
+              </AccordionBody>
+            </Accordion>
+          );
+        })}
       </AboutContainer>
     </div>
   );
