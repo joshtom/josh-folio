@@ -37,11 +37,7 @@ function Footer({ timeline }: Footerprops) {
 
   useEffect(() => {
     timeline.from(Cont.current, {
-      // delay: 9,
-      // ease: "power4.out",
       ease: "bounce.out",
-      // skewY: 7,
-      // y: 400,
       opacity: 0,
       stagger: {
         amount: 0.3,

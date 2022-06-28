@@ -54,11 +54,11 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
 
   let handleHover = useCallback(() => {
     cursorChangeHandler("hovered");
-  }, []);
+  }, [cursorChangeHandler]);
 
   let handleHoverOut = useCallback(() => {
     cursorChangeHandler("");
-  }, []);
+  }, [cursorChangeHandler]);
 
   useEffect(() => {
     navtl.current = gsap.timeline({ paused: true });

@@ -20,8 +20,6 @@ const Container = styled.div`
   padding-bottom: 3rem;
 `;
 
-
-
 const Home: NextPage = () => {
   const timeline = gsap.timeline();
   const gsaptimeline = gsap.timeline();
