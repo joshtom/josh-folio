@@ -161,6 +161,7 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
           </ul>
         </MobileSocial>
       </MobileContainer>
+
       <HeaderContainer ref={header}>
         <LogoArea>
           <Logo />

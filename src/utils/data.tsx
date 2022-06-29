@@ -44,7 +44,7 @@ export const Panels: { id: number; label: string; content: string }[] = [
     id: 4,
     label: "HUMAN",
     content:
-      "Ohhh yeah! Aside work, I develop Long-Term relationships with clients / co-workers. I believe we are human before we all got into tech and building relationships doesn't have to end at work environment :)",
+      "Ohhh yeah! Aside work, I develop Long-Term relationships with clients / co-workers. I believe we are human before work and building relationships doesn't have to end at work environment :)",
   },
   {
     id: 5,
