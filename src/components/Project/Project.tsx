@@ -134,25 +134,23 @@ function Project({ timeline }: Projectprops) {
             ASIKO
           </p>
         </ProjectName>
-        <ProjectBanner
-          className="hover-img"
-          data-displacement="/images/myDistorsionImage.webp"
-          // data-displacement="https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg"
-          onMouseEnter={() => cursorChangeHandler("linkhover")}
-          onMouseLeave={() => cursorChangeHandler("")}
-          ref={container}
-        >
-          <img
-            ref={image1}
-            src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGZhc2hpb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
-            alt="banner-image"
-          />
-          <img
-            ref={image1}
-            src=" https://images.unsplash.com/photo-1648737966636-2fc3a5fffc8a?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHw2fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
-            alt="banner-image"
-          />
-        </ProjectBanner>
+        <a href="https://asiko.flutterwave.com">
+          <ProjectBanner
+            className="hover-img"
+            data-displacement="/images/myDistorsionImage.webp"
+            onMouseEnter={() => cursorChangeHandler("linkhover")}
+            onMouseLeave={() => cursorChangeHandler("")}
+            ref={container}
+          >
+            <img
+              ref={image1}
+              src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGZhc2hpb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+              alt="banner-image"
+            />
+
+            <img ref={image1} src="/images/imageAsiko.png" />
+          </ProjectBanner>
+        </a>
         <ProjectFooter>
           <Title
             ref={title1}
@@ -166,7 +164,11 @@ function Project({ timeline }: Projectprops) {
               I&apos;ve built products that solve real-life problems ranging
               from Businesses to companies{" "}
             </p>
-            <a href="https://url" target="_blank" rel="noreferrer">
+            <a
+              href="https://asiko.flutterwave.com"
+              target="_blank"
+              rel="noreferrer"
+            >
               <p
                 ref={a1}
                 onMouseEnter={() => cursorChangeHandler("hovered")}

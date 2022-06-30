@@ -25,8 +25,19 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
     if (!MainContainer.current) return;
     // @ts-ignore
     locoScroll = new locomotiveScroll({
-      el: MainContainer.current,
+      // el: MainContainer.current,
+      el: document.querySelector("#home"),
       smooth: true,
+      mobile: {
+        breakpoint: 0,
+        smooth: false,
+        getDirection: true,
+      },
+      tablet: {
+        breakpoint: 0,
+        smooth: false,
+        getDirection: true,
+      },
       reloadOnContextChange: true,
       inertia: 1,
       class: "is-reveal",

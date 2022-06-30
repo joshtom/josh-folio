@@ -63,6 +63,7 @@ const ProjectName = styled.div<{ color: ProjectType }>`
   margin: 0 auto;
   padding: 14px 0;
   margin-top: 30px;
+  /* overflow: scroll; */
   &::-webkit-scrollbar {
     display: none;
   }
@@ -124,7 +125,6 @@ const ProjectName = styled.div<{ color: ProjectType }>`
 const ProjectBanner = styled.div`
   width: 100%;
   height: 470px;
-  background-color: ${cVar("pink")};
   background: ${cVar("warning")};
   margin-top: 1.5rem;
   position: relative;
