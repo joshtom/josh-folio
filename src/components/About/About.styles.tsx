@@ -18,11 +18,15 @@ const AboutContainer = styled.div`
     width: 90%;
   }
   & > .accordion {
+    /* Disable the last accordion and the accordion line on hover */
     &:last-child {
       & > header {
         border-bottom: none;
         &:focus {
           border-bottom: 1px solid ${cVar("grayMid")};
+        }
+        .accordion-line {
+          background: transparent;
         }
       }
     }
@@ -43,11 +47,13 @@ const Overflow = styled.div`
 `;
 
 const Accordion = styled.div`
+  position: relative;
   &[aria-expanded="true"] {
   }
 `;
 
 const AccordionHeader = styled.header`
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -66,8 +72,34 @@ const AccordionHeader = styled.header`
   letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
   border-bottom: 1px solid ${cVar("grayMid")};
 
+  .accordion-line {
+    position: absolute;
+    content: "";
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 0.1px;
+    background-color: ${cVar("primaryLight")};
+    transform-origin: center left;
+    transform: scaleX(0);
+    ${({ theme }) => theme.transition.default};
+  }
+
   &:focus {
     outline: none;
+  }
+
+  &:hover {
+    p {
+      color: ${cVar("primaryLight")};
+    }
+    .accordion-line {
+      transform: scaleX(1);
+    }
+    &::after,
+    &::before {
+      background-color: ${cVar("primaryLight")};
+    }
   }
 
   &::after,
@@ -101,6 +133,7 @@ const AccordionHeader = styled.header`
     color: ${cVar("pink")};
     font-family: ${cVar("dinAlternate")};
     text-transform: uppercase;
+    ${({ theme }) => theme.transition.default};
 
     ${({ theme }) => theme.media.mobile} {
       font-size: 7vw;
@@ -117,10 +150,6 @@ const AccordionBody = styled.div`
   will-change: height;
   transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
 
-  /* &[aria-expanded="false"] {
-    opacity: 0;
-    transform: translateY(-60px);
-  } */
   p {
     margin: 5px 0;
     /* opacity: 0; */

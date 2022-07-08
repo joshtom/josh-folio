@@ -1,5 +1,6 @@
 export const COLORS = {
   primary: "--primary",
+  primaryLight: "--primary-light",
   secondary: "--secondary",
   warning: "--warning",
   black2: "--black",

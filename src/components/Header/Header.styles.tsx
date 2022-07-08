@@ -127,6 +127,7 @@ const Links = styled.li`
         .h-link__inner {
           transform: translateY(-100%);
           color: ${cVar("pink")};
+          color: ${cVar("primaryLight")};
         }
       }
     }
