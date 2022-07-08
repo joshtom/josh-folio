@@ -53,7 +53,7 @@ const LinkArea = styled.ul`
   align-items: flex-end;
   align-self: center;
   justify-items: center;
-  gap: 35px;
+  gap: 20px;
   grid-area: links;
   ${({ theme }) => theme.media.custom(0, 768)} {
     display: none;
@@ -89,10 +89,50 @@ const MenuArea = styled.div`
 const Links = styled.li`
   font-weight: 700;
   color: ${cVar("pink")};
-
   position: relative;
 
   a {
+    padding: 10px;
+    color: white;
+    letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
+
+    .h-link {
+      display: inline-flex;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+      overflow: hidden;
+
+      &__inner {
+        display: flex;
+        transform: translateY(0);
+        ${({ theme }) => theme.transition.link};
+        margin-right: 2px;
+      }
+
+      &__animated {
+        position: absolute;
+        top: 100%;
+        display: none;
+        font-family: $font-sauce;
+
+        @media (any-pointer: fine) {
+          display: inline-block;
+        }
+      }
+    }
+
+    &:hover {
+      @media (any-pointer: fine) {
+        .h-link__inner {
+          transform: translateY(-100%);
+          color: ${cVar("pink")};
+        }
+      }
+    }
+  }
+
+  /* a {
     color: ${cVar("light")};
     display: flex;
     flex-direction: column;
@@ -133,7 +173,7 @@ const Links = styled.li`
     &:hover {
       color: ${cVar("pinkDeep")};
     }
-  }
+  } */
 `;
 
 // Mobile navigation styling.

@@ -169,17 +169,32 @@ const Header: React.FC<HeaderProps> = ({ timeline }) => {
         <LinkArea>
           <Links onMouseEnter={handleHover} onMouseLeave={handleHoverOut}>
             <a href="#project" data-scroll-to className="link">
-              PROJECTS
+              <span className="h-link">
+                <span className="h-link__inner">
+                  <span> PROJECTS </span>
+                  <span className="h-link__animated"> PROJECTS </span>
+                </span>
+              </span>
             </a>
           </Links>
           <Links onMouseEnter={handleHover} onMouseLeave={handleHoverOut}>
             <a href="#about" data-scroll-to className="link">
-              ABOUT
+              <span className="h-link">
+                <span className="h-link__inner">
+                  <span> ABOUT </span>
+                  <span className="h-link__animated"> ABOUT </span>
+                </span>
+              </span>
             </a>
           </Links>
           <Links onMouseEnter={handleHover} onMouseLeave={handleHoverOut}>
             <a href="#contact" data-scroll-to className="link">
-              CONTACT
+              <span className="h-link">
+                <span className="h-link__inner">
+                  <span> CONTACT </span>
+                  <span className="h-link__animated"> CONTACT </span>
+                </span>
+              </span>
             </a>
           </Links>
         </LinkArea>

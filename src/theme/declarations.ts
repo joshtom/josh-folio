@@ -88,6 +88,7 @@ const border = {
 
 const transition = {
   default: "transition: 0.5s cubic-bezier(0.76, 0, 0.24, 1)",
+  link: "transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);",
 };
 
 export {
