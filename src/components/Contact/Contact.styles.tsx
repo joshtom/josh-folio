@@ -95,54 +95,57 @@ const Socials = styled.ul`
   }
 `;
 
-const List = styled.li`
-  display: flex;
-  text-transform: uppercase;
-  ${({ theme }) => theme.transition};
+// const List = styled.li`
+//   display: flex;
+//   text-transform: uppercase;
+//   ${({ theme }) => theme.transition};
 
-  a {
-    color: ${cVar("pink")};
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    font-size: 16px;
-    letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
-    position: relative;
-    cursor: pointer !important;
-    ${({ theme }) => theme.transition.default};
+//   a {
+//     color: ${cVar("pink")};
+//     display: flex;
+//     flex-direction: column;
+//     height: auto;
+//     font-size: 16px;
+//     letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
+//     position: relative;
+//     cursor: pointer !important;
+//     ${({ theme }) => theme.transition.default};
+//     background-color: red;
+//     padding: 10px;
+//     overflow: hidden;
 
-    &::before,
-    &::after {
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      background: ${cVar("pinkDeep")};
-      bottom: -4px;
-      left: 0;
-      pointer-events: none;
-    }
+//     &::before,
+//     &::after {
+//       position: absolute;
+//       width: 100%;
+//       height: 1px;
+//       background: ${cVar("pinkDeep")};
+//       bottom: -4px;
+//       left: 0;
+//       pointer-events: none;
+//     }
 
-    &::before {
-      content: "";
-    }
+//     &::before {
+//       content: "";
+//     }
 
-    &.link::before {
-      transform-origin: 100% 50%;
-      transform: scale3d(0, 1, 1);
-      transition: transform 0.3s;
-      ${({ theme }) => theme.transition.default};
-    }
+//     &.link::before {
+//       transform-origin: 100% 50%;
+//       transform: scale3d(0, 1, 1);
+//       transition: transform 0.3s;
+//       ${({ theme }) => theme.transition.default};
+//     }
 
-    &.link:hover::before {
-      transform-origin: 0% 50%;
-      transform: scale3d(1, 1, 1);
-    }
+//     &.link:hover::before {
+//       transform-origin: 0% 50%;
+//       transform: scale3d(1, 1, 1);
+//     }
 
-    &:hover {
-      color: ${cVar("pinkDeep")};
-    }
-  }
-`;
+//     &:hover {
+//       color: ${cVar("pinkDeep")};
+//     }
+//   }
+// `;
 
 const ScrollUp = styled.div`
   position: absolute;
@@ -195,6 +198,5 @@ export {
   Heading,
   Email,
   Socials,
-  List,
   ScrollUp,
 };

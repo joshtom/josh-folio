@@ -6,13 +6,13 @@ import {
   ContactContainer,
   Email,
   Socials,
-  List,
   Heading,
   OverflowEmail,
   ScrollUp,
 } from "./Contact.styles";
 import { Overflow } from "../About/About.styles";
 import ArrowIcon from "@assets/icons/Arrow";
+import { Links } from "../Header/Header.styles";
 
 function Contact() {
   const Cont = useRef(null);
@@ -76,7 +76,7 @@ function Contact() {
           </Email>
         </OverflowEmail>
         <Socials>
-          <List
+          <Links
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
@@ -87,10 +87,15 @@ function Contact() {
               rel="noreferrer"
               className="link"
             >
-              RESUME
+              <span className="h-link">
+                <span className="h-link__inner">
+                  <span> RESUME </span>
+                  <span className="h-link__animated"> RESUME </span>
+                </span>
+              </span>
             </a>
-          </List>
-          <List
+          </Links>
+          <Links
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
@@ -102,10 +107,15 @@ function Contact() {
               rel="noreferrer"
               className="link"
             >
-              MEDIUM
+              <span className="h-link">
+                <span className="h-link__inner">
+                  <span> MEDIUM </span>
+                  <span className="h-link__animated"> MEDIUM </span>
+                </span>
+              </span>
             </a>
-          </List>
-          <List
+          </Links>
+          <Links
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
@@ -117,10 +127,15 @@ function Contact() {
               rel="noreferrer"
               className="link"
             >
-              TWITTER
+              <span className="h-link">
+                <span className="h-link__inner">
+                  <span> TWITTER </span>
+                  <span className="h-link__animated"> TWITTER </span>
+                </span>
+              </span>
             </a>
-          </List>
-          <List
+          </Links>
+          <Links
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
@@ -132,10 +147,15 @@ function Contact() {
               rel="noreferrer"
               className="link"
             >
-              LINKEDIN
+              <span className="h-link">
+                <span className="h-link__inner">
+                  <span> LINKEDIN </span>
+                  <span className="h-link__animated"> LINKEDIN </span>
+                </span>
+              </span>
             </a>
-          </List>
-          <List
+          </Links>
+          <Links
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
@@ -147,9 +167,14 @@ function Contact() {
               rel="noreferrer"
               className="link"
             >
-              GITHUB
+              <span className="h-link">
+                <span className="h-link__inner">
+                  <span> GITHUB </span>
+                  <span className="h-link__animated"> GITHUB </span>
+                </span>
+              </span>
             </a>
-          </List>
+          </Links>
           <a href="#home" data-scroll-to style={{ cursor: "pointer" }}>
             <ScrollUp>
               <ArrowIcon />
