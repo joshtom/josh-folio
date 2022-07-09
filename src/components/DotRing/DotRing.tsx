@@ -13,7 +13,7 @@ const DotRing = () => {
   // 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
   const cursorDisplay = (cursor: cursorType | string) => {
     if (cursor === "ahover") return "GOTO";
-    else if (cursor === "linkhover") return "VIEW";
+    else if (cursor === "linkhover") return "VISIT";
     else if (cursor === "buttonhover") return "BUTTON";
     else if (cursor === "scrolldown") return "SCROLL DOWN";
     else if (cursor === "contact") return "SHOOT";
@@ -44,7 +44,7 @@ const DotRing = () => {
       });
     } else if (cursor === "linkhover" || cursor === "contact") {
       gsap.to(ring.current, {
-        scale: 2,
+        scale: 3,
       });
       gsap.to(span.current, {
         scale: 0.6,

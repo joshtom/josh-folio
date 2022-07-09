@@ -42,7 +42,7 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
       inertia: 1,
       class: "is-reveal",
       offset: 0,
-      multiplier: 1,
+      multiplier: 0.65,
     });
 
     // update locomotive scroll

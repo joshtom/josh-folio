@@ -120,14 +120,14 @@ function Project({ timeline }: Projectprops) {
       id="project"
       data-scroll-container
     >
-      <Heading ref={heading}>I build Product that works 🚀</Heading>
+      <Heading ref={heading}>selected projects</Heading>
       <Wrapper ref={wrapper1} id="theWrapper">
         <ProjectName color="asiko" data-scroll>
           <p
             data-scroll
-            data-scroll-speed="2"
+            data-scroll-speed="8"
             data-scroll-repeat={true}
-            data-scroll-position="top"
+            data-scroll-position="middle"
             data-scroll-direction="horizontal"
           >
             ASIKO - ASIKO - ASIKO - ASIKO - ASIKO - ASIKO - ASIKO - ASIKO -
@@ -161,8 +161,8 @@ function Project({ timeline }: Projectprops) {
           </Title>
           <Info color="asiko">
             <p ref={p1}>
-              I&apos;ve built products that solve real-life problems ranging
-              from Businesses to companies{" "}
+              A fun space for you to play games with friends, discover new
+              places to shop, watch trending videos, and so much more
             </p>
             <a
               href="https://asiko.flutterwave.com"
@@ -187,13 +187,12 @@ function Project({ timeline }: Projectprops) {
         <ProjectName color="inawo" data-scroll>
           <p
             data-scroll
-            data-scroll-speed="4"
-            data-scroll-position="top"
+            data-scroll-speed="8"
+            data-scroll-position="middle"
             data-scroll-direction="horizontal"
           >
-            {" "}
-            INAWO - INAWO - INAWO - INAWO - INAWO - INAWO - INAWO - INAWO -
-            INAWO{" "}
+            WISHME - WISHME - WISHME - WISHME - WISHME - WISHME - WISHME -
+            WISHME - WISHME
           </p>
         </ProjectName>
         <a href="https://url.com" target="_blank" rel="noreferrer">
@@ -222,12 +221,12 @@ function Project({ timeline }: Projectprops) {
             onMouseEnter={() => cursorChangeHandler("linkhover")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            ROBUST EVENT MANAGEMENT SYSTEM
+            BIRTHDAY WISHES PLATFORM
           </Title>
           <Info color="inawo">
             <p ref={p2}>
-              I&apos;ve built products that solve real-life problems ranging
-              from Businesses to companies{" "}
+              Wishme is a space where you can quickly make your wishes come true
+              and it enables you to track your wishes realtime
             </p>
             <a href="https://url" target="_blank" rel="noreferrer">
               <p

@@ -11,7 +11,7 @@ import {
   ScrollUp,
 } from "./Contact.styles";
 import { Overflow } from "../About/About.styles";
-import ArrowIcon from "@assets/icons/Arrow";
+import ArrowIcon, { Smallarrow } from "@assets/icons/Arrow";
 import { Links } from "../Header/Header.styles";
 
 function Contact() {
@@ -59,21 +59,22 @@ function Contact() {
       <LineText>shoot your shot 🚀</LineText>
       <ContactContainer>
         <Overflow>
-          <Heading ref={header} className="ANIMATE-TEXT">
+          <Heading ref={header}>
             Let&apos;s Work On Something Cool Together
           </Heading>
         </Overflow>
 
         <OverflowEmail>
-          <Email
-            ref={email}
+          <a
+            href="mailto:joshuaolarjide@gmail.com"
+            rel="noreferrer"
             onMouseEnter={() => cursorChangeHandler("contact")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <a href="mailto:joshuaolarjide@gmail.com" rel="noreferrer">
+            <Email ref={email}>
               🌍 <p>joshuaolarjide@gmail.com </p>
-            </a>
-          </Email>
+            </Email>
+          </a>
         </OverflowEmail>
         <Socials>
           <Links
@@ -175,9 +176,18 @@ function Contact() {
               </span>
             </a>
           </Links>
-          <a href="#home" data-scroll-to style={{ cursor: "pointer" }}>
+          <a href="#home" data-scroll-to>
             <ScrollUp>
-              <ArrowIcon />
+              <span className="c-link">
+                <span className="c-link__inner">
+                  <span>
+                    <Smallarrow />
+                  </span>
+                  <span className="c-link__animated">
+                    <Smallarrow />
+                  </span>
+                </span>
+              </span>
             </ScrollUp>
           </a>
         </Socials>

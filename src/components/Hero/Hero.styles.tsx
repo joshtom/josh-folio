@@ -22,27 +22,6 @@ const HeroContainer = styled.div`
   ${({ theme }) => theme.media.custom(0, 468)} {
     padding-top: 3rem;
   }
-
-  /* &::after {
-    z-index: 1000;
-    content: "";
-    pointer-events: none;
-    width: 100%;
-    height: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: url("/images/shadow.png") no-repeat 100% 0%;
-    background-size: cover;
-    animation: move 7s infinite alternate 2s;
-    transform-origin: 100% 0%;
-  }
-
-  @keyframes move {
-    to {
-      transform: scaleX(1.1);
-    }
-  } */
 `;
 
 const HeroHeading = styled.h1<{ desktop: boolean }>`

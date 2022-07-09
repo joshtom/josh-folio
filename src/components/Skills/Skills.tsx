@@ -25,29 +25,14 @@ function Skills({ timeline }: Skillprops) {
   }, [timeline]);
   return (
     <Container ref={Cont}>
-      <Skillset
-        data-scroll
-        data-scroll-speed="3"
-        data-scroll-position="top"
-        data-scroll-direction="horizontal"
-      >
+      <Skillset data-attr="top">
         {SkillsetTop.map((data, key) => (
-          <Skill key={key} data-scroll data-scroll-repeat>
-            {data}{" "}
-          </Skill>
+          <Skill key={key}>{data} </Skill>
         ))}
       </Skillset>
-      <Skillset
-        style={{ marginTop: "30px" }}
-        data-scroll
-        data-scroll-speed="-1"
-        data-scroll-position="top"
-        data-scroll-direction="horizontal"
-      >
+      <Skillset style={{ marginTop: "30px" }} data-attr="bottom">
         {SkillsetBottom.map((data, key) => (
-          <Skill key={key} data-scroll data-scroll-repeat>
-            {data}{" "}
-          </Skill>
+          <Skill key={key}>{data} </Skill>
         ))}
       </Skillset>
     </Container>

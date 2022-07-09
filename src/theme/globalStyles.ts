@@ -61,7 +61,8 @@ export const GlobalStyles = createGlobalStyle`
   .rotate {
     transform: rotate(0deg);
     transform-origin: center;
-    animation: rotate 7s infinite alternate 2s;
+    /* animation: rotate 7s infinite alternate 2s; */
+    animation: rotate 20s linear infinite;
     @keyframes rotate {
     to {
       transform: rotate(360deg);
