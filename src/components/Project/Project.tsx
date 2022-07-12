@@ -94,14 +94,15 @@ function Project({ timeline }: Projectprops) {
       });
 
     // HOVER EFFECT
-    new hoverEffect({
-      parent: container.current,
-      intensity: 0.3,
-      image1: "https://picsum.photos/400/600",
-      image2: "https://picsum.photos/420/620",
-      displacementImage:
-        "https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg",
-    });
+
+    // new hoverEffect({
+    //   parent: container.current,
+    //   intensity: 0.3,
+    //   image1: "https://picsum.photos/400/600",
+    //   image2: "https://picsum.photos/420/620",
+    //   displacementImage:
+    //     "https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg",
+    // });
   }, []);
 
   useEffect(() => {
@@ -136,19 +137,17 @@ function Project({ timeline }: Projectprops) {
         </ProjectName>
         <a href="https://asiko.flutterwave.com">
           <ProjectBanner
-            className="hover-img"
-            data-displacement="/images/myDistorsionImage.webp"
             onMouseEnter={() => cursorChangeHandler("linkhover")}
             onMouseLeave={() => cursorChangeHandler("")}
             ref={container}
           >
             <img
               ref={image1}
-              src="https://images.unsplash.com/photo-1445205170230-053b83016050?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTF8fGZhc2hpb258ZW58MHx8MHx8&auto=format&fit=crop&w=800&q=60"
+              src="/images/asiko.png"
               alt="banner-image"
+              width="100%"
+              height="100%"
             />
-
-            <img ref={image1} src="/images/imageAsiko.png" />
           </ProjectBanner>
         </a>
         <ProjectFooter>
@@ -182,7 +181,6 @@ function Project({ timeline }: Projectprops) {
         </ProjectFooter>
       </Wrapper>
 
-      {/*  */}
       <Wrapper ref={wrapper2} id="theWrapper">
         <ProjectName color="inawo" data-scroll>
           <p
@@ -195,23 +193,21 @@ function Project({ timeline }: Projectprops) {
             WISHME - WISHME
           </p>
         </ProjectName>
-        <a href="https://url.com" target="_blank" rel="noreferrer">
+        <a
+          href="https://curious-creponne-7c16ea.netlify.app/"
+          target="_blank"
+          rel="noreferrer"
+        >
           <ProjectBanner
-            className="hover-img"
-            data-displacement="/images/distortionImage2.jpeg"
             onMouseEnter={() => cursorChangeHandler("linkhover")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
             <img
-              ref={image2}
-              src="https://images.unsplash.com/photo-1648737153811-69a6d8c528bf?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=800&q=60"
+              ref={image1}
+              src="/images/wishme.png"
               alt="banner-image"
-            />
-            <img
-              ref={image2}
-              // src="https://images.unsplash.com/photo-1529025530948-67e8a5c69b58?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1674&q=80"
-              // alt="banner-image"
-              src="/images/imageAsiko.png"
+              width="100%"
+              height="100%"
             />
           </ProjectBanner>
         </a>
@@ -228,7 +224,11 @@ function Project({ timeline }: Projectprops) {
               Wishme is a space where you can quickly make your wishes come true
               and it enables you to track your wishes realtime
             </p>
-            <a href="https://url" target="_blank" rel="noreferrer">
+            <a
+              href="https://curious-creponne-7c16ea.netlify.app/"
+              target="_blank"
+              rel="noreferrer"
+            >
               <p
                 ref={a2}
                 onMouseEnter={() => cursorChangeHandler("hovered")}
@@ -241,6 +241,61 @@ function Project({ timeline }: Projectprops) {
           </Info>
         </ProjectFooter>
       </Wrapper>
+      {/*  */}
+      <Wrapper id="theWrapper">
+        <ProjectName color="inawo" data-scroll>
+          <p
+            data-scroll
+            data-scroll-speed="8"
+            data-scroll-position="middle"
+            data-scroll-direction="horizontal"
+          >
+            JOSHFOLIO - JOSHFOLIO - JOSHFOLIO - JOSHFOLIO - JOSHFOLIO -
+            JOSHFOLIO - JOSHFOLIO - JOSHFOLIO - JOSHFOLIO
+          </p>
+        </ProjectName>
+        <a href="https://joshuaolajide.com" target="_blank" rel="noreferrer">
+          <ProjectBanner
+            onMouseEnter={() => cursorChangeHandler("linkhover")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            <img
+              ref={image1}
+              src="/images/folio.png"
+              alt="banner-image"
+              width="100%"
+              height="100%"
+            />
+          </ProjectBanner>
+        </a>
+        <ProjectFooter>
+          <Title
+            ref={title2}
+            onMouseEnter={() => cursorChangeHandler("linkhover")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            PERSONAL PORTFOLIO WEBSITE
+          </Title>
+          <Info color="inawo">
+            <p ref={p2}>A new look on my portfolio website</p>
+            <a
+              href="https://joshuaolajide.com"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <p
+                ref={a2}
+                onMouseEnter={() => cursorChangeHandler("hovered")}
+                onMouseLeave={() => cursorChangeHandler("")}
+              >
+                {" "}
+                VISIT SITE <ArrowIcon />{" "}
+              </p>
+            </a>
+          </Info>
+        </ProjectFooter>
+      </Wrapper>
+      {/*  */}
       <Footer>
         <a
           href="https://github.com/joshtom"

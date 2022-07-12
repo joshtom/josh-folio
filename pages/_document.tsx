@@ -63,8 +63,8 @@ export default class MyDocument extends Document {
             property="og:title"
             content="Joshua Olajide | Frontend Engineer"
           />
-          <meta property="og:url" content="https://josh-folio.netlify.app/" />
-          <meta property="og:image" content="webp/preloader2.png" />
+          <meta property="og:url" content="https://www.joshuaolajide.com/" />
+          <meta property="og:image" content="webp/ogimage.png" />
           <meta
             property="og:description"
             content="I’m a frontend engineer that loves to create scalable, fast and
@@ -79,9 +79,9 @@ export default class MyDocument extends Document {
             content="I’m a frontend engineer that loves to create scalable, fast and
             mobile-first web applications"
           />
-          <meta name="twitter:image" content="webp/preloader2.png" />
+          <meta name="twitter:image" content="webp/ogimage.png" />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://josh-folio.netlify.app/" />
+          <meta name="twitter:url" content="https://www.joshuaolajide.com/" />
         </Head>
         <body>
           <Main />

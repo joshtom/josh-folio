@@ -59,11 +59,16 @@ function About() {
               onMouseEnter={() => cursorChangeHandler("hovered")}
               onMouseLeave={() => cursorChangeHandler("")}
               className="accordion"
+              data-scroll
+              data-repeat
               key={data.id}
             >
               <AccordionHeader
                 role="tab"
                 aria-expanded={isActive && selectedElement === index + 1}
+                data-scroll
+                data-scroll-offset="200"
+                data-repeat
               >
                 <span className="accordion-line"> </span>
                 <p>{data.label}</p>

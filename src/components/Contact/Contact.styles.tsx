@@ -32,9 +32,18 @@ const Heading = styled.h1`
   letter-spacing: ${({ theme }) => theme.letterSpacing("0.04")};
   line-height: 1.15;
   text-align: center;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 
   ${({ theme }) => theme.media.mobile} {
     font-size: 10vw;
+  }
+
+  &.is-reveal {
+    opacity: 1;
+    transform: none;
   }
 `;
 
@@ -53,6 +62,15 @@ const OverflowEmail = styled.div`
     height: 100px;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
+      transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &.is-reveal {
+      opacity: 1;
+      transform: none;
+    }
   }
 `;
 
@@ -97,6 +115,38 @@ const Socials = styled.ul`
   width: 60%;
   margin: 0 auto;
 
+  & > * {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
+      transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  &.is-reveal > * {
+    opacity: 1;
+    transform: none;
+  }
+
+  &.is-reveal > :first-child {
+    transition-delay: 0.06s;
+  }
+  &.is-reveal > :nth-child(2) {
+    transition-delay: 0.12s;
+  }
+  &.is-reveal > :nth-child(3) {
+    transition-delay: 0.18s;
+  }
+  &.is-reveal > :nth-child(4) {
+    transition-delay: 0.24s;
+  }
+  &.is-reveal > :nth-child(5) {
+    transition-delay: 0.3s;
+  }
+  &.is-reveal > :nth-child(6) {
+    transition-delay: 0.36s;
+  }
+
+  /* Responsive */
   ${({ theme }) => theme.media.mobile} {
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);

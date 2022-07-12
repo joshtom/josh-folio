@@ -74,7 +74,7 @@ const ProjectName = styled.div<{ color: ProjectType }>`
     bottom: 0;
     right: 0;
     left: 0;
-    height: 0.4px;
+    height: 0.8px;
     background-color: ${cVar("primary")};
     width: 100%;
     transform: scaleX(0);
@@ -88,7 +88,7 @@ const ProjectName = styled.div<{ color: ProjectType }>`
     top: 0;
     right: 0;
     left: 0;
-    height: 0.4px;
+    height: 0.8px;
     background-color: ${cVar("primary")};
     width: 100%;
     transform: scaleX(0);
@@ -127,49 +127,33 @@ const ProjectName = styled.div<{ color: ProjectType }>`
 const ProjectBanner = styled.div`
   width: 100%;
   height: 470px;
-  background: ${cVar("warning")};
+  background: transparent;
   margin-top: 1.5rem;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-size: contain;
   background-position: center center;
+  overflow: hidden;
 
   ${({ theme }) => theme.media.mobile} {
-    height: 300px;
-  }
-
-  canvas {
-    position: absolute;
-    z-index: 0;
-    width: 100% !important;
-    height: 100% !important;
+    height: auto;
   }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 1;
+    transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+      transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    ${({ theme }) => theme.media.mobile} {
+      object-fit: contain;
+    }
 
     &:hover {
-      &:nth-child(2) {
-        opacity: 1;
-      }
-    }
-
-    &:nth-child(1) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    &:nth-child(2) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 0.3s;
+      transform: scale(1.1) !important;
     }
   }
 `;
@@ -289,11 +273,7 @@ const Footer = styled.footer`
     position: relative;
     display: inline-block;
     & > span {
-      &:hover,
-      &:focus-visible,
-      &:focus-within {
-        animation: rotate-animation 10s infinite linear;
-      }
+      animation: rotate-animation 10s infinite linear;
     }
     & > section {
       background-color: transparent;

@@ -45,6 +45,9 @@ const Footer = styled.div`
     flex-direction: column-reverse;
     align-items: flex-start;
   }
+  ${({ theme }) => theme.media.mobile} {
+    transform: translateY(-35px);
+  }
 `;
 
 const Wrap = styled.div`

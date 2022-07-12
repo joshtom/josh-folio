@@ -17,8 +17,9 @@ const AboutContainer = styled.div`
   ${({ theme }) => theme.media.custom(0, 768)} {
     width: 90%;
   }
-  & > .accordion {
-    /* Disable the last accordion and the accordion line on hover */
+
+  /* Disable the last accordion and the accordion line on hover */
+  /* & > .accordion {
     &:last-child {
       & > header {
         border-bottom: none;
@@ -30,7 +31,7 @@ const AboutContainer = styled.div`
         }
       }
     }
-  }
+  } */
 `;
 const AboutParagraph = styled.p`
   font-size: 20px;
@@ -67,22 +68,60 @@ const AccordionHeader = styled.header`
   font-weight: 500;
   font-size: 17px;
   font-family: inherit;
+  overflow: hidden;
   transition: color 0.2s linear;
   cursor: pointer;
   letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
-  border-bottom: 1px solid ${cVar("grayMid")};
+  transition: all 10s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 10s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  &::before,
+  &::after {
+    opacity: 0;
+  }
+
+  & > * {
+    opacity: 0;
+    transform: translateY(60px);
+  }
+  &.is-reveal > p {
+    opacity: 1;
+    transform: none;
+    transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+      transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  &.is-reveal:before,
+  &.is-reveal:after {
+    opacity: 1;
+  }
+
+  &.is-reveal:first-child {
+    transition-delay: 0.5s;
+  }
+
+  &.is-reveal > .accordion-line:before {
+    transform: scaleX(1);
+    transition-delay: 0.3s;
+  }
 
   .accordion-line {
-    position: absolute;
-    content: "";
-    bottom: 0;
-    left: 0;
-    right: 0;
-    height: 0.1px;
-    background-color: ${cVar("primaryLight")};
-    transform-origin: center left;
-    transform: scaleX(0);
-    ${({ theme }) => theme.transition.default};
+    opacity: 1;
+    &::before,
+    &::after {
+      position: absolute;
+      content: "";
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 1px;
+      background-color: ${cVar("grayMid")};
+      transform-origin: center right;
+      transform: scaleX(0);
+      ${({ theme }) => theme.transition.default};
+      transition: all 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+      opacity: 1;
+    }
   }
 
   &:focus {
@@ -93,15 +132,17 @@ const AccordionHeader = styled.header`
     p {
       color: ${cVar("primaryLight")};
     }
-    .accordion-line {
+    .accordion-line:after {
       transform: scaleX(1);
+      background-color: ${cVar("primaryLight")};
     }
-    &::after,
-    &::before {
+    &::before,
+    &::after {
       background-color: ${cVar("primaryLight")};
     }
   }
 
+  /* The plus Icon */
   &::after,
   &::before {
     content: "";
@@ -139,21 +180,19 @@ const AccordionHeader = styled.header`
       font-size: 7vw;
     }
   }
+
+  /* Locomotivr scroll animation */
 `;
 
 const AccordionBody = styled.div`
   color: ${cVar("pink")};
-  line-height: 1.7;
+  line-height: 1.6;
   font-family: ${cVar("dmSans")};
   font-weight: 100;
   overflow: hidden;
   will-change: height;
   transition: height 0.4s cubic-bezier(0.65, 0.05, 0.36, 1);
-
-  p {
-    margin: 5px 0;
-    /* opacity: 0; */
-  }
+  padding-top: 20px;
 `;
 
 export {

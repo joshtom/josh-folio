@@ -2,19 +2,19 @@ export const SkillsetTop = [
   "javascript",
   "framermotion",
   "bootstrap",
-  "vuejs",
-  "nextjs",
-  "nuxtjs",
+  "vue.js",
+  "next.js",
+  "nuxt.js",
   "vuex",
-  "reactjs",
-  "gatsbyjs",
+  "react.js",
+  "gatsby.js",
 ];
 export const SkillsetBottom = [
   "typescript",
   "tailwindcss",
   "chakraui",
   "redux",
-  "reactjs",
+  "react.js",
   "graphql",
   "gsap",
   "sass",
@@ -50,6 +50,6 @@ export const Panels: { id: number; label: string; content: string }[] = [
     id: 5,
     label: "COMMUNITY",
     content:
-      "I have enjoyed the benefits of several communities both local and international and I thought of giving back in my own little way. This my little quest of giving back brought me to limelight in which I recently became an Organizer for Google`s Developers Group (Ibadan).",
+      "I have enjoyed the benefits of several communities both local and international and I thought of giving back in my own little way. This my little quest of giving back brought me to limelight in which I recently became an Organizer for Google`s Developers Group (Ibadan Chapter).",
   },
 ];

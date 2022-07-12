@@ -138,6 +138,7 @@ const Section1 = styled.section`
   width: 100%;
   height: auto;
   overflow: hidden;
+  height: 400px;
 
   & > img {
     object-fit: fill;
