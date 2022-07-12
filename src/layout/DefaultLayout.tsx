@@ -5,6 +5,8 @@ interface DefaultLayoutProps {
   preloader?: Boolean;
 }
 
+// 👨🏽‍🍳
+
 const DefaultLayoutContainer = styled.div`
   width: 100%;
   height: 100%;
@@ -25,7 +27,6 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
     if (!MainContainer.current) return;
     // @ts-ignore
     locoScroll = new locomotiveScroll({
-      // el: MainContainer.current,
       el: document.querySelector("#home"),
       smooth: true,
       mobile: {
@@ -39,10 +40,10 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
         getDirection: true,
       },
       reloadOnContextChange: true,
-      inertia: 1,
+      inertia: 0.3,
       class: "is-reveal",
       offset: 0,
-      multiplier: 1,
+      multiplier: 0.65,
     });
 
     // update locomotive scroll
@@ -70,12 +71,12 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
       });
     });
 
-    console.clear();
+    // console.clear();
     console.log.apply(console, [
       "Designed by Blessing Omotoyingbo 🎨 and Developed by Joshua Olajide  🥷 \n",
     ]);
     console.log.apply(console, [
-      "%c Shooting my shot 🚀, I'm currently open to join a new team, freelance project or collaboration\n",
+      "%c Shooting my shot 🚀, I'm currently open to join a new team, project or collaboration\n",
       "color: #000; background: #FDEEE7; padding:5px 0;",
     ]);
   }, []);

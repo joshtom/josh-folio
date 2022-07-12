@@ -19,7 +19,7 @@ const ProjectWrapper = styled.div`
 `;
 
 const Heading = styled.div`
-  color: ${cVar("pinkDeep")};
+  color: ${cVar("primary")};
   font-family: ${cVar("dinAlternate")};
   text-transform: uppercase;
   font-size: 36px;
@@ -47,10 +47,10 @@ const Wrapper = styled.div`
   margin-bottom: 4.5rem;
 `;
 
-const projectColor = (color: ProjectType) => {
-  if (color === "asiko") return `${cVar("asikoColor")}`;
-  else if (color === "inawo") return `${cVar("inawoColor")}`;
-};
+// const projectColor = (color: ProjectType) => {
+//   if (color === "asiko") return `${cVar("asikoColor")}`;
+//   else if (color === "inawo") return `${cVar("inawoColor")}`;
+// };
 
 // Usage
 // border-top: 1px solid ${({ color }) => projectColor(color)};
@@ -59,10 +59,11 @@ const projectColor = (color: ProjectType) => {
 // Check the color passed in the ProjectName component and use that to determine the color that would be applied
 const ProjectName = styled.div<{ color: ProjectType }>`
   position: relative;
-  font-size: 64px;
+  font-size: 70px;
   margin: 0 auto;
-  padding: 14px 0;
+  padding: 25px 0;
   margin-top: 30px;
+
   /* overflow: scroll; */
   &::-webkit-scrollbar {
     display: none;
@@ -73,7 +74,7 @@ const ProjectName = styled.div<{ color: ProjectType }>`
     bottom: 0;
     right: 0;
     left: 0;
-    height: 1px;
+    height: 0.8px;
     background-color: ${cVar("primary")};
     width: 100%;
     transform: scaleX(0);
@@ -87,7 +88,7 @@ const ProjectName = styled.div<{ color: ProjectType }>`
     top: 0;
     right: 0;
     left: 0;
-    height: 1px;
+    height: 0.8px;
     background-color: ${cVar("primary")};
     width: 100%;
     transform: scaleX(0);
@@ -119,55 +120,40 @@ const ProjectName = styled.div<{ color: ProjectType }>`
 
   p {
     white-space: nowrap;
+    color: ${cVar("pink")};
   }
 `;
 
 const ProjectBanner = styled.div`
   width: 100%;
   height: 470px;
-  background: ${cVar("warning")};
+  background: transparent;
   margin-top: 1.5rem;
   position: relative;
   overflow: hidden;
   background-size: cover;
   background-size: contain;
   background-position: center center;
+  overflow: hidden;
 
   ${({ theme }) => theme.media.mobile} {
-    height: 300px;
-  }
-
-  canvas {
-    position: absolute;
-    z-index: 0;
-    width: 100% !important;
-    height: 100% !important;
+    height: auto;
   }
 
   img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    opacity: 1;
+    transition: all 0.8s cubic-bezier(0.215, 0.61, 0.355, 1),
+      transform 0.8s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    ${({ theme }) => theme.media.mobile} {
+      object-fit: contain;
+    }
 
     &:hover {
-      &:nth-child(2) {
-        opacity: 1;
-      }
-    }
-
-    &:nth-child(1) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-    &:nth-child(2) {
-      position: absolute;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 0.3s;
+      transform: scale(1.1) !important;
     }
   }
 `;
@@ -187,7 +173,7 @@ const AnimateBanner = styled.div`
 const ProjectFooter = styled.div`
   display: grid;
   grid-template-columns: 3fr 2fr;
-  margin-top: 1.5rem;
+  margin-top: 2.3rem;
 
   ${({ theme }) => theme.media.custom(0, 1024)} {
     grid-template-columns: 1fr;
@@ -197,8 +183,11 @@ const Title = styled.h3`
   font-size: 48px;
   font-size: 2.5vw;
   font-family: ${cVar("dinAlternate")};
+  line-height: 1.4;
+  letter-spacing: ${({ theme }) => theme.letterSpacing("0.03")};
   width: 60%;
   margin-bottom: 20px;
+  color: ${cVar("pink")};
 
   ${({ theme }) => theme.media.custom(0, 1024)} {
     font-size: 48px;
@@ -216,6 +205,10 @@ const Info = styled.div<{ color: ProjectType }>`
   p {
     font-family: ${cVar("dmSans")};
     position: relative;
+
+    &:first-child {
+      line-height: 1.7;
+    }
     &:last-child {
       margin-top: 20px;
       color: ${cVar("white")};
@@ -280,11 +273,7 @@ const Footer = styled.footer`
     position: relative;
     display: inline-block;
     & > span {
-      &:hover,
-      &:focus-visible,
-      &:focus-within {
-        animation: rotate-animation 10s infinite linear;
-      }
+      animation: rotate-animation 10s infinite linear;
     }
     & > section {
       background-color: transparent;

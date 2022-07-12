@@ -1,6 +1,7 @@
+import { useRef, useState, useEffect, useContext } from "react";
+import { MouseContext } from "@context/mouse-context";
 import { cVar } from "@src/helpers";
 import { Panels } from "@src/utils/data";
-import { useRef, useState, useEffect } from "react";
 import { LineText } from "../LineText/LineText";
 import {
   AboutContainer,
@@ -15,6 +16,7 @@ function About() {
   const [isActive, setIsActive] = useState(false);
   const [selectedElement, setSelectedElement] = useState(0);
   const [choose, setChoose] = useState([]);
+  const { cursorChangeHandler } = useContext(MouseContext);
 
   const handleActive = (data: any, index: number) => {
     if (data.id === index + 1) {
@@ -54,13 +56,21 @@ function About() {
           return (
             <Accordion
               onClick={() => handleActive(data, index)}
+              onMouseEnter={() => cursorChangeHandler("hovered")}
+              onMouseLeave={() => cursorChangeHandler("")}
               className="accordion"
+              data-scroll
+              data-repeat
               key={data.id}
             >
               <AccordionHeader
                 role="tab"
                 aria-expanded={isActive && selectedElement === index + 1}
+                data-scroll
+                data-scroll-offset="200"
+                data-repeat
               >
+                <span className="accordion-line"> </span>
                 <p>{data.label}</p>
               </AccordionHeader>
               <AccordionBody

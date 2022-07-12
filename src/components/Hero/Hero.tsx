@@ -126,16 +126,20 @@ function Hero({ timeline }: Heroprops) {
   useEffect(() => {
     new hoverEffect({
       parent: section1.current,
+      // imagesRatio: 6 / 15,
       imagesRatio: 4 / 9,
       intensity: 0.4,
-      image1: "/images/fot2.png",
-      image2: "/images/fot2.png", // Replace this with the image without grayscale
+      // image1: "/images/fot2.png",
+      // image2: "/images/fot2.png",
+      // image2: "/images/2.png",
+      image1: "/images/doc1.png",
+      image2: "/images/doc2.png",
       displacementImage: "/images/myDistorsionImage.webp",
     });
   }, [section1]);
 
   return (
-    <HeroContainer ref={HeroCont} >
+    <HeroContainer ref={HeroCont}>
       <Header timeline={timeline} />
       <Main>
         <MainHead>

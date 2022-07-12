@@ -9,12 +9,13 @@ export const GlobalStyles = createGlobalStyle`
     --light: #ffffff;
     --dark: #161a19;
     --primary: #FE3F00;
+    --primary-light: tomato;
     --secondary: #7f9993;
     --warning: #FEF7CD;
     --text-pink: #FDEEE7;
     --text-pink-deep: #dbb59b;
     --gray: #E5E5E5;
-    /* --gray-dark: #C4C4C4; */
+
     --gray-dark: #262626;
     --gray-mid: #aaaaaa57;
     --gray-darker: #141414;
@@ -60,7 +61,8 @@ export const GlobalStyles = createGlobalStyle`
   .rotate {
     transform: rotate(0deg);
     transform-origin: center;
-    animation: rotate 7s infinite alternate 2s;
+    /* animation: rotate 7s infinite alternate 2s; */
+    animation: rotate 20s linear infinite;
     @keyframes rotate {
     to {
       transform: rotate(360deg);

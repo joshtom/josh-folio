@@ -23,19 +23,41 @@ const Skillset = styled.div`
   margin-bottom: 10px;
   display: flex;
   gap: 25px;
+
+  &[data-attr="top"] {
+    animation: marquee 100s alternate infinite 2s;
+    will-change: transform;
+  }
+  &[data-attr="bottom"] {
+    animation: marqueeReverse 100s alternate infinite 2s;
+    will-change: transform;
+    transform: translate3d(-32%, 0, 0);
+  }
+
+  @keyframes marquee {
+    100% {
+      transform: translate3d(-32%, 0, 0);
+    }
+  }
+  @keyframes marqueeReverse {
+    100% {
+      transform: translate3d(0%, 0, 0);
+    }
+  }
 `;
 
 const Skill = styled.div`
-  padding: 25px 50px;
+  padding: 20px 56px 20px;
   letter-spacing: ${({ theme }) => theme.letterSpacing()};
   width: auto;
-  color: ${cVar("pink")};
-  border: 1px solid ${cVar("grayMid")};
+  color: #5a5a5c;
+  border: 1px solid #5a5a5c;
   display: flex;
   justify-content: center;
   align-items: center;
   text-transform: uppercase;
   border-radius: 58px;
+  font-weight: 100;
   letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
   ${({ theme }) => theme.transition.default};
 
@@ -45,10 +67,6 @@ const Skill = styled.div`
 
   &.is-reveal {
     border: 1px solid ${cVar("pinkDeep")};
-  }
-
-  &:hover {
-    border: 1px solid ${cVar("primary")};
   }
 `;
 

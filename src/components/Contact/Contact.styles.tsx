@@ -32,20 +32,46 @@ const Heading = styled.h1`
   letter-spacing: ${({ theme }) => theme.letterSpacing("0.04")};
   line-height: 1.15;
   text-align: center;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
+    transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
 
   ${({ theme }) => theme.media.mobile} {
     font-size: 10vw;
+  }
+
+  &.is-reveal {
+    opacity: 1;
+    transform: none;
   }
 `;
 
 const OverflowEmail = styled.div`
   width: 100%;
-  height: auto;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
+  margin: 1.4rem 0;
   ${({ theme }) => theme.transition.default};
+
+  a {
+    display: inline-block;
+    display: inline-flex;
+    height: 100px;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 1s cubic-bezier(0.215, 0.61, 0.355, 1),
+      transform 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+    &.is-reveal {
+      opacity: 1;
+      transform: none;
+    }
+  }
 `;
 
 const Email = styled.div`
@@ -58,6 +84,7 @@ const Email = styled.div`
   border-radius: 91px;
   margin: 40px auto;
   font-size: 28px;
+  cursor: pointer;
   ${({ theme }) => theme.transition.default};
 
   a {
@@ -88,59 +115,42 @@ const Socials = styled.ul`
   width: 60%;
   margin: 0 auto;
 
+  & > * {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.6s cubic-bezier(0.215, 0.61, 0.355, 1),
+      transform 0.6s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  &.is-reveal > * {
+    opacity: 1;
+    transform: none;
+  }
+
+  &.is-reveal > :first-child {
+    transition-delay: 0.06s;
+  }
+  &.is-reveal > :nth-child(2) {
+    transition-delay: 0.12s;
+  }
+  &.is-reveal > :nth-child(3) {
+    transition-delay: 0.18s;
+  }
+  &.is-reveal > :nth-child(4) {
+    transition-delay: 0.24s;
+  }
+  &.is-reveal > :nth-child(5) {
+    transition-delay: 0.3s;
+  }
+  &.is-reveal > :nth-child(6) {
+    transition-delay: 0.36s;
+  }
+
+  /* Responsive */
   ${({ theme }) => theme.media.mobile} {
     gap: 20px;
     grid-template-columns: repeat(3, 1fr);
     width: 100%;
-  }
-`;
-
-const List = styled.li`
-  display: flex;
-  text-transform: uppercase;
-  ${({ theme }) => theme.transition};
-
-  a {
-    color: ${cVar("pink")};
-    display: flex;
-    flex-direction: column;
-    height: auto;
-    font-size: 16px;
-    letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
-    position: relative;
-    cursor: pointer !important;
-    ${({ theme }) => theme.transition.default};
-
-    &::before,
-    &::after {
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      background: ${cVar("pinkDeep")};
-      bottom: -4px;
-      left: 0;
-      pointer-events: none;
-    }
-
-    &::before {
-      content: "";
-    }
-
-    &.link::before {
-      transform-origin: 100% 50%;
-      transform: scale3d(0, 1, 1);
-      transition: transform 0.3s;
-      ${({ theme }) => theme.transition.default};
-    }
-
-    &.link:hover::before {
-      transform-origin: 0% 50%;
-      transform: scale3d(1, 1, 1);
-    }
-
-    &:hover {
-      color: ${cVar("pinkDeep")};
-    }
   }
 `;
 
@@ -158,43 +168,49 @@ const ScrollUp = styled.div`
   z-index: 1;
   ${({ theme }) => theme.transition.default};
 
+  .c-link {
+    display: inline-flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    overflow: hidden;
+
+    &__inner {
+      display: flex;
+      transform: translateY(100%);
+      animation: infiniteArrow 1.2s infinite
+        cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    &__animated {
+      position: absolute;
+      bottom: 100%;
+    }
+  }
+
+  @keyframes infiniteArrow {
+    100% {
+      transform: translateY(0);
+    }
+  }
+
   svg {
-    transform: rotate(315deg);
-    width: 20px;
-    ${({ theme }) => theme.transition.default};
-    animation: scroll 800ms cubic-bezier(0.76, 0, 0.24, 1) infinite alternate;
-
-    @keyframes scroll {
-      0% {
-        transform: translateY(-10px) rotate(315deg);
-      }
-
-      100% {
-        transform: translateY(0px) rotate(315deg);
-      }
+    transform: rotate(180deg);
+    path {
+      fill: ${cVar("light")};
     }
   }
 
   &:hover {
-    background: ${cVar("primary")};
-    svg > path {
-      fill: ${cVar("pink")};
-    }
+    opacity: 0.9;
   }
 
   /* Responsiveness */
   ${({ theme }) => theme.media.mobile} {
     right: 27px;
     bottom: 4px;
+    display: none;
   }
 `;
 
-export {
-  ContactContainer,
-  OverflowEmail,
-  Heading,
-  Email,
-  Socials,
-  List,
-  ScrollUp,
-};
+export { ContactContainer, OverflowEmail, Heading, Email, Socials, ScrollUp };
