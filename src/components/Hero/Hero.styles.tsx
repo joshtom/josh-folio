@@ -41,7 +41,7 @@ const HeroHeading = styled.h1<{ desktop: boolean }>`
   ${({ theme }) => theme.media.mobile} {
     font-size: 12vw;
     line-height: 1.2;
-    font-weight: 900;
+    /* font-weight: 900; */
     display: ${({ desktop }) => (desktop ? "none" : "inline-block")};
   }
 `;
@@ -145,7 +145,6 @@ const Section1 = styled.section`
     object-fit: contain;
     background-color: ${cVar("dark")};
   }
-  
 `;
 const Section2 = styled.section`
   position: relative;
@@ -184,6 +183,11 @@ const Section3 = styled.section`
     display: inline-flex;
     align-items: center;
 
+    ${({ theme }) => theme.media.mobile} {
+      margin-left: 10px;
+      margin-top: 35px;
+    }
+
     &:before {
       position: absolute;
       content: "";
@@ -200,7 +204,7 @@ const Section3 = styled.section`
         width: 188px;
         box-shadow: none;
         border-radius: 38px;
-        border: none;
+        /* border: none; */
       }
     }
     span {
@@ -231,7 +235,6 @@ const Section3 = styled.section`
     }
   }
   ${({ theme }) => theme.media.mobile} {
-    height: auto;
     font-size: 20px;
   }
 `;

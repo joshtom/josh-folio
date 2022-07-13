@@ -12,7 +12,8 @@ const Container = styled.div`
   }
 
   ${({ theme }) => theme.media.custom(0, 768)} {
-    overflow: scroll;
+    /* overflow: scroll; */
+    background-color: transparent;
   }
 `;
 
@@ -25,13 +26,17 @@ const Skillset = styled.div`
   gap: 25px;
 
   &[data-attr="top"] {
-    animation: marquee 100s alternate infinite 2s;
+    animation: marquee 40s alternate infinite 4s;
     will-change: transform;
   }
   &[data-attr="bottom"] {
-    animation: marqueeReverse 100s alternate infinite 2s;
+    animation: marqueeReverse 40s alternate infinite 4s;
     will-change: transform;
     transform: translate3d(-32%, 0, 0);
+
+    ${({ theme }) => theme.media.mobile} {
+      transform: translate3d(-240%, 0, 0);
+    }
   }
 
   @keyframes marquee {
@@ -44,14 +49,29 @@ const Skillset = styled.div`
       transform: translate3d(0%, 0, 0);
     }
   }
+
+  /* Keyframes for mobile */
+  ${({ theme }) => theme.media.mobile} {
+    @keyframes marqueeReverse {
+      100% {
+        transform: translate3d(0%, 0, 0);
+      }
+    }
+    @keyframes marquee {
+      100% {
+        transform: translate3d(-253%, 0, 0);
+      }
+    }
+  }
 `;
 
 const Skill = styled.div`
   padding: 20px 56px 20px;
   letter-spacing: ${({ theme }) => theme.letterSpacing()};
   width: auto;
-  color: #5a5a5c;
-  border: 1px solid #5a5a5c;
+  /* color: #5a5a5c; */
+  color: ${cVar("pink")};
+  border: 1px solid ${cVar("grayMid")};
   display: flex;
   justify-content: center;
   align-items: center;

@@ -30,14 +30,10 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
       el: document.querySelector("#home"),
       smooth: true,
       mobile: {
-        breakpoint: 0,
-        smooth: false,
-        getDirection: true,
+        smooth: true,
       },
       tablet: {
-        breakpoint: 0,
-        smooth: false,
-        getDirection: true,
+        smooth: true,
       },
       reloadOnContextChange: true,
       inertia: 0.3,

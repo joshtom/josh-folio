@@ -272,7 +272,7 @@ const Footer = styled.footer`
   & > a {
     position: relative;
     display: inline-block;
-    & > span {
+    & > img:first-child {
       animation: rotate-animation 10s infinite linear;
     }
     & > section {
