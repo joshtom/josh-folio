@@ -166,7 +166,7 @@ const AnimateBanner = styled.div`
   bottom: 0;
   width: 100%;
   height: 100%;
-  background-color: ${cVar("dark")};
+  background-color: ${cVar("black2")};
   z-index: 1;
 `;
 
@@ -272,7 +272,7 @@ const Footer = styled.footer`
   & > a {
     position: relative;
     display: inline-block;
-    & > span {
+    & > img:first-child {
       animation: rotate-animation 10s infinite linear;
     }
     & > section {

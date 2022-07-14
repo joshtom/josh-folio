@@ -44,6 +44,7 @@ const DotRing = () => {
       });
     } else if (cursor === "linkhover" || cursor === "contact") {
       gsap.to(ring.current, {
+        border: `none`,
         scale: 3,
       });
       gsap.to(span.current, {

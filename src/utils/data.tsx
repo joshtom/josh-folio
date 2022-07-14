@@ -18,7 +18,7 @@ export const SkillsetBottom = [
   "graphql",
   "gsap",
   "sass",
-  "typescript",
+  "restapi",
 ];
 
 export const Panels: { id: number; label: string; content: string }[] = [

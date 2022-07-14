@@ -41,7 +41,7 @@ const HeroHeading = styled.h1<{ desktop: boolean }>`
   ${({ theme }) => theme.media.mobile} {
     font-size: 12vw;
     line-height: 1.2;
-    font-weight: 900;
+    /* font-weight: 900; */
     display: ${({ desktop }) => (desktop ? "none" : "inline-block")};
   }
 `;
@@ -134,18 +134,38 @@ const MainBody = styled.main`
 
 const Section1 = styled.section`
   position: relative;
-  background-color: ${cVar("grayDarker")};
+  background-color: ${cVar("black2")};
   width: 100%;
   height: auto;
+  height: 200px;
   overflow: hidden;
-  height: 400px;
+
+  /* Tablet */
+  ${({ theme }) => theme.media.mobile} {
+    height: auto;
+  }
 
   & > img {
-    object-fit: fill;
-    object-fit: contain;
-    background-color: ${cVar("dark")};
+    object-fit: cover;
+    background-color: ${cVar("black2")};
+    filter: grayscale(100%) brightness(70%);
+    transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
   }
-  
+
+  & > .animatebanner {
+    transition: 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+  }
+
+  &:hover {
+    & > img {
+      filter: none;
+      transform: scale(1.3) !important;
+    }
+    & > .animatebanner {
+      transform: translate(-100%, 0) !important;
+      opacity: 0 !important;
+    }
+  }
 `;
 const Section2 = styled.section`
   position: relative;
@@ -184,6 +204,11 @@ const Section3 = styled.section`
     display: inline-flex;
     align-items: center;
 
+    ${({ theme }) => theme.media.mobile} {
+      margin-left: 10px;
+      margin-top: 35px;
+    }
+
     &:before {
       position: absolute;
       content: "";
@@ -200,7 +225,7 @@ const Section3 = styled.section`
         width: 188px;
         box-shadow: none;
         border-radius: 38px;
-        border: none;
+        /* border: none; */
       }
     }
     span {
@@ -231,7 +256,6 @@ const Section3 = styled.section`
     }
   }
   ${({ theme }) => theme.media.mobile} {
-    height: auto;
     font-size: 20px;
   }
 `;

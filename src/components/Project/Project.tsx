@@ -16,7 +16,7 @@ import Emoji from "@assets/icons/emoji.png";
 import ArrowIcon from "@assets/icons/Arrow";
 // import ImageAsiko from "../../assets/images/imageAsiko.png";
 import { gsap } from "gsap";
-import Image from "next/image";
+// import Image from "next/image";
 
 const hoverEffect =
   typeof window !== `undefined` ? require("hover-effect").default : null;
@@ -241,61 +241,7 @@ function Project({ timeline }: Projectprops) {
           </Info>
         </ProjectFooter>
       </Wrapper>
-      {/*  */}
-      <Wrapper id="theWrapper">
-        <ProjectName color="inawo" data-scroll>
-          <p
-            data-scroll
-            data-scroll-speed="8"
-            data-scroll-position="middle"
-            data-scroll-direction="horizontal"
-          >
-            JOSHFOLIO - JOSHFOLIO - JOSHFOLIO - JOSHFOLIO - JOSHFOLIO -
-            JOSHFOLIO - JOSHFOLIO - JOSHFOLIO - JOSHFOLIO
-          </p>
-        </ProjectName>
-        <a href="https://joshuaolajide.com" target="_blank" rel="noreferrer">
-          <ProjectBanner
-            onMouseEnter={() => cursorChangeHandler("linkhover")}
-            onMouseLeave={() => cursorChangeHandler("")}
-          >
-            <img
-              ref={image1}
-              src="/images/folio.png"
-              alt="banner-image"
-              width="100%"
-              height="100%"
-            />
-          </ProjectBanner>
-        </a>
-        <ProjectFooter>
-          <Title
-            ref={title2}
-            onMouseEnter={() => cursorChangeHandler("linkhover")}
-            onMouseLeave={() => cursorChangeHandler("")}
-          >
-            PERSONAL PORTFOLIO WEBSITE
-          </Title>
-          <Info color="inawo">
-            <p ref={p2}>A new look on my portfolio website</p>
-            <a
-              href="https://joshuaolajide.com"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <p
-                ref={a2}
-                onMouseEnter={() => cursorChangeHandler("hovered")}
-                onMouseLeave={() => cursorChangeHandler("")}
-              >
-                {" "}
-                VISIT SITE <ArrowIcon />{" "}
-              </p>
-            </a>
-          </Info>
-        </ProjectFooter>
-      </Wrapper>
-      {/*  */}
+
       <Footer>
         <a
           href="https://github.com/joshtom"
@@ -304,9 +250,9 @@ function Project({ timeline }: Projectprops) {
           onMouseLeave={() => cursorChangeHandler("")}
           rel="noreferrer"
         >
-          <Image src={MoreProject} />
+          <img src={MoreProject.src} />
           <section>
-            <Image src={Emoji} />
+            <img src={Emoji.src} />
           </section>
         </a>
       </Footer>
