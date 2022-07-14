@@ -19,6 +19,14 @@ const FooterContainer = styled.footer`
     color: ${cVar("pink")};
     font-size: 18px;
     text-transform: uppercase;
+    ${({ theme }) => theme.transition.default};
+
+    &:last-child {
+      cursor: pointer;
+      &:hover {
+        color: ${cVar("primaryLight")};
+      }
+    }
 
     span {
       ${({ theme }) => theme.media.custom(0, 768)} {
@@ -48,10 +56,12 @@ function Footer({ timeline }: Footerprops) {
     <div ref={Cont}>
       <FooterContainer>
         <p> &copy; Joshua Olajide - {new Date().getFullYear()} </p>
-        <p>
-          {" "}
-          🎨 &nbsp; <span>Design by</span> B!{" "}
-        </p>
+        <a href="https://twitter.com/blsnomot" rel="noreferrer" target="_blank">
+          <p>
+            {" "}
+            🎨 &nbsp; <span>Design by</span> B!{" "}
+          </p>
+        </a>
       </FooterContainer>
     </div>
   );

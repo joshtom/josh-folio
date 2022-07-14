@@ -73,7 +73,7 @@ function Hero({ timeline }: Heroprops) {
       .from(
         [chars, chars1],
         {
-          duration: 1,
+          duration: 1.4,
           opacity: 0,
           scale: 1,
           y: 40,
@@ -81,7 +81,7 @@ function Hero({ timeline }: Heroprops) {
           rotationX: -90,
           transformOrigin: "0% 50% -50",
           stagger: {
-            amount: 0.6,
+            amount: 0.9,
           },
         },
         "+=0"
@@ -92,13 +92,12 @@ function Hero({ timeline }: Heroprops) {
         delay: timeDelay + 1,
         duration: 1,
         x: "100%",
-        ease: "power2.out",
+        opacity: 1,
       })
       .from(image.current, {
-        scale: 1.2,
+        scale: 1.4,
         duration: 1.4,
         delay: -1,
-        ease: "power2.out",
       })
       .from([sectionLine1.current, sectionLine2.current], {
         scaleX: 0,
@@ -123,21 +122,6 @@ function Hero({ timeline }: Heroprops) {
       });
   }, [timeline]);
 
-  useEffect(() => {
-    new hoverEffect({
-      parent: section1.current,
-      // imagesRatio: 6 / 15,
-      imagesRatio: 4 / 9,
-      intensity: 0.4,
-      // image1: "/images/fot2.png",
-      // image2: "/images/fot2.png",
-      // image2: "/images/2.png",
-      image1: "/images/doc1.png",
-      image2: "/images/doc2.png",
-      displacementImage: "/images/myDistorsionImage.webp",
-    });
-  }, [section1]);
-
   return (
     <HeroContainer ref={HeroCont}>
       <Header timeline={timeline} />
@@ -152,20 +136,14 @@ function Hero({ timeline }: Heroprops) {
           </ScrollerContainer>
         </MainHead>
         <MainBody>
-          {/* <Section1 ref={section1}>
-            <AnimateBanner ref={animeBanner} />
+          <Section1 ref={section1}>
+            <AnimateBanner ref={animeBanner} className="animatebanner" />
             <img
               ref={image}
-              src="https://res.cloudinary.com/drqltx8ye/image/upload/q_auto:best/v1652971643/fococlipping-20220224-05210_1_mydqw8.png"
+              src="/images/josh2.png"
               width="100%"
               height="100%"
             />
-          </Section1> */}
-          <Section1
-            ref={section1}
-            style={{ width: "100%", height: 190, objectFit: "scale-down" }}
-          >
-            <AnimateBanner ref={animeBanner} />
           </Section1>
           <MainBodyHeading> Frontend Engineer</MainBodyHeading>
           <Section2>
