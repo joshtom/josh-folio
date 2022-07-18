@@ -84,11 +84,16 @@ const MainHead = styled.header`
   gap: 4rem;
   margin-bottom: 20px;
 
+  ${({ theme }) => theme.media.smallLaptop} {
+    margin-bottom: 50px;
+  }
+
   ${({ theme }) => theme.media.custom(0, 1024)} {
     gap: 2rem;
   }
   ${({ theme }) => theme.media.mobile} {
     grid-template-columns: 5fr 2fr;
+    margin-bottom: 20px;
   }
 `;
 const ScrollerContainer = styled.div`
@@ -97,6 +102,18 @@ const ScrollerContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  /* background-color: green; */
+  position: relative;
+  height: 200px;
+
+  ${({ theme }) => theme.media.smallLaptop} {
+    /* background-color: red; */
+    height: 120px;
+  }
+
+  ${({ theme }) => theme.media.mobile} {
+    height: 120px;
+  }
 `;
 const MainBody = styled.main`
   display: grid;
@@ -191,6 +208,13 @@ const Section3 = styled.section`
   color: ${cVar("white")};
   line-height: 30px;
   font-size: 16px;
+
+  ${({ theme }) => theme.media.smallLaptop} {
+    min-height: 100%;
+  }
+  ${({ theme }) => theme.media.mobile} {
+    height: auto;
+  }
   a {
     color: ${cVar("white")};
     letter-spacing: ${({ theme }) => theme.letterSpacing("0.07")};

@@ -67,7 +67,7 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
       });
     });
 
-    // console.clear();
+    console.clear();
     console.log.apply(console, [
       "Designed by Blessing Omotoyingbo 🎨 and Developed by Joshua Olajide  🥷 \n",
     ]);
