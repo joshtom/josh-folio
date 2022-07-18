@@ -26,12 +26,12 @@ const Skillset = styled.div`
   gap: 25px;
 
   &[data-attr="top"] {
-    animation: marquee 40s alternate infinite 4s;
-    will-change: transform;
+    animation: marquee 30s alternate infinite 4s;
+    /* will-change: transform; */
   }
   &[data-attr="bottom"] {
-    animation: marqueeReverse 40s alternate infinite 4s;
-    will-change: transform;
+    animation: marqueeReverse 30s alternate infinite 4s;
+    /* will-change: transform; */
     transform: translate3d(-32%, 0, 0);
 
     ${({ theme }) => theme.media.mobile} {
@@ -71,7 +71,7 @@ const Skill = styled.div`
   width: auto;
   /* color: #5a5a5c; */
   color: ${cVar("pink")};
-  border: 1px solid ${cVar("grayMid")};
+  border: 1.5px solid ${cVar("grayMid")};
   display: flex;
   justify-content: center;
   align-items: center;
