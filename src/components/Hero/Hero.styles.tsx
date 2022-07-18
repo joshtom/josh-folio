@@ -159,11 +159,11 @@ const Section1 = styled.section`
   &:hover {
     & > img {
       filter: none;
-      transform: scale(1.3) !important;
+      /* transform: scale(1.1) !important; */
     }
     & > .animatebanner {
       transform: translate(-100%, 0) !important;
-      opacity: 0 !important;
+      opacity: 0.6 !important;
     }
   }
 `;
@@ -181,7 +181,6 @@ const Section2 = styled.section`
   }
   ${({ theme }) => theme.media.mobile} {
     height: auto;
-    font-size: 20px;
   }
 `;
 const Section3 = styled.section`
@@ -206,7 +205,7 @@ const Section3 = styled.section`
 
     ${({ theme }) => theme.media.mobile} {
       margin-left: 10px;
-      margin-top: 35px;
+      margin-top: 43px;
     }
 
     &:before {
@@ -256,7 +255,7 @@ const Section3 = styled.section`
     }
   }
   ${({ theme }) => theme.media.mobile} {
-    font-size: 20px;
+    min-height: 160px;
   }
 `;
 const MainFooter = styled.h1`

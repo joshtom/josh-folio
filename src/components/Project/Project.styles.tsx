@@ -248,15 +248,14 @@ const Info = styled.div<{ color: ProjectType }>`
       &:hover > svg {
         transform: rotate(45deg);
         transform-origin: center;
+        margin-left: 20px;
       }
 
-      &:hover::before,
-      &:focus::before,
-      &:focus-within::before {
+      &:hover::before {
         width: 150px;
         border-radius: 38px;
         box-shadow: none;
-        border: 1px solid ${cVar("primary")};
+        /* border: 1px solid ${cVar("primary")}; */
       }
     }
   }

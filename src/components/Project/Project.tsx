@@ -135,7 +135,8 @@ function Project({ timeline }: Projectprops) {
             ASIKO
           </p>
         </ProjectName>
-        <a href="https://asiko.flutterwave.com">
+        {/* <a href="https://asiko.flutterwave.com"> */}
+        <a href="#">
           <ProjectBanner
             onMouseEnter={() => cursorChangeHandler("linkhover")}
             onMouseLeave={() => cursorChangeHandler("")}

@@ -54,7 +54,7 @@ export const GlobalStyles = createGlobalStyle`
     }
 
     @media (min-width: 1200px){
-          font-size: 18px;
+          font-size: 16px;
       }
   }
   /* Custom style */
