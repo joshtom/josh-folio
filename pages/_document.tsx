@@ -63,8 +63,11 @@ export default class MyDocument extends Document {
             property="og:title"
             content="Joshua Olajide | Frontend Engineer"
           />
-          <meta property="og:url" content="https://www.joshuaolajide.com/" />
-          <meta property="og:image" content="images/ogimage.png" />
+          <meta property="og:url" content="https://joshuaolajide.com/" />
+          <meta
+            property="og:image"
+            content="https://res.cloudinary.com/drqltx8ye/image/upload/v1658311058/Frame_33614_1_mgn4h1.png"
+          />
           <meta
             property="og:description"
             content="I’m a frontend engineer that loves to create scalable, fast and
@@ -79,9 +82,12 @@ export default class MyDocument extends Document {
             content="I’m a frontend engineer that loves to create scalable, fast and
             mobile-first web applications"
           />
-          <meta name="twitter:image" content="images/ogimage.png" />
+          <meta
+            name="twitter:image"
+            content="https://res.cloudinary.com/drqltx8ye/image/upload/v1658311058/Frame_33614_1_mgn4h1.png"
+          />
           <meta name="twitter:card" content="summary_large_image" />
-          <meta name="twitter:url" content="https://www.joshuaolajide.com/" />
+          <meta name="twitter:url" content="https://joshuaolajide.com/" />
         </Head>
         <body>
           <Main />
