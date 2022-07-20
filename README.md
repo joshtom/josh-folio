@@ -1,4 +1,4 @@
-My portolio website is built with [Next.js](https://nextjs.org/)
+My portfolio website is built with [Next.js](https://nextjs.org/)
 
 ## Installation
 
