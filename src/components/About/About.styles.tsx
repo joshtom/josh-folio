@@ -17,21 +17,6 @@ const AboutContainer = styled.div`
   ${({ theme }) => theme.media.custom(0, 768)} {
     width: 90%;
   }
-
-  /* Disable the last accordion and the accordion line on hover */
-  /* & > .accordion {
-    &:last-child {
-      & > header {
-        border-bottom: none;
-        &:focus {
-          border-bottom: 1px solid ${cVar("grayMid")};
-        }
-        .accordion-line {
-          background: transparent;
-        }
-      }
-    }
-  } */
 `;
 const AboutParagraph = styled.p`
   font-size: 20px;
@@ -180,8 +165,6 @@ const AccordionHeader = styled.header`
       font-size: 7vw;
     }
   }
-
-  /* Locomotivr scroll animation */
 `;
 
 const AccordionBody = styled.div`

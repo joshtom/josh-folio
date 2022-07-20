@@ -10,7 +10,6 @@ const DotRing = () => {
   const dot = useRef(null);
   const section = useRef(null);
   const span = useRef(null);
-  // 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
   const cursorDisplay = (cursor: cursorType | string) => {
     if (cursor === "ahover") return "GOTO";
     else if (cursor === "linkhover") return "VISIT";
@@ -33,7 +32,6 @@ const DotRing = () => {
     y: y,
   });
 
-  // Create a function, Listen to the cursor type, Then apply styling based on that.
   const cursorChangeOnHover = (cursor: cursorType | string) => {
     if (cursor === "hovered") {
       gsap.to(ring.current, {
@@ -71,7 +69,6 @@ const DotRing = () => {
   };
 
   useEffect(() => {
-    // Listen to cursor type changes and pass the param to the function
     cursorChangeOnHover(cursorType);
   }, [cursorType]);
 

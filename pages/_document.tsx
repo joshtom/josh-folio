@@ -47,7 +47,7 @@ export default class MyDocument extends Document {
             rel="stylesheet"
           />
 
-          <link href="https://josh-folio.netlify.app/" rel="canonical" />
+          <link href="https://www.joshuaolajide.com/" rel="canonical" />
           <meta name="theme-color" content="#161a19" />
           <meta
             name="apple-mobile-web-app-status-bar-style"
@@ -64,7 +64,7 @@ export default class MyDocument extends Document {
             content="Joshua Olajide | Frontend Engineer"
           />
           <meta property="og:url" content="https://www.joshuaolajide.com/" />
-          <meta property="og:image" content="webp/ogimage.png" />
+          <meta property="og:image" content="images/ogimage.png" />
           <meta
             property="og:description"
             content="I’m a frontend engineer that loves to create scalable, fast and
@@ -79,7 +79,7 @@ export default class MyDocument extends Document {
             content="I’m a frontend engineer that loves to create scalable, fast and
             mobile-first web applications"
           />
-          <meta name="twitter:image" content="webp/ogimage.png" />
+          <meta name="twitter:image" content="images/ogimage.png" />
           <meta name="twitter:card" content="summary_large_image" />
           <meta name="twitter:url" content="https://www.joshuaolajide.com/" />
         </Head>

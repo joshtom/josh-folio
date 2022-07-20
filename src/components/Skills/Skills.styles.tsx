@@ -12,7 +12,6 @@ const Container = styled.div`
   }
 
   ${({ theme }) => theme.media.custom(0, 768)} {
-    /* overflow: scroll; */
     background-color: transparent;
   }
 `;
@@ -69,7 +68,6 @@ const Skill = styled.div`
   padding: 20px 56px 20px;
   letter-spacing: ${({ theme }) => theme.letterSpacing()};
   width: auto;
-  /* color: #5a5a5c; */
   color: ${cVar("pink")};
   border: 1.5px solid ${cVar("grayMid")};
   display: flex;

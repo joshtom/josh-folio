@@ -7,7 +7,6 @@ const HeaderContainer = styled.div`
   grid-template-areas: "logo . . links";
   gap: 20px;
 
-  /* Media screen mobile */
   ${({ theme }) => theme.media.custom(0, 768)} {
     position: absolute;
     z-index: 100;
@@ -132,49 +131,6 @@ const Links = styled.li`
       }
     }
   }
-
-  /* a {
-    color: ${cVar("light")};
-    display: flex;
-    flex-direction: column;
-    font-size: 16px;
-    height: auto;
-    letter-spacing: ${({ theme }) => theme.letterSpacing("0.08")};
-    position: relative;
-    cursor: pointer !important;
-    ${({ theme }) => theme.transition.default};
-
-    &::before,
-    &::after {
-      position: absolute;
-      width: 100%;
-      height: 1px;
-      background: ${cVar("pinkDeep")};
-      bottom: -4px;
-      left: 0;
-      pointer-events: none;
-    }
-
-    &::before {
-      content: "";
-    }
-
-    &.link::before {
-      transform-origin: 100% 50%;
-      transform: scale3d(0, 1, 1);
-      transition: transform 0.3s;
-      ${({ theme }) => theme.transition.default};
-    }
-
-    &.link:hover::before {
-      transform-origin: 0% 50%;
-      transform: scale3d(1, 1, 1);
-    }
-
-    &:hover {
-      color: ${cVar("pinkDeep")};
-    }
-  } */
 `;
 
 // Mobile navigation styling.
