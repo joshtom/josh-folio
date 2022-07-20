@@ -2,7 +2,6 @@ import { cVar } from "@src/helpers";
 import styled from "styled-components";
 
 const ContactContainer = styled.div`
-  /* background-color: red; */
   position: relative;
   width: 75%;
   margin: 3rem auto;

@@ -107,7 +107,6 @@ const ScrollerContainer = styled.div`
   height: 200px;
 
   ${({ theme }) => theme.media.smallLaptop} {
-    /* background-color: red; */
     height: 120px;
   }
 
