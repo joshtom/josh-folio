@@ -16,9 +16,6 @@ const DefaultLayoutContainer = styled.div`
 const locomotiveScroll =
   typeof window !== "undefined" ? require("locomotive-scroll").default : null;
 
-const hoverEffect =
-  typeof window !== `undefined` ? require("hover-effect").default : null;
-
 function Defaultlayout({ children }: DefaultLayoutProps) {
   const MainContainer = useRef(null);
   let locoScroll: any;
@@ -48,23 +45,6 @@ function Defaultlayout({ children }: DefaultLayoutProps) {
       // @ts-ignore
       locoScroll.update();
       locoScroll.scrollTo(getTop);
-    });
-
-    // image hover effect
-    Array.from(document.querySelectorAll(".hover-img")).forEach((el: any) => {
-      const imgs: any = Array.from(el.querySelectorAll("img"));
-      new hoverEffect({
-        parent: el,
-        // imagesRatio: 9 / 16, // Use this aspect ratio when you get new image
-        intensity: 0.5,
-        speedIn: el.dataset.speedin || undefined,
-        speedOut: el.dataset.speedout || undefined,
-        easing: el.dataset.easing || undefined,
-        hover: el.dataset.hover || undefined,
-        image1: imgs[0]?.getAttribute("src"),
-        image2: imgs[1]?.getAttribute("src"),
-        displacementImage: el.dataset.displacement,
-      });
     });
 
     console.clear();
