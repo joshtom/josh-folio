@@ -14,12 +14,7 @@ import {
 import MoreProject from "@assets/icons/mp.png";
 import Emoji from "@assets/icons/emoji.png";
 import ArrowIcon from "@assets/icons/Arrow";
-// import ImageAsiko from "../../assets/images/imageAsiko.png";
 import { gsap } from "gsap";
-// import Image from "next/image";
-
-const hoverEffect =
-  typeof window !== `undefined` ? require("hover-effect").default : null;
 interface Projectprops {
   timeline?: any;
 }
@@ -92,17 +87,6 @@ function Project({ timeline }: Projectprops) {
           amount: 0.8,
         },
       });
-
-    // HOVER EFFECT
-
-    // new hoverEffect({
-    //   parent: container.current,
-    //   intensity: 0.3,
-    //   image1: "https://picsum.photos/400/600",
-    //   image2: "https://picsum.photos/420/620",
-    //   displacementImage:
-    //     "https://raw.githubusercontent.com/robin-dela/hover-effect/master/images/fluid.jpg",
-    // });
   }, []);
 
   useEffect(() => {

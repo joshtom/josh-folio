@@ -19,8 +19,6 @@ import ArrowIcon from "@assets/icons/Arrow";
 import SplitTextToChars from "@src/SplitTextToChars/SplitTextToChars";
 import { AnimateBanner } from "../Project/Project.styles";
 import { gsap } from "gsap/dist/gsap";
-const hoverEffect =
-  typeof window !== `undefined` ? require("hover-effect").default : null;
 interface Heroprops {
   timeline?: any;
 }
