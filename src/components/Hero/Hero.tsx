@@ -36,6 +36,8 @@ function Hero({ timeline }: Heroprops) {
   const sectionLine2 = useRef(null);
   const scroller = useRef(null);
   const animeBanner = useRef(null);
+  const mobilewavy1 = useRef(null);
+  const mobilewavy2 = useRef(null);
   const image = useRef(null);
   const theTimeline = gsap.timeline();
 
@@ -68,9 +70,18 @@ function Hero({ timeline }: Heroprops) {
           opacity: 1,
         }
       )
+      .from([mobilewavy1.current, mobilewavy2.current], {
+        duration: 1.4,
+        opacity: 0,
+        y: 40,
+        stagger: {
+          amount: 0.9,
+        },
+      })
       .from(
         [chars, chars1],
         {
+          delay: -2,
           duration: 1.4,
           opacity: 0,
           scale: 1,
@@ -128,7 +139,10 @@ function Hero({ timeline }: Heroprops) {
           <HeroHeading ref={wavyTextRef} desktop={true}>
             Joshua Olajide
           </HeroHeading>
-          <HeroHeading desktop={false}> Joshua Olajide</HeroHeading>
+          <HeroHeading desktop={false} ref={mobilewavy1}>
+            {" "}
+            Joshua Olajide
+          </HeroHeading>
           <ScrollerContainer ref={scroller}>
             <Scroller />
           </ScrollerContainer>
@@ -143,7 +157,10 @@ function Hero({ timeline }: Heroprops) {
               height="100%"
             />
           </Section1>
-          <MainBodyHeading> Frontend Engineer</MainBodyHeading>
+          <MainBodyHeading ref={mobilewavy2}>
+            {" "}
+            Frontend Engineer
+          </MainBodyHeading>
           <Section2>
             <span id="topLine" ref={sectionLine1}>
               {" "}
