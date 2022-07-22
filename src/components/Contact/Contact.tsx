@@ -47,7 +47,13 @@ function Contact() {
             onMouseEnter={() => cursorChangeHandler("hovered")}
             onMouseLeave={() => cursorChangeHandler("")}
           >
-            <a href="#" aria-label="resume" rel="noreferrer" className="link">
+            <a
+              href="https://drive.google.com/file/d/1kso8t0teyTBeC5HtL8WiGeMOdZbW1q_Z/view?usp=sharing"
+              aria-label="resume"
+              target="_blank"
+              rel="noreferrer"
+              className="link"
+            >
               <span className="h-link">
                 <span className="h-link__inner">
                   <span> RESUME </span>
