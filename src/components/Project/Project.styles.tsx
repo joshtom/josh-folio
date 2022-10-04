@@ -202,6 +202,13 @@ const Info = styled.div<{ color: ProjectType }>`
   display: flex;
   flex-direction: column;
 
+  #coming-soon {
+    font-family: ${cVar("dmSans")};
+    color: ${cVar("white")};
+    margin-top: 20px;
+    text-decoration: underline;
+  }
+
   p {
     font-family: ${cVar("dmSans")};
     position: relative;

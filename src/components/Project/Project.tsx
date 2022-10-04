@@ -227,6 +227,60 @@ function Project({ timeline }: Projectprops) {
         </ProjectFooter>
       </Wrapper>
 
+      <Wrapper ref={wrapper2} id="theWrapper">
+        <ProjectName color="inawo" data-scroll>
+          <p
+            data-scroll
+            data-scroll-speed="8"
+            data-scroll-position="middle"
+            data-scroll-direction="horizontal"
+          >
+            COMPENSATE - COMPENSATE - COMPENSATE - COMPENSATE - COMPENSATE -
+            COMPENSATE - COMPENSATE - COMPENSATE - COMPENSATE
+          </p>
+        </ProjectName>
+        <a href="#" target="_blank" rel="noreferrer">
+          <ProjectBanner
+            onMouseEnter={() => cursorChangeHandler("linkhover")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            <img
+              ref={image1}
+              src="/images/compensate.png"
+              alt="compensatebanner-image"
+              width="100%"
+              height="100%"
+            />
+          </ProjectBanner>
+        </a>
+        <ProjectFooter>
+          <Title
+            ref={title2}
+            onMouseEnter={() => cursorChangeHandler("linkhover")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            PAYROLL SYSTEM
+          </Title>
+          <Info color="inawo">
+            <p ref={p2}>
+              Compensate is a platform that solves salary problem in a
+              personified way by providing progressive and affordable salary
+              management system accessible on Web to everyone
+            </p>
+            <a href="#" target="_blank" rel="noreferrer" id="coming-soon">
+              {/* <p
+                ref={a2}
+                onMouseEnter={() => cursorChangeHandler("hovered")}
+                onMouseLeave={() => cursorChangeHandler("")}
+              > */}
+                {" "}
+                COMING SOON  
+              {/* </p> */}
+            </a>
+          </Info>
+        </ProjectFooter>
+      </Wrapper>
+
       <Footer>
         <a
           href="https://github.com/joshtom"
