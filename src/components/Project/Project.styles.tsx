@@ -221,6 +221,10 @@ const Info = styled.div<{ color: ProjectType }>`
       color: ${cVar("white")};
       display: flex;
       align-items: center;
+      
+      a {
+        background-color: red;
+      }
 
       ${({ theme }) => theme.media.custom(0, 768)} {
         margin-top: 20px;

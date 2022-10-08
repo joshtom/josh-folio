@@ -235,6 +235,67 @@ function Project({ timeline }: Projectprops) {
             data-scroll-position="middle"
             data-scroll-direction="horizontal"
           >
+            MODERN - MODERN - MODERN - MODERN - MODERN - MODERN - MODERN -
+            MODERN - MODERN
+          </p>
+        </ProjectName>
+        <a href="https://modern-marketting.netlify.app/" target="_blank" rel="noreferrer">
+          <ProjectBanner
+            onMouseEnter={() => cursorChangeHandler("linkhover")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            <img
+              ref={image1}
+              src="/images/modern.png"
+              alt="modern-image-banner"
+              width="100%"
+              height="100%"
+            />
+          </ProjectBanner>
+        </a>
+        <ProjectFooter>
+          <Title
+            ref={title2}
+            onMouseEnter={() => cursorChangeHandler("linkhover")}
+            onMouseLeave={() => cursorChangeHandler("")}
+          >
+            MODERN WEBSITE
+          </Title>
+          <Info color="inawo">
+            <p ref={p2}>
+              Design inspiration gotten from this{" "}
+              <a
+                href="https://dribbble.com/shots/17421483-Modern-Marketing-Agency-Hero"
+                target="_blank"
+                rel="noreferrer"
+                id="coming-soon"
+              >
+                {" "}
+                dribbble design{" "}
+              </a>{" "}
+              combined with ideas that lived in my head
+            </p>
+            <a href="https://modern-marketting.netlify.app/" target="_blank" rel="noreferrer">
+              <p
+                ref={a2}
+                onMouseEnter={() => cursorChangeHandler("hovered")}
+                onMouseLeave={() => cursorChangeHandler("")}
+              >
+                VISIT SITE <ArrowIcon />
+              </p>
+            </a>
+          </Info>
+        </ProjectFooter>
+      </Wrapper>
+
+      <Wrapper ref={wrapper2} id="theWrapper">
+        <ProjectName color="inawo" data-scroll>
+          <p
+            data-scroll
+            data-scroll-speed="8"
+            data-scroll-position="middle"
+            data-scroll-direction="horizontal"
+          >
             COMPENSATE - COMPENSATE - COMPENSATE - COMPENSATE - COMPENSATE -
             COMPENSATE - COMPENSATE - COMPENSATE - COMPENSATE
           </p>
@@ -272,9 +333,8 @@ function Project({ timeline }: Projectprops) {
                 ref={a2}
                 onMouseEnter={() => cursorChangeHandler("hovered")}
                 onMouseLeave={() => cursorChangeHandler("")}
-              > */}
-                {" "}
-                COMING SOON  
+              > */}{" "}
+              COMING SOON
               {/* </p> */}
             </a>
           </Info>
