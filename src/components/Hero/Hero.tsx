@@ -130,7 +130,7 @@ function Hero({ timeline }: Heroprops) {
         rotation: -180,
         ease: "power4.out",
       });
-  }, [timeline, theTimeline, timeDelay]);
+  }, [timeline]);
 
   return (
     <HeroContainer ref={HeroCont}>
