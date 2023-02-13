@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import { useEffect, useRef, useContext } from "react";
 import { MouseContext } from "@context/mouse-context";
 import {
@@ -129,7 +130,7 @@ function Hero({ timeline }: Heroprops) {
         rotation: -180,
         ease: "power4.out",
       });
-  }, [timeline]);
+  }, [timeline, theTimeline, timeDelay]);
 
   return (
     <HeroContainer ref={HeroCont}>
@@ -155,6 +156,7 @@ function Hero({ timeline }: Heroprops) {
               src="/images/josh2.png"
               width="100%"
               height="100%"
+              alt="png"
             />
           </Section1>
           <MainBodyHeading ref={mobilewavy2}>
@@ -175,8 +177,8 @@ function Hero({ timeline }: Heroprops) {
               {" "}
             </span>
             <p ref={section3}>
-              I currently work at <b>FLUTTERWAVE</b>, open for fulltime role and
-              / collaboration
+              I currently work at <b>ARM GROUPS</b>, open for Projects and /
+              Collaboration
             </p>
             <a href="mailto:joshuaolarjide@gmail.com" ref={section4}>
               <section

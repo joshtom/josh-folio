@@ -48,7 +48,8 @@ function Contact() {
             onMouseLeave={() => cursorChangeHandler("")}
           >
             <a
-              href="https://drive.google.com/file/d/1HGP_Peu4jbvi4TAPb_nDo0RiYIEIbyqE/view?usp=sharing"
+              href="#Reviewed"
+              // href="https://drive.google.com/file/d/1HGP_Peu4jbvi4TAPb_nDo0RiYIEIbyqE/view?usp=sharing"
               aria-label="resume"
               target="_blank"
               rel="noreferrer"
